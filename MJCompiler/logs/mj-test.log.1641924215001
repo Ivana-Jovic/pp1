@@ -1,0 +1,1508 @@
+INFO  19:02:14,599 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  19:02:14,634 - #2 program
+INFO  19:02:14,634 - #49 p
+INFO  19:02:14,634 - #7 const
+INFO  19:02:14,634 - #49 int
+INFO  19:02:14,634 - #49 size
+INFO  19:02:14,635 - #35 =
+INFO  19:02:14,635 - #48 10
+INFO  19:02:14,635 - #40 ,
+INFO  19:02:14,635 - #49 b
+INFO  19:02:14,635 - #39 ;
+ERROR 19:02:14,635 - 
+Sintaksna greska na liniji 3
+INFO  19:02:14,635 - #49 int
+INFO  19:02:14,636 - #49 a
+INFO  19:02:14,636 - #40 ,
+ERROR 19:02:14,636 - *******Const -Izvrsen oporavak do , u liniji 3
+INFO  19:02:14,637 - #49 b
+INFO  19:02:14,637 - #39 ;
+INFO  19:02:14,637 - #49 int
+INFO  19:02:14,637 - #49 c
+INFO  19:02:14,637 - #39 ;
+INFO  19:02:14,637 - #4 class
+INFO  19:02:14,638 - #49 A
+INFO  19:02:14,638 - #42 {
+INFO  19:02:14,638 - #43 }
+INFO  19:02:14,638 - #4 class
+INFO  19:02:14,638 - #49 B
+INFO  19:02:14,638 - #16 extends
+INFO  19:02:14,638 - #49 A
+INFO  19:02:14,638 - #42 {
+INFO  19:02:14,638 - #49 int
+INFO  19:02:14,639 - #49 a
+INFO  19:02:14,639 - #40 ,
+INFO  19:02:14,639 - #49 b
+INFO  19:02:14,639 - #46 [
+INFO  19:02:14,639 - #47 ]
+INFO  19:02:14,639 - #39 ;
+INFO  19:02:14,639 - #49 string
+INFO  19:02:14,639 - #49 s
+INFO  19:02:14,639 - #39 ;
+INFO  19:02:14,639 - #42 {
+INFO  19:02:14,639 - #15 void
+INFO  19:02:14,639 - #49 putp
+INFO  19:02:14,640 - #44 (
+INFO  19:02:14,640 - #49 int
+INFO  19:02:14,640 - #49 a
+INFO  19:02:14,640 - #40 ,
+INFO  19:02:14,640 - #49 int
+INFO  19:02:14,640 - #49 idx
+INFO  19:02:14,640 - #45 )
+INFO  19:02:14,641 - #42 {
+INFO  19:02:14,641 - #43 }
+INFO  19:02:14,641 - #49 int
+INFO  19:02:14,641 - #49 testingMore
+INFO  19:02:14,641 - #44 (
+INFO  19:02:14,642 - #49 int
+INFO  19:02:14,642 - #49 a
+INFO  19:02:14,642 - #40 ,
+INFO  19:02:14,642 - #49 double
+INFO  19:02:14,642 - #45 )
+ERROR 19:02:14,642 - 
+Sintaksna greska na liniji 15
+INFO  19:02:14,642 - #49 float
+INFO  19:02:14,642 - #49 random
+INFO  19:02:14,642 - #39 ;
+ERROR 19:02:14,642 - *******FormPars -Izvrsen oporavak do ,) u liniji 15
+INFO  19:02:14,642 - #42 {
+INFO  19:02:14,642 - #8 if
+INFO  19:02:14,643 - #44 (
+INFO  19:02:14,643 - #49 d
+INFO  19:02:14,643 - #34 ||
+INFO  19:02:14,643 - #45 )
+ERROR 19:02:14,643 - 
+Sintaksna greska na liniji 24
+INFO  19:02:14,643 - #42 {
+INFO  19:02:14,644 - #49 bla
+INFO  19:02:14,644 - #35 =
+ERROR 19:02:14,644 - *******Condition -Izvrsen oporavak do ; u liniji 24
+INFO  19:02:14,644 - #48 6
+INFO  19:02:14,644 - #39 ;
+INFO  19:02:14,644 - #43 }
+INFO  19:02:14,645 - #49 random
+INFO  19:02:14,645 - #35 =
+INFO  19:02:14,645 - #49 a
+INFO  19:02:14,645 - #41 .
+INFO  19:02:14,645 - #49 fetchRandomTest
+INFO  19:02:14,645 - #44 (
+INFO  19:02:14,645 - #45 )
+INFO  19:02:14,645 - #24 *
+INFO  19:02:14,646 - #48 100
+INFO  19:02:14,646 - #23 +
+INFO  19:02:14,646 - #48 1
+INFO  19:02:14,647 - #39 ;
+INFO  19:02:14,647 - #49 random
+INFO  19:02:14,647 - #36 ++
+INFO  19:02:14,647 - #39 ;
+INFO  19:02:14,648 - #8 if
+INFO  19:02:14,648 - #44 (
+INFO  19:02:14,648 - #49 random
+INFO  19:02:14,648 - #29 >
+INFO  19:02:14,648 - #48 25
+INFO  19:02:14,649 - #24 *
+INFO  19:02:14,649 - #48 2
+INFO  19:02:14,653 - #33 &&
+INFO  19:02:14,654 - #49 random
+INFO  19:02:14,654 - #32 <=
+INFO  19:02:14,654 - #48 1
+INFO  19:02:14,655 - #23 +
+INFO  19:02:14,655 - #48 50
+INFO  19:02:14,655 - #24 *
+INFO  19:02:14,655 - #48 2
+INFO  19:02:14,655 - #45 )
+INFO  19:02:14,655 - #42 {
+INFO  19:02:14,655 - #9 do
+INFO  19:02:14,655 - #42 {
+INFO  19:02:14,655 - #49 random
+INFO  19:02:14,655 - #35 =
+INFO  19:02:14,655 - #49 random
+INFO  19:02:14,655 - #22 -
+INFO  19:02:14,656 - #48 1
+INFO  19:02:14,656 - #39 ;
+INFO  19:02:14,656 - #8 if
+INFO  19:02:14,656 - #44 (
+INFO  19:02:14,656 - #49 WorldTime
+INFO  19:02:14,656 - #41 .
+INFO  19:02:14,656 - #49 currentTime
+INFO  19:02:14,657 - #46 [
+INFO  19:02:14,657 - #49 Today
+INFO  19:02:14,657 - #47 ]
+INFO  19:02:14,657 - #27 ==
+INFO  19:02:14,657 - #49 Late
+INFO  19:02:14,658 - #45 )
+INFO  19:02:14,658 - #17 continue
+INFO  19:02:14,658 - #39 ;
+INFO  19:02:14,659 - #43 }
+INFO  19:02:14,659 - #10 while
+INFO  19:02:14,659 - #44 (
+INFO  19:02:14,659 - #49 random
+INFO  19:02:14,659 - #28 !=
+INFO  19:02:14,659 - #48 0
+INFO  19:02:14,660 - #45 )
+INFO  19:02:14,660 - #39 ;
+INFO  19:02:14,660 - #3 break
+INFO  19:02:14,660 - #39 ;
+INFO  19:02:14,660 - #49 loop
+INFO  19:02:14,660 - #38 :
+INFO  19:02:14,661 - #9 do
+INFO  19:02:14,661 - #49 random
+INFO  19:02:14,661 - #36 ++
+INFO  19:02:14,661 - #39 ;
+INFO  19:02:14,661 - #10 while
+INFO  19:02:14,661 - #44 (
+INFO  19:02:14,661 - #49 random
+INFO  19:02:14,661 - #31 <
+INFO  19:02:14,661 - #48 50
+INFO  19:02:14,661 - #45 )
+INFO  19:02:14,661 - #39 ;
+INFO  19:02:14,661 - #43 }
+INFO  19:02:14,662 - #6 else
+INFO  19:02:14,662 - #20 goto
+INFO  19:02:14,662 - #49 loop
+INFO  19:02:14,662 - #39 ;
+INFO  19:02:14,662 - #12 print
+INFO  19:02:14,662 - #44 (
+INFO  19:02:14,662 - #22 -
+INFO  19:02:14,662 - #49 b
+INFO  19:02:14,662 - #46 [
+INFO  19:02:14,662 - #48 5
+INFO  19:02:14,662 - #47 ]
+INFO  19:02:14,662 - #40 ,
+INFO  19:02:14,662 - #48 10
+INFO  19:02:14,662 - #45 )
+INFO  19:02:14,662 - #39 ;
+INFO  19:02:14,662 - #14 return
+INFO  19:02:14,662 - #49 random
+INFO  19:02:14,662 - #39 ;
+INFO  19:02:14,662 - #43 }
+INFO  19:02:14,662 - #43 }
+INFO  19:02:14,663 - #43 }
+INFO  19:02:14,663 - #49 float
+INFO  19:02:14,663 - #49 c
+INFO  19:02:14,663 - #40 ,
+INFO  19:02:14,663 - #49 d
+INFO  19:02:14,663 - #39 ;
+INFO  19:02:14,663 - #21 record
+INFO  19:02:14,663 - #49 r
+INFO  19:02:14,663 - #42 {
+INFO  19:02:14,663 - #43 }
+INFO  19:02:14,663 - #49 B
+INFO  19:02:14,663 - #49 testObject
+INFO  19:02:14,664 - #39 ;
+INFO  19:02:14,664 - #42 {
+INFO  19:02:14,664 - #15 void
+INFO  19:02:14,664 - #49 main
+INFO  19:02:14,664 - #44 (
+INFO  19:02:14,664 - #45 )
+INFO  19:02:14,664 - #42 {
+INFO  19:02:14,664 - #49 testObject
+INFO  19:02:14,664 - #35 =
+INFO  19:02:14,664 - #11 new
+INFO  19:02:14,664 - #49 B
+INFO  19:02:14,664 - #46 [
+INFO  19:02:14,664 - #49 c
+INFO  19:02:14,664 - #23 +
+INFO  19:02:14,664 - #49 d
+INFO  19:02:14,664 - #47 ]
+INFO  19:02:14,664 - #39 ;
+INFO  19:02:14,664 - #49 a
+INFO  19:02:14,664 - #35 =
+INFO  19:02:14,664 - #49 testObject
+INFO  19:02:14,664 - #41 .
+INFO  19:02:14,665 - #49 testingMore
+INFO  19:02:14,665 - #44 (
+INFO  19:02:14,665 - #45 )
+INFO  19:02:14,665 - #26 %
+INFO  19:02:14,665 - #48 10
+INFO  19:02:14,665 - #39 ;
+INFO  19:02:14,665 - #49 b
+INFO  19:02:14,665 - #35 =
+INFO  19:02:14,665 - #49 testObject
+INFO  19:02:14,665 - #41 .
+INFO  19:02:14,665 - #49 b
+INFO  19:02:14,665 - #46 [
+INFO  19:02:14,665 - #48 5
+INFO  19:02:14,665 - #47 ]
+INFO  19:02:14,665 - #39 ;
+INFO  19:02:14,665 - #8 if
+INFO  19:02:14,665 - #44 (
+INFO  19:02:14,666 - #49 a
+INFO  19:02:14,666 - #30 >=
+INFO  19:02:14,666 - #49 testObject
+INFO  19:02:14,666 - #41 .
+INFO  19:02:14,666 - #49 testingMore
+INFO  19:02:14,666 - #44 (
+INFO  19:02:14,666 - #45 )
+INFO  19:02:14,666 - #22 -
+INFO  19:02:14,666 - #49 testObject
+INFO  19:02:14,666 - #41 .
+INFO  19:02:14,666 - #49 b
+INFO  19:02:14,666 - #46 [
+INFO  19:02:14,666 - #48 0
+INFO  19:02:14,666 - #47 ]
+INFO  19:02:14,666 - #33 &&
+INFO  19:02:14,666 - #49 c
+INFO  19:02:14,666 - #27 ==
+INFO  19:02:14,666 - #49 d
+INFO  19:02:14,666 - #45 )
+INFO  19:02:14,666 - #49 B
+INFO  19:02:14,666 - #41 .
+INFO  19:02:14,667 - #49 putp
+INFO  19:02:14,667 - #44 (
+INFO  19:02:14,667 - #49 a
+INFO  19:02:14,667 - #40 ,
+INFO  19:02:14,667 - #49 b
+INFO  19:02:14,667 - #45 )
+INFO  19:02:14,667 - #39 ;
+INFO  19:02:14,667 - #6 else
+INFO  19:02:14,667 - #49 a
+INFO  19:02:14,667 - #35 =
+INFO  19:02:14,667 - #49 help
+INFO  19:02:14,667 - #44 (
+INFO  19:02:14,667 - #49 a
+INFO  19:02:14,667 - #40 ,
+INFO  19:02:14,667 - #49 b
+INFO  19:02:14,667 - #45 )
+INFO  19:02:14,667 - #39 ;
+INFO  19:02:14,667 - #43 }
+INFO  19:02:14,668 - #49 int
+INFO  19:02:14,668 - #49 help
+INFO  19:02:14,668 - #44 (
+INFO  19:02:14,668 - #49 int
+INFO  19:02:14,668 - #49 a
+INFO  19:02:14,668 - #40 ,
+INFO  19:02:14,668 - #49 int
+INFO  19:02:14,668 - #49 b
+INFO  19:02:14,668 - #45 )
+INFO  19:02:14,668 - #42 {
+INFO  19:02:14,668 - #49 a
+INFO  19:02:14,668 - #35 =
+INFO  19:02:14,668 - #50 f
+INFO  19:02:14,668 - #23 +
+INFO  19:02:14,668 - #50 u
+INFO  19:02:14,668 - #23 +
+INFO  19:02:14,668 - #50 c
+INFO  19:02:14,668 - #23 +
+INFO  19:02:14,668 - #50 k
+INFO  19:02:14,668 - #39 ;
+INFO  19:02:14,668 - #49 b
+INFO  19:02:14,668 - #35 =
+INFO  19:02:14,668 - #50 t
+INFO  19:02:14,668 - #24 *
+INFO  19:02:14,669 - #50 h
+INFO  19:02:14,669 - #24 *
+INFO  19:02:14,669 - #50 i
+INFO  19:02:14,669 - #24 *
+INFO  19:02:14,669 - #50 s
+INFO  19:02:14,669 - #39 ;
+INFO  19:02:14,669 - #14 return
+INFO  19:02:14,669 - #11 new
+INFO  19:02:14,669 - #49 ItWorks
+INFO  19:02:14,669 - #46 [
+INFO  19:02:14,669 - #49 a
+INFO  19:02:14,669 - #24 *
+INFO  19:02:14,669 - #48 5
+INFO  19:02:14,669 - #22 -
+INFO  19:02:14,669 - #49 b
+INFO  19:02:14,669 - #47 ]
+INFO  19:02:14,669 - #39 ;
+INFO  19:02:14,669 - #43 }
+INFO  19:02:14,669 - #43 }
+INFO  19:02:14,674 - Program(
+ p
+  ProgListVarDecl(
+    ProgListRecordDecl(
+      ProgListVarDecl(
+        ProgListClassDecl(
+          ProgListClassDecl(
+            ProgListVarDecl(
+              ProgListVarDecl(
+                ProgListConstDecl(
+                  ProgListNoProgList(
+                    Epsilon(
+                    ) [Epsilon]
+                  ) [ProgListNoProgList]
+                  ConstDeclNoError(
+                    Type(
+                     int
+                    ) [Type]
+                   size
+                    ConstTypeNumber(
+                     10
+                    ) [ConstTypeNumber]
+                    ConstDeclListError(
+                    ) [ConstDeclListError]
+                  ) [ConstDeclNoError]
+                ) [ProgListConstDecl]
+                VarDeclNoSquare(
+                  Type(
+                   int
+                  ) [Type]
+                 a
+                  VarDeclListNoSquare(
+                    NoVarDeclList(
+                      Epsilon(
+                      ) [Epsilon]
+                    ) [NoVarDeclList]
+                   b
+                  ) [VarDeclListNoSquare]
+                ) [VarDeclNoSquare]
+              ) [ProgListVarDecl]
+              VarDeclNoSquare(
+                Type(
+                 int
+                ) [Type]
+               c
+                NoVarDeclList(
+                  Epsilon(
+                  ) [Epsilon]
+                ) [NoVarDeclList]
+              ) [VarDeclNoSquare]
+            ) [ProgListVarDecl]
+            ClassDeclNoType(
+             A
+              NoVarDeclListList(
+                Epsilon(
+                ) [Epsilon]
+              ) [NoVarDeclListList]
+              NoConstrMeth(
+                Epsilon(
+                ) [Epsilon]
+              ) [NoConstrMeth]
+            ) [ClassDeclNoType]
+          ) [ProgListClassDecl]
+          ClassDeclType(
+           B
+            Type(
+             A
+            ) [Type]
+            YVarDeclListList(
+              YVarDeclListList(
+                NoVarDeclListList(
+                  Epsilon(
+                  ) [Epsilon]
+                ) [NoVarDeclListList]
+                VarDeclNoSquare(
+                  Type(
+                   int
+                  ) [Type]
+                 a
+                  VarDeclListSquare(
+                    NoVarDeclList(
+                      Epsilon(
+                      ) [Epsilon]
+                    ) [NoVarDeclList]
+                   b
+                  ) [VarDeclListSquare]
+                ) [VarDeclNoSquare]
+              ) [YVarDeclListList]
+              VarDeclNoSquare(
+                Type(
+                 string
+                ) [Type]
+               s
+                NoVarDeclList(
+                  Epsilon(
+                  ) [Epsilon]
+                ) [NoVarDeclList]
+              ) [VarDeclNoSquare]
+            ) [YVarDeclListList]
+            ConstrMethNoConstr(
+              YMethodDeclListList(
+                YMethodDeclListList(
+                  NoMethodDeclListList(
+                    Epsilon(
+                    ) [Epsilon]
+                  ) [NoMethodDeclListList]
+                  MethodDecl(
+                    MethDeclTypeVoid(
+                    ) [MethDeclTypeVoid]
+                   putp
+                    YFormParsList(
+                      FormParsNoSquareList(
+                        FormParsNoSquare(
+                          Type(
+                           int
+                          ) [Type]
+                         a
+                        ) [FormParsNoSquare]
+                        Type(
+                         int
+                        ) [Type]
+                       idx
+                      ) [FormParsNoSquareList]
+                    ) [YFormParsList]
+                    NoVarDeclListList(
+                      Epsilon(
+                      ) [Epsilon]
+                    ) [NoVarDeclListList]
+                    NoStatementList(
+                      Epsilon(
+                      ) [Epsilon]
+                    ) [NoStatementList]
+                  ) [MethodDecl]
+                ) [YMethodDeclListList]
+                MethodDecl(
+                  MethDeclTypeType(
+                    Type(
+                     int
+                    ) [Type]
+                  ) [MethDeclTypeType]
+                 testingMore
+                  YFormParsList(
+                    FormParsError(
+                    ) [FormParsError]
+                  ) [YFormParsList]
+                  YVarDeclListList(
+                    NoVarDeclListList(
+                      Epsilon(
+                      ) [Epsilon]
+                    ) [NoVarDeclListList]
+                    VarDeclNoSquare(
+                      Type(
+                       float
+                      ) [Type]
+                     random
+                      NoVarDeclList(
+                        Epsilon(
+                        ) [Epsilon]
+                      ) [NoVarDeclList]
+                    ) [VarDeclNoSquare]
+                  ) [YVarDeclListList]
+                  YStatementList(
+                    YStatementList(
+                      YStatementList(
+                        YStatementList(
+                          YStatementList(
+                            YStatementList(
+                              NoStatementList(
+                                Epsilon(
+                                ) [Epsilon]
+                              ) [NoStatementList]
+                              StatementSingle(
+                                SingleStatementIf(
+                                  ConditionError(
+                                  ) [ConditionError]
+                                  StatementStat(
+                                    Statements(
+                                      YStatementList(
+                                        NoStatementList(
+                                          Epsilon(
+                                          ) [Epsilon]
+                                        ) [NoStatementList]
+                                        StatementSingle(
+                                          SingleStatementDesStmtASSIGNOP(
+                                            DesignatorAssignop(
+                                              Designator(
+                                               bla
+                                                NoDesignList(
+                                                  Epsilon(
+                                                  ) [Epsilon]
+                                                ) [NoDesignList]
+                                              ) [Designator]
+                                              Assignop(
+                                              ) [Assignop]
+                                              ExprTerm(
+                                                TermFactor(
+                                                  FactorNum(
+                                                   6
+                                                  ) [FactorNum]
+                                                ) [TermFactor]
+                                              ) [ExprTerm]
+                                            ) [DesignatorAssignop]
+                                          ) [SingleStatementDesStmtASSIGNOP]
+                                        ) [StatementSingle]
+                                      ) [YStatementList]
+                                    ) [Statements]
+                                  ) [StatementStat]
+                                ) [SingleStatementIf]
+                              ) [StatementSingle]
+                            ) [YStatementList]
+                            StatementSingle(
+                              SingleStatementDesStmtASSIGNOP(
+                                DesignatorAssignop(
+                                  Designator(
+                                   random
+                                    NoDesignList(
+                                      Epsilon(
+                                      ) [Epsilon]
+                                    ) [NoDesignList]
+                                  ) [Designator]
+                                  Assignop(
+                                  ) [Assignop]
+                                  ExprAddop(
+                                    ExprTerm(
+                                      TermMlop(
+                                        TermFactor(
+                                          FactorDesPar(
+                                            Designator(
+                                             a
+                                              DesignListDot(
+                                                NoDesignList(
+                                                  Epsilon(
+                                                  ) [Epsilon]
+                                                ) [NoDesignList]
+                                               fetchRandomTest
+                                              ) [DesignListDot]
+                                            ) [Designator]
+                                          ) [FactorDesPar]
+                                        ) [TermFactor]
+                                        MulopMul(
+                                        ) [MulopMul]
+                                        FactorNum(
+                                         100
+                                        ) [FactorNum]
+                                      ) [TermMlop]
+                                    ) [ExprTerm]
+                                    AddopPlus(
+                                    ) [AddopPlus]
+                                    TermFactor(
+                                      FactorNum(
+                                       1
+                                      ) [FactorNum]
+                                    ) [TermFactor]
+                                  ) [ExprAddop]
+                                ) [DesignatorAssignop]
+                              ) [SingleStatementDesStmtASSIGNOP]
+                            ) [StatementSingle]
+                          ) [YStatementList]
+                          StatementSingle(
+                            SingleStatementDesi(
+                              DesignatorPlus(
+                                Designator(
+                                 random
+                                  NoDesignList(
+                                    Epsilon(
+                                    ) [Epsilon]
+                                  ) [NoDesignList]
+                                ) [Designator]
+                              ) [DesignatorPlus]
+                            ) [SingleStatementDesi]
+                          ) [StatementSingle]
+                        ) [YStatementList]
+                        StatementSingle(
+                          SingleStatementIfElse(
+                            ConditionNoList(
+                              CondTermList(
+                                CondTermNoList(
+                                  CondFactList(
+                                    ExprTerm(
+                                      TermFactor(
+                                        FactorDes(
+                                          Designator(
+                                           random
+                                            NoDesignList(
+                                              Epsilon(
+                                              ) [Epsilon]
+                                            ) [NoDesignList]
+                                          ) [Designator]
+                                        ) [FactorDes]
+                                      ) [TermFactor]
+                                    ) [ExprTerm]
+                                    RelopGrt(
+                                    ) [RelopGrt]
+                                    ExprTerm(
+                                      TermMlop(
+                                        TermFactor(
+                                          FactorNum(
+                                           25
+                                          ) [FactorNum]
+                                        ) [TermFactor]
+                                        MulopMul(
+                                        ) [MulopMul]
+                                        FactorNum(
+                                         2
+                                        ) [FactorNum]
+                                      ) [TermMlop]
+                                    ) [ExprTerm]
+                                  ) [CondFactList]
+                                ) [CondTermNoList]
+                                CondFactList(
+                                  ExprTerm(
+                                    TermFactor(
+                                      FactorDes(
+                                        Designator(
+                                         random
+                                          NoDesignList(
+                                            Epsilon(
+                                            ) [Epsilon]
+                                          ) [NoDesignList]
+                                        ) [Designator]
+                                      ) [FactorDes]
+                                    ) [TermFactor]
+                                  ) [ExprTerm]
+                                  RelopLesse(
+                                  ) [RelopLesse]
+                                  ExprAddop(
+                                    ExprTerm(
+                                      TermFactor(
+                                        FactorNum(
+                                         1
+                                        ) [FactorNum]
+                                      ) [TermFactor]
+                                    ) [ExprTerm]
+                                    AddopPlus(
+                                    ) [AddopPlus]
+                                    TermMlop(
+                                      TermFactor(
+                                        FactorNum(
+                                         50
+                                        ) [FactorNum]
+                                      ) [TermFactor]
+                                      MulopMul(
+                                      ) [MulopMul]
+                                      FactorNum(
+                                       2
+                                      ) [FactorNum]
+                                    ) [TermMlop]
+                                  ) [ExprAddop]
+                                ) [CondFactList]
+                              ) [CondTermList]
+                            ) [ConditionNoList]
+                            StatementStat(
+                              Statements(
+                                YStatementList(
+                                  YStatementList(
+                                    YStatementList(
+                                      NoStatementList(
+                                        Epsilon(
+                                        ) [Epsilon]
+                                      ) [NoStatementList]
+                                      StatementSingle(
+                                        SingleStatementDo(
+                                          StatementStat(
+                                            Statements(
+                                              YStatementList(
+                                                YStatementList(
+                                                  NoStatementList(
+                                                    Epsilon(
+                                                    ) [Epsilon]
+                                                  ) [NoStatementList]
+                                                  StatementSingle(
+                                                    SingleStatementDesStmtASSIGNOP(
+                                                      DesignatorAssignop(
+                                                        Designator(
+                                                         random
+                                                          NoDesignList(
+                                                            Epsilon(
+                                                            ) [Epsilon]
+                                                          ) [NoDesignList]
+                                                        ) [Designator]
+                                                        Assignop(
+                                                        ) [Assignop]
+                                                        ExprAddop(
+                                                          ExprTerm(
+                                                            TermFactor(
+                                                              FactorDes(
+                                                                Designator(
+                                                                 random
+                                                                  NoDesignList(
+                                                                    Epsilon(
+                                                                    ) [Epsilon]
+                                                                  ) [NoDesignList]
+                                                                ) [Designator]
+                                                              ) [FactorDes]
+                                                            ) [TermFactor]
+                                                          ) [ExprTerm]
+                                                          AddopMinus(
+                                                          ) [AddopMinus]
+                                                          TermFactor(
+                                                            FactorNum(
+                                                             1
+                                                            ) [FactorNum]
+                                                          ) [TermFactor]
+                                                        ) [ExprAddop]
+                                                      ) [DesignatorAssignop]
+                                                    ) [SingleStatementDesStmtASSIGNOP]
+                                                  ) [StatementSingle]
+                                                ) [YStatementList]
+                                                StatementSingle(
+                                                  SingleStatementIf(
+                                                    ConditionNoList(
+                                                      CondTermNoList(
+                                                        CondFactList(
+                                                          ExprTerm(
+                                                            TermFactor(
+                                                              FactorDes(
+                                                                Designator(
+                                                                 WorldTime
+                                                                  DesignListSquare(
+                                                                    DesignListDot(
+                                                                      NoDesignList(
+                                                                        Epsilon(
+                                                                        ) [Epsilon]
+                                                                      ) [NoDesignList]
+                                                                     currentTime
+                                                                    ) [DesignListDot]
+                                                                    ExprTerm(
+                                                                      TermFactor(
+                                                                        FactorDes(
+                                                                          Designator(
+                                                                           Today
+                                                                            NoDesignList(
+                                                                              Epsilon(
+                                                                              ) [Epsilon]
+                                                                            ) [NoDesignList]
+                                                                          ) [Designator]
+                                                                        ) [FactorDes]
+                                                                      ) [TermFactor]
+                                                                    ) [ExprTerm]
+                                                                  ) [DesignListSquare]
+                                                                ) [Designator]
+                                                              ) [FactorDes]
+                                                            ) [TermFactor]
+                                                          ) [ExprTerm]
+                                                          RelopEqual(
+                                                          ) [RelopEqual]
+                                                          ExprTerm(
+                                                            TermFactor(
+                                                              FactorDes(
+                                                                Designator(
+                                                                 Late
+                                                                  NoDesignList(
+                                                                    Epsilon(
+                                                                    ) [Epsilon]
+                                                                  ) [NoDesignList]
+                                                                ) [Designator]
+                                                              ) [FactorDes]
+                                                            ) [TermFactor]
+                                                          ) [ExprTerm]
+                                                        ) [CondFactList]
+                                                      ) [CondTermNoList]
+                                                    ) [ConditionNoList]
+                                                    StatementSingle(
+                                                      SingleStatementContinue(
+                                                      ) [SingleStatementContinue]
+                                                    ) [StatementSingle]
+                                                  ) [SingleStatementIf]
+                                                ) [StatementSingle]
+                                              ) [YStatementList]
+                                            ) [Statements]
+                                          ) [StatementStat]
+                                          ConditionNoList(
+                                            CondTermNoList(
+                                              CondFactList(
+                                                ExprTerm(
+                                                  TermFactor(
+                                                    FactorDes(
+                                                      Designator(
+                                                       random
+                                                        NoDesignList(
+                                                          Epsilon(
+                                                          ) [Epsilon]
+                                                        ) [NoDesignList]
+                                                      ) [Designator]
+                                                    ) [FactorDes]
+                                                  ) [TermFactor]
+                                                ) [ExprTerm]
+                                                RelopNotEq(
+                                                ) [RelopNotEq]
+                                                ExprTerm(
+                                                  TermFactor(
+                                                    FactorNum(
+                                                     0
+                                                    ) [FactorNum]
+                                                  ) [TermFactor]
+                                                ) [ExprTerm]
+                                              ) [CondFactList]
+                                            ) [CondTermNoList]
+                                          ) [ConditionNoList]
+                                        ) [SingleStatementDo]
+                                      ) [StatementSingle]
+                                    ) [YStatementList]
+                                    StatementSingle(
+                                      SingleStatementBreak(
+                                      ) [SingleStatementBreak]
+                                    ) [StatementSingle]
+                                  ) [YStatementList]
+                                  StatementLab(
+                                    Label(
+                                     loop
+                                    ) [Label]
+                                    SingleStatementDo(
+                                      StatementSingle(
+                                        SingleStatementDesi(
+                                          DesignatorPlus(
+                                            Designator(
+                                             random
+                                              NoDesignList(
+                                                Epsilon(
+                                                ) [Epsilon]
+                                              ) [NoDesignList]
+                                            ) [Designator]
+                                          ) [DesignatorPlus]
+                                        ) [SingleStatementDesi]
+                                      ) [StatementSingle]
+                                      ConditionNoList(
+                                        CondTermNoList(
+                                          CondFactList(
+                                            ExprTerm(
+                                              TermFactor(
+                                                FactorDes(
+                                                  Designator(
+                                                   random
+                                                    NoDesignList(
+                                                      Epsilon(
+                                                      ) [Epsilon]
+                                                    ) [NoDesignList]
+                                                  ) [Designator]
+                                                ) [FactorDes]
+                                              ) [TermFactor]
+                                            ) [ExprTerm]
+                                            RelopLess(
+                                            ) [RelopLess]
+                                            ExprTerm(
+                                              TermFactor(
+                                                FactorNum(
+                                                 50
+                                                ) [FactorNum]
+                                              ) [TermFactor]
+                                            ) [ExprTerm]
+                                          ) [CondFactList]
+                                        ) [CondTermNoList]
+                                      ) [ConditionNoList]
+                                    ) [SingleStatementDo]
+                                  ) [StatementLab]
+                                ) [YStatementList]
+                              ) [Statements]
+                            ) [StatementStat]
+                            StatementSingle(
+                              SingleStatemenGoto(
+                                Label(
+                                 loop
+                                ) [Label]
+                              ) [SingleStatemenGoto]
+                            ) [StatementSingle]
+                          ) [SingleStatementIfElse]
+                        ) [StatementSingle]
+                      ) [YStatementList]
+                      StatementSingle(
+                        SingleStatementPrintNum(
+                          ExprMin(
+                            TermFactor(
+                              FactorDes(
+                                Designator(
+                                 b
+                                  DesignListSquare(
+                                    NoDesignList(
+                                      Epsilon(
+                                      ) [Epsilon]
+                                    ) [NoDesignList]
+                                    ExprTerm(
+                                      TermFactor(
+                                        FactorNum(
+                                         5
+                                        ) [FactorNum]
+                                      ) [TermFactor]
+                                    ) [ExprTerm]
+                                  ) [DesignListSquare]
+                                ) [Designator]
+                              ) [FactorDes]
+                            ) [TermFactor]
+                          ) [ExprMin]
+                         10
+                        ) [SingleStatementPrintNum]
+                      ) [StatementSingle]
+                    ) [YStatementList]
+                    StatementSingle(
+                      SingleStatementRetExpr(
+                        ExprTerm(
+                          TermFactor(
+                            FactorDes(
+                              Designator(
+                               random
+                                NoDesignList(
+                                  Epsilon(
+                                  ) [Epsilon]
+                                ) [NoDesignList]
+                              ) [Designator]
+                            ) [FactorDes]
+                          ) [TermFactor]
+                        ) [ExprTerm]
+                      ) [SingleStatementRetExpr]
+                    ) [StatementSingle]
+                  ) [YStatementList]
+                ) [MethodDecl]
+              ) [YMethodDeclListList]
+            ) [ConstrMethNoConstr]
+          ) [ClassDeclType]
+        ) [ProgListClassDecl]
+        VarDeclNoSquare(
+          Type(
+           float
+          ) [Type]
+         c
+          VarDeclListNoSquare(
+            NoVarDeclList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoVarDeclList]
+           d
+          ) [VarDeclListNoSquare]
+        ) [VarDeclNoSquare]
+      ) [ProgListVarDecl]
+      RecordDecl(
+       r
+        NoVarDeclListList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoVarDeclListList]
+      ) [RecordDecl]
+    ) [ProgListRecordDecl]
+    VarDeclNoSquare(
+      Type(
+       B
+      ) [Type]
+     testObject
+      NoVarDeclList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoVarDeclList]
+    ) [VarDeclNoSquare]
+  ) [ProgListVarDecl]
+  YMethodDeclList(
+    YMethodDeclList(
+      NoMethodDeclList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoMethodDeclList]
+      MethodDecl(
+        MethDeclTypeVoid(
+        ) [MethDeclTypeVoid]
+       main
+        NoFormParsList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoFormParsList]
+        NoVarDeclListList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoVarDeclListList]
+        YStatementList(
+          YStatementList(
+            YStatementList(
+              YStatementList(
+                NoStatementList(
+                  Epsilon(
+                  ) [Epsilon]
+                ) [NoStatementList]
+                StatementSingle(
+                  SingleStatementDesStmtASSIGNOP(
+                    DesignatorAssignop(
+                      Designator(
+                       testObject
+                        NoDesignList(
+                          Epsilon(
+                          ) [Epsilon]
+                        ) [NoDesignList]
+                      ) [Designator]
+                      Assignop(
+                      ) [Assignop]
+                      ExprTerm(
+                        TermFactor(
+                          FactorTypeExpr(
+                            Type(
+                             B
+                            ) [Type]
+                            ExprAddop(
+                              ExprTerm(
+                                TermFactor(
+                                  FactorDes(
+                                    Designator(
+                                     c
+                                      NoDesignList(
+                                        Epsilon(
+                                        ) [Epsilon]
+                                      ) [NoDesignList]
+                                    ) [Designator]
+                                  ) [FactorDes]
+                                ) [TermFactor]
+                              ) [ExprTerm]
+                              AddopPlus(
+                              ) [AddopPlus]
+                              TermFactor(
+                                FactorDes(
+                                  Designator(
+                                   d
+                                    NoDesignList(
+                                      Epsilon(
+                                      ) [Epsilon]
+                                    ) [NoDesignList]
+                                  ) [Designator]
+                                ) [FactorDes]
+                              ) [TermFactor]
+                            ) [ExprAddop]
+                          ) [FactorTypeExpr]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                    ) [DesignatorAssignop]
+                  ) [SingleStatementDesStmtASSIGNOP]
+                ) [StatementSingle]
+              ) [YStatementList]
+              StatementSingle(
+                SingleStatementDesStmtASSIGNOP(
+                  DesignatorAssignop(
+                    Designator(
+                     a
+                      NoDesignList(
+                        Epsilon(
+                        ) [Epsilon]
+                      ) [NoDesignList]
+                    ) [Designator]
+                    Assignop(
+                    ) [Assignop]
+                    ExprTerm(
+                      TermMlop(
+                        TermFactor(
+                          FactorDesPar(
+                            Designator(
+                             testObject
+                              DesignListDot(
+                                NoDesignList(
+                                  Epsilon(
+                                  ) [Epsilon]
+                                ) [NoDesignList]
+                               testingMore
+                              ) [DesignListDot]
+                            ) [Designator]
+                          ) [FactorDesPar]
+                        ) [TermFactor]
+                        MulopMod(
+                        ) [MulopMod]
+                        FactorNum(
+                         10
+                        ) [FactorNum]
+                      ) [TermMlop]
+                    ) [ExprTerm]
+                  ) [DesignatorAssignop]
+                ) [SingleStatementDesStmtASSIGNOP]
+              ) [StatementSingle]
+            ) [YStatementList]
+            StatementSingle(
+              SingleStatementDesStmtASSIGNOP(
+                DesignatorAssignop(
+                  Designator(
+                   b
+                    NoDesignList(
+                      Epsilon(
+                      ) [Epsilon]
+                    ) [NoDesignList]
+                  ) [Designator]
+                  Assignop(
+                  ) [Assignop]
+                  ExprTerm(
+                    TermFactor(
+                      FactorDes(
+                        Designator(
+                         testObject
+                          DesignListSquare(
+                            DesignListDot(
+                              NoDesignList(
+                                Epsilon(
+                                ) [Epsilon]
+                              ) [NoDesignList]
+                             b
+                            ) [DesignListDot]
+                            ExprTerm(
+                              TermFactor(
+                                FactorNum(
+                                 5
+                                ) [FactorNum]
+                              ) [TermFactor]
+                            ) [ExprTerm]
+                          ) [DesignListSquare]
+                        ) [Designator]
+                      ) [FactorDes]
+                    ) [TermFactor]
+                  ) [ExprTerm]
+                ) [DesignatorAssignop]
+              ) [SingleStatementDesStmtASSIGNOP]
+            ) [StatementSingle]
+          ) [YStatementList]
+          StatementSingle(
+            SingleStatementIfElse(
+              ConditionNoList(
+                CondTermList(
+                  CondTermNoList(
+                    CondFactList(
+                      ExprTerm(
+                        TermFactor(
+                          FactorDes(
+                            Designator(
+                             a
+                              NoDesignList(
+                                Epsilon(
+                                ) [Epsilon]
+                              ) [NoDesignList]
+                            ) [Designator]
+                          ) [FactorDes]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                      RelopGrte(
+                      ) [RelopGrte]
+                      ExprAddop(
+                        ExprTerm(
+                          TermFactor(
+                            FactorDesPar(
+                              Designator(
+                               testObject
+                                DesignListDot(
+                                  NoDesignList(
+                                    Epsilon(
+                                    ) [Epsilon]
+                                  ) [NoDesignList]
+                                 testingMore
+                                ) [DesignListDot]
+                              ) [Designator]
+                            ) [FactorDesPar]
+                          ) [TermFactor]
+                        ) [ExprTerm]
+                        AddopMinus(
+                        ) [AddopMinus]
+                        TermFactor(
+                          FactorDes(
+                            Designator(
+                             testObject
+                              DesignListSquare(
+                                DesignListDot(
+                                  NoDesignList(
+                                    Epsilon(
+                                    ) [Epsilon]
+                                  ) [NoDesignList]
+                                 b
+                                ) [DesignListDot]
+                                ExprTerm(
+                                  TermFactor(
+                                    FactorNum(
+                                     0
+                                    ) [FactorNum]
+                                  ) [TermFactor]
+                                ) [ExprTerm]
+                              ) [DesignListSquare]
+                            ) [Designator]
+                          ) [FactorDes]
+                        ) [TermFactor]
+                      ) [ExprAddop]
+                    ) [CondFactList]
+                  ) [CondTermNoList]
+                  CondFactList(
+                    ExprTerm(
+                      TermFactor(
+                        FactorDes(
+                          Designator(
+                           c
+                            NoDesignList(
+                              Epsilon(
+                              ) [Epsilon]
+                            ) [NoDesignList]
+                          ) [Designator]
+                        ) [FactorDes]
+                      ) [TermFactor]
+                    ) [ExprTerm]
+                    RelopEqual(
+                    ) [RelopEqual]
+                    ExprTerm(
+                      TermFactor(
+                        FactorDes(
+                          Designator(
+                           d
+                            NoDesignList(
+                              Epsilon(
+                              ) [Epsilon]
+                            ) [NoDesignList]
+                          ) [Designator]
+                        ) [FactorDes]
+                      ) [TermFactor]
+                    ) [ExprTerm]
+                  ) [CondFactList]
+                ) [CondTermList]
+              ) [ConditionNoList]
+              StatementSingle(
+                SingleStatementDesi(
+                  DesignatorActpars(
+                    Designator(
+                     B
+                      DesignListDot(
+                        NoDesignList(
+                          Epsilon(
+                          ) [Epsilon]
+                        ) [NoDesignList]
+                       putp
+                      ) [DesignListDot]
+                    ) [Designator]
+                    ActParsList(
+                      ActParsNoList(
+                        ExprTerm(
+                          TermFactor(
+                            FactorDes(
+                              Designator(
+                               a
+                                NoDesignList(
+                                  Epsilon(
+                                  ) [Epsilon]
+                                ) [NoDesignList]
+                              ) [Designator]
+                            ) [FactorDes]
+                          ) [TermFactor]
+                        ) [ExprTerm]
+                      ) [ActParsNoList]
+                      ExprTerm(
+                        TermFactor(
+                          FactorDes(
+                            Designator(
+                             b
+                              NoDesignList(
+                                Epsilon(
+                                ) [Epsilon]
+                              ) [NoDesignList]
+                            ) [Designator]
+                          ) [FactorDes]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                    ) [ActParsList]
+                  ) [DesignatorActpars]
+                ) [SingleStatementDesi]
+              ) [StatementSingle]
+              StatementSingle(
+                SingleStatementDesStmtASSIGNOP(
+                  DesignatorAssignop(
+                    Designator(
+                     a
+                      NoDesignList(
+                        Epsilon(
+                        ) [Epsilon]
+                      ) [NoDesignList]
+                    ) [Designator]
+                    Assignop(
+                    ) [Assignop]
+                    ExprTerm(
+                      TermFactor(
+                        FactorDesParenAct(
+                          Designator(
+                           help
+                            NoDesignList(
+                              Epsilon(
+                              ) [Epsilon]
+                            ) [NoDesignList]
+                          ) [Designator]
+                          ActParsList(
+                            ActParsNoList(
+                              ExprTerm(
+                                TermFactor(
+                                  FactorDes(
+                                    Designator(
+                                     a
+                                      NoDesignList(
+                                        Epsilon(
+                                        ) [Epsilon]
+                                      ) [NoDesignList]
+                                    ) [Designator]
+                                  ) [FactorDes]
+                                ) [TermFactor]
+                              ) [ExprTerm]
+                            ) [ActParsNoList]
+                            ExprTerm(
+                              TermFactor(
+                                FactorDes(
+                                  Designator(
+                                   b
+                                    NoDesignList(
+                                      Epsilon(
+                                      ) [Epsilon]
+                                    ) [NoDesignList]
+                                  ) [Designator]
+                                ) [FactorDes]
+                              ) [TermFactor]
+                            ) [ExprTerm]
+                          ) [ActParsList]
+                        ) [FactorDesParenAct]
+                      ) [TermFactor]
+                    ) [ExprTerm]
+                  ) [DesignatorAssignop]
+                ) [SingleStatementDesStmtASSIGNOP]
+              ) [StatementSingle]
+            ) [SingleStatementIfElse]
+          ) [StatementSingle]
+        ) [YStatementList]
+      ) [MethodDecl]
+    ) [YMethodDeclList]
+    MethodDecl(
+      MethDeclTypeType(
+        Type(
+         int
+        ) [Type]
+      ) [MethDeclTypeType]
+     help
+      YFormParsList(
+        FormParsNoSquareList(
+          FormParsNoSquare(
+            Type(
+             int
+            ) [Type]
+           a
+          ) [FormParsNoSquare]
+          Type(
+           int
+          ) [Type]
+         b
+        ) [FormParsNoSquareList]
+      ) [YFormParsList]
+      NoVarDeclListList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoVarDeclListList]
+      YStatementList(
+        YStatementList(
+          YStatementList(
+            NoStatementList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoStatementList]
+            StatementSingle(
+              SingleStatementDesStmtASSIGNOP(
+                DesignatorAssignop(
+                  Designator(
+                   a
+                    NoDesignList(
+                      Epsilon(
+                      ) [Epsilon]
+                    ) [NoDesignList]
+                  ) [Designator]
+                  Assignop(
+                  ) [Assignop]
+                  ExprAddop(
+                    ExprAddop(
+                      ExprAddop(
+                        ExprTerm(
+                          TermFactor(
+                            FactorChar(
+                             f
+                            ) [FactorChar]
+                          ) [TermFactor]
+                        ) [ExprTerm]
+                        AddopPlus(
+                        ) [AddopPlus]
+                        TermFactor(
+                          FactorChar(
+                           u
+                          ) [FactorChar]
+                        ) [TermFactor]
+                      ) [ExprAddop]
+                      AddopPlus(
+                      ) [AddopPlus]
+                      TermFactor(
+                        FactorChar(
+                         c
+                        ) [FactorChar]
+                      ) [TermFactor]
+                    ) [ExprAddop]
+                    AddopPlus(
+                    ) [AddopPlus]
+                    TermFactor(
+                      FactorChar(
+                       k
+                      ) [FactorChar]
+                    ) [TermFactor]
+                  ) [ExprAddop]
+                ) [DesignatorAssignop]
+              ) [SingleStatementDesStmtASSIGNOP]
+            ) [StatementSingle]
+          ) [YStatementList]
+          StatementSingle(
+            SingleStatementDesStmtASSIGNOP(
+              DesignatorAssignop(
+                Designator(
+                 b
+                  NoDesignList(
+                    Epsilon(
+                    ) [Epsilon]
+                  ) [NoDesignList]
+                ) [Designator]
+                Assignop(
+                ) [Assignop]
+                ExprTerm(
+                  TermMlop(
+                    TermMlop(
+                      TermMlop(
+                        TermFactor(
+                          FactorChar(
+                           t
+                          ) [FactorChar]
+                        ) [TermFactor]
+                        MulopMul(
+                        ) [MulopMul]
+                        FactorChar(
+                         h
+                        ) [FactorChar]
+                      ) [TermMlop]
+                      MulopMul(
+                      ) [MulopMul]
+                      FactorChar(
+                       i
+                      ) [FactorChar]
+                    ) [TermMlop]
+                    MulopMul(
+                    ) [MulopMul]
+                    FactorChar(
+                     s
+                    ) [FactorChar]
+                  ) [TermMlop]
+                ) [ExprTerm]
+              ) [DesignatorAssignop]
+            ) [SingleStatementDesStmtASSIGNOP]
+          ) [StatementSingle]
+        ) [YStatementList]
+        StatementSingle(
+          SingleStatementRetExpr(
+            ExprTerm(
+              TermFactor(
+                FactorTypeExpr(
+                  Type(
+                   ItWorks
+                  ) [Type]
+                  ExprAddop(
+                    ExprTerm(
+                      TermMlop(
+                        TermFactor(
+                          FactorDes(
+                            Designator(
+                             a
+                              NoDesignList(
+                                Epsilon(
+                                ) [Epsilon]
+                              ) [NoDesignList]
+                            ) [Designator]
+                          ) [FactorDes]
+                        ) [TermFactor]
+                        MulopMul(
+                        ) [MulopMul]
+                        FactorNum(
+                         5
+                        ) [FactorNum]
+                      ) [TermMlop]
+                    ) [ExprTerm]
+                    AddopMinus(
+                    ) [AddopMinus]
+                    TermFactor(
+                      FactorDes(
+                        Designator(
+                         b
+                          NoDesignList(
+                            Epsilon(
+                            ) [Epsilon]
+                          ) [NoDesignList]
+                        ) [Designator]
+                      ) [FactorDes]
+                    ) [TermFactor]
+                  ) [ExprAddop]
+                ) [FactorTypeExpr]
+              ) [TermFactor]
+            ) [ExprTerm]
+          ) [SingleStatementRetExpr]
+        ) [StatementSingle]
+      ) [YStatementList]
+    ) [MethodDecl]
+  ) [YMethodDeclList]
+) [Program]
+INFO  19:02:14,675 - ===================================

@@ -1,0 +1,34 @@
+INFO  14:04:54,802 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  14:04:54,810 - #2 program
+INFO  14:04:54,810 - #49 MJProgram
+INFO  14:04:54,810 - #7 const
+INFO  14:04:54,810 - #49 int
+INFO  14:04:54,811 - #49 a3
+INFO  14:04:54,811 - #35 =
+INFO  14:04:54,811 - #48 5
+INFO  14:04:54,811 - #39 ;
+INFO  14:04:54,811 - #42 {
+INFO  14:04:54,812 - #43 }
+INFO  14:04:54,813 - Program(
+ MJProgram
+  ProgListConstDecl(
+    NoProgList(
+      Epsilon(
+      ) [Epsilon]
+    ) [NoProgList]
+    ConstDecl(
+      Type(
+       int
+      ) [Type]
+     a3
+      ConstTypeNumber(
+       5
+      ) [ConstTypeNumber]
+      NoConstDeclList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoConstDeclList]
+    ) [ConstDecl]
+  ) [ProgListConstDecl]
+) [Program]
+INFO  14:04:54,814 - ===================================

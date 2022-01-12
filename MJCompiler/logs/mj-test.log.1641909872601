@@ -1,0 +1,65 @@
+INFO  15:04:04,094 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  15:04:04,126 - #2 program
+INFO  15:04:04,126 - #49 p
+INFO  15:04:04,126 - #7 const
+INFO  15:04:04,127 - #49 int
+INFO  15:04:04,127 - #49 size
+INFO  15:04:04,127 - #35 =
+INFO  15:04:04,127 - #48 10
+INFO  15:04:04,127 - #39 ;
+INFO  15:04:04,128 - #35 =
+ERROR 15:04:04,128 - 
+Sintaksna greska na liniji 3
+INFO  15:04:04,128 - #39 ;
+INFO  15:04:04,128 - #49 int
+INFO  15:04:04,128 - #49 a
+INFO  15:04:04,128 - #40 ,
+ERROR 15:04:04,128 - Const -Izvrsen oporavak do , u liniji 2
+INFO  15:04:04,129 - #49 b
+INFO  15:04:04,129 - #39 ;
+INFO  15:04:04,129 - #49 int
+INFO  15:04:04,129 - #49 c
+INFO  15:04:04,129 - #39 ;
+INFO  15:04:04,130 - #4 class
+INFO  15:04:04,130 - #49 A
+INFO  15:04:04,130 - #42 {
+INFO  15:04:04,130 - #43 }
+INFO  15:04:04,131 - #4 class
+INFO  15:04:04,131 - #49 B
+INFO  15:04:04,131 - #16 extends
+INFO  15:04:04,131 - #49 A
+INFO  15:04:04,131 - #42 {
+INFO  15:04:04,131 - #49 int
+INFO  15:04:04,131 - #49 a
+INFO  15:04:04,131 - #40 ,
+INFO  15:04:04,131 - #49 b
+INFO  15:04:04,131 - #46 [
+INFO  15:04:04,131 - #47 ]
+INFO  15:04:04,131 - #39 ;
+INFO  15:04:04,131 - #49 string
+INFO  15:04:04,131 - #49 s
+INFO  15:04:04,132 - #39 ;
+INFO  15:04:04,132 - #42 {
+INFO  15:04:04,132 - #15 void
+INFO  15:04:04,132 - #49 putp
+INFO  15:04:04,132 - #44 (
+INFO  15:04:04,132 - #49 int
+INFO  15:04:04,132 - #49 a
+INFO  15:04:04,132 - #40 ,
+INFO  15:04:04,133 - #49 int
+INFO  15:04:04,133 - #49 idx
+INFO  15:04:04,133 - #45 )
+INFO  15:04:04,133 - #42 {
+INFO  15:04:04,133 - #43 }
+INFO  15:04:04,133 - #49 int
+INFO  15:04:04,134 - #49 testingMore
+INFO  15:04:04,134 - #44 (
+INFO  15:04:04,134 - #45 )
+INFO  15:04:04,134 - #49 float
+INFO  15:04:04,134 - #49 random
+INFO  15:04:04,134 - #39 ;
+INFO  15:04:04,134 - #42 {
+INFO  15:04:04,134 - #35 =
+ERROR 15:04:04,134 - 
+Sintaksna greska na liniji 17
+ERROR 15:04:04,134 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 17

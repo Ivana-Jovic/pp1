@@ -1,0 +1,151 @@
+INFO  15:45:39,263 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  15:45:39,295 - #2 program
+INFO  15:45:39,295 - #49 p
+INFO  15:45:39,295 - #7 const
+INFO  15:45:39,296 - #49 int
+INFO  15:45:39,296 - #49 size
+INFO  15:45:39,296 - #35 =
+INFO  15:45:39,296 - #48 10
+INFO  15:45:39,297 - #39 ;
+INFO  15:45:39,297 - #49 int
+INFO  15:45:39,297 - #49 a
+INFO  15:45:39,297 - #39 ;
+INFO  15:45:39,297 - #4 class
+INFO  15:45:39,298 - #49 Table
+INFO  15:45:39,298 - #16 extends
+INFO  15:45:39,298 - #49 A
+INFO  15:45:39,298 - #42 {
+INFO  15:45:39,298 - #49 int
+INFO  15:45:39,298 - #49 pos
+INFO  15:45:39,298 - #46 [
+INFO  15:45:39,298 - #47 ]
+INFO  15:45:39,298 - #40 ,
+INFO  15:45:39,299 - #49 neg
+INFO  15:45:39,299 - #46 [
+INFO  15:45:39,299 - #47 ]
+INFO  15:45:39,299 - #39 ;
+INFO  15:45:39,300 - #42 {
+INFO  15:45:39,300 - #15 void
+INFO  15:45:39,300 - #49 putp
+INFO  15:45:39,301 - #44 (
+INFO  15:45:39,301 - #49 int
+INFO  15:45:39,301 - #49 a
+INFO  15:45:39,301 - #40 ,
+INFO  15:45:39,301 - #49 int
+INFO  15:45:39,301 - #49 idx
+INFO  15:45:39,301 - #45 )
+INFO  15:45:39,301 - #42 {
+INFO  15:45:39,301 - #14 return
+INFO  15:45:39,301 - #39 ;
+INFO  15:45:39,301 - #43 }
+INFO  15:45:39,302 - #43 }
+INFO  15:45:39,302 - #43 }
+INFO  15:45:39,302 - #42 {
+INFO  15:45:39,303 - #43 }
+INFO  15:45:39,304 - Program(
+ p
+  ProgListClassDecl(
+    ProgListVarDecl(
+      ProgListConstDecl(
+        ProgListNoProgList(
+          Epsilon(
+          ) [Epsilon]
+        ) [ProgListNoProgList]
+        ConstDecl(
+          Type(
+           int
+          ) [Type]
+         size
+          ConstTypeNumber(
+           10
+          ) [ConstTypeNumber]
+          NoConstDeclList(
+            Epsilon(
+            ) [Epsilon]
+          ) [NoConstDeclList]
+        ) [ConstDecl]
+      ) [ProgListConstDecl]
+      VarDeclNoSquare(
+        Type(
+         int
+        ) [Type]
+       a
+        NoVarDeclList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoVarDeclList]
+      ) [VarDeclNoSquare]
+    ) [ProgListVarDecl]
+    ClassDeclType(
+     Table
+      Type(
+       A
+      ) [Type]
+      YVarDeclListList(
+        NoVarDeclListList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoVarDeclListList]
+        VarDeclSquare(
+          Type(
+           int
+          ) [Type]
+         pos
+          VarDeclListSquare(
+            NoVarDeclList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoVarDeclList]
+           neg
+          ) [VarDeclListSquare]
+        ) [VarDeclSquare]
+      ) [YVarDeclListList]
+      ConstrMethNoConstr(
+        YMethodDeclListList(
+          NoMethodDeclListList(
+            Epsilon(
+            ) [Epsilon]
+          ) [NoMethodDeclListList]
+          MethodDecl(
+            MethDeclTypeVoid(
+            ) [MethDeclTypeVoid]
+           putp
+            YFormParsList(
+              FormParsNoSquareList(
+                FormParsNoSquare(
+                  Type(
+                   int
+                  ) [Type]
+                 a
+                ) [FormParsNoSquare]
+                Type(
+                 int
+                ) [Type]
+               idx
+              ) [FormParsNoSquareList]
+            ) [YFormParsList]
+            NoVarDeclListList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoVarDeclListList]
+            YStatementList(
+              NoStatementList(
+                Epsilon(
+                ) [Epsilon]
+              ) [NoStatementList]
+              StatementSingle(
+                SingleStatementRet(
+                ) [SingleStatementRet]
+              ) [StatementSingle]
+            ) [YStatementList]
+          ) [MethodDecl]
+        ) [YMethodDeclListList]
+      ) [ConstrMethNoConstr]
+    ) [ClassDeclType]
+  ) [ProgListClassDecl]
+  NoMethodDeclList(
+    Epsilon(
+    ) [Epsilon]
+  ) [NoMethodDeclList]
+) [Program]
+INFO  15:45:39,304 - ===================================

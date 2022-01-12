@@ -1,0 +1,203 @@
+INFO  15:48:08,648 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  15:48:08,682 - #2 program
+INFO  15:48:08,682 - #49 p
+INFO  15:48:08,682 - #7 const
+INFO  15:48:08,682 - #49 int
+INFO  15:48:08,683 - #49 size
+INFO  15:48:08,683 - #35 =
+INFO  15:48:08,683 - #48 10
+INFO  15:48:08,683 - #39 ;
+INFO  15:48:08,683 - #49 int
+INFO  15:48:08,684 - #49 a
+INFO  15:48:08,684 - #39 ;
+INFO  15:48:08,684 - #4 class
+INFO  15:48:08,684 - #49 Table
+INFO  15:48:08,685 - #16 extends
+INFO  15:48:08,685 - #49 A
+INFO  15:48:08,685 - #42 {
+INFO  15:48:08,685 - #49 int
+INFO  15:48:08,685 - #49 pos
+INFO  15:48:08,685 - #46 [
+INFO  15:48:08,685 - #47 ]
+INFO  15:48:08,685 - #40 ,
+INFO  15:48:08,685 - #49 neg
+INFO  15:48:08,686 - #46 [
+INFO  15:48:08,686 - #47 ]
+INFO  15:48:08,686 - #39 ;
+INFO  15:48:08,686 - #42 {
+INFO  15:48:08,686 - #15 void
+INFO  15:48:08,686 - #49 putp
+INFO  15:48:08,687 - #44 (
+INFO  15:48:08,687 - #49 int
+INFO  15:48:08,687 - #49 a
+INFO  15:48:08,687 - #40 ,
+INFO  15:48:08,687 - #49 int
+INFO  15:48:08,687 - #49 idx
+INFO  15:48:08,687 - #45 )
+INFO  15:48:08,687 - #42 {
+INFO  15:48:08,688 - #49 pos
+INFO  15:48:08,688 - #46 [
+INFO  15:48:08,688 - #49 idx
+INFO  15:48:08,688 - #47 ]
+INFO  15:48:08,689 - #35 =
+INFO  15:48:08,689 - #49 a
+INFO  15:48:08,689 - #39 ;
+INFO  15:48:08,689 - #14 return
+INFO  15:48:08,689 - #39 ;
+INFO  15:48:08,690 - #43 }
+INFO  15:48:08,690 - #43 }
+INFO  15:48:08,690 - #43 }
+INFO  15:48:08,690 - #42 {
+INFO  15:48:08,692 - #43 }
+INFO  15:48:08,692 - Program(
+ p
+  ProgListClassDecl(
+    ProgListVarDecl(
+      ProgListConstDecl(
+        ProgListNoProgList(
+          Epsilon(
+          ) [Epsilon]
+        ) [ProgListNoProgList]
+        ConstDecl(
+          Type(
+           int
+          ) [Type]
+         size
+          ConstTypeNumber(
+           10
+          ) [ConstTypeNumber]
+          NoConstDeclList(
+            Epsilon(
+            ) [Epsilon]
+          ) [NoConstDeclList]
+        ) [ConstDecl]
+      ) [ProgListConstDecl]
+      VarDeclNoSquare(
+        Type(
+         int
+        ) [Type]
+       a
+        NoVarDeclList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoVarDeclList]
+      ) [VarDeclNoSquare]
+    ) [ProgListVarDecl]
+    ClassDeclType(
+     Table
+      Type(
+       A
+      ) [Type]
+      YVarDeclListList(
+        NoVarDeclListList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoVarDeclListList]
+        VarDeclSquare(
+          Type(
+           int
+          ) [Type]
+         pos
+          VarDeclListSquare(
+            NoVarDeclList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoVarDeclList]
+           neg
+          ) [VarDeclListSquare]
+        ) [VarDeclSquare]
+      ) [YVarDeclListList]
+      ConstrMethNoConstr(
+        YMethodDeclListList(
+          NoMethodDeclListList(
+            Epsilon(
+            ) [Epsilon]
+          ) [NoMethodDeclListList]
+          MethodDecl(
+            MethDeclTypeVoid(
+            ) [MethDeclTypeVoid]
+           putp
+            YFormParsList(
+              FormParsNoSquareList(
+                FormParsNoSquare(
+                  Type(
+                   int
+                  ) [Type]
+                 a
+                ) [FormParsNoSquare]
+                Type(
+                 int
+                ) [Type]
+               idx
+              ) [FormParsNoSquareList]
+            ) [YFormParsList]
+            NoVarDeclListList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoVarDeclListList]
+            YStatementList(
+              YStatementList(
+                NoStatementList(
+                  Epsilon(
+                  ) [Epsilon]
+                ) [NoStatementList]
+                StatementSingle(
+                  SingleStatementDesi(
+                    DesignatorAssignop(
+                      Designator(
+                       pos
+                        DesignListSquare(
+                          NoDesignList(
+                            Epsilon(
+                            ) [Epsilon]
+                          ) [NoDesignList]
+                          ExprTerm(
+                            TermFactor(
+                              FactorDes(
+                                Designator(
+                                 idx
+                                  NoDesignList(
+                                    Epsilon(
+                                    ) [Epsilon]
+                                  ) [NoDesignList]
+                                ) [Designator]
+                              ) [FactorDes]
+                            ) [TermFactor]
+                          ) [ExprTerm]
+                        ) [DesignListSquare]
+                      ) [Designator]
+                      Assignop(
+                      ) [Assignop]
+                      ExprTerm(
+                        TermFactor(
+                          FactorDes(
+                            Designator(
+                             a
+                              NoDesignList(
+                                Epsilon(
+                                ) [Epsilon]
+                              ) [NoDesignList]
+                            ) [Designator]
+                          ) [FactorDes]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                    ) [DesignatorAssignop]
+                  ) [SingleStatementDesi]
+                ) [StatementSingle]
+              ) [YStatementList]
+              StatementSingle(
+                SingleStatementRet(
+                ) [SingleStatementRet]
+              ) [StatementSingle]
+            ) [YStatementList]
+          ) [MethodDecl]
+        ) [YMethodDeclListList]
+      ) [ConstrMethNoConstr]
+    ) [ClassDeclType]
+  ) [ProgListClassDecl]
+  NoMethodDeclList(
+    Epsilon(
+    ) [Epsilon]
+  ) [NoMethodDeclList]
+) [Program]
+INFO  15:48:08,692 - ===================================

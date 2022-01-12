@@ -1,0 +1,129 @@
+INFO  14:32:18,798 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  14:32:18,809 - #2 program
+INFO  14:32:18,810 - #49 MJProgram
+INFO  14:32:18,810 - #7 const
+INFO  14:32:18,810 - #49 int
+INFO  14:32:18,810 - #49 a3
+INFO  14:32:18,811 - #35 =
+INFO  14:32:18,811 - #48 5
+INFO  14:32:18,811 - #40 ,
+INFO  14:32:18,811 - #49 b
+INFO  14:32:18,811 - #35 =
+INFO  14:32:18,811 - #48 7
+INFO  14:32:18,811 - #40 ,
+INFO  14:32:18,812 - #49 c
+INFO  14:32:18,812 - #35 =
+INFO  14:32:18,812 - #48 8
+INFO  14:32:18,812 - #39 ;
+INFO  14:32:18,812 - #49 int
+INFO  14:32:18,813 - #49 aa
+INFO  14:32:18,813 - #46 [
+INFO  14:32:18,813 - #47 ]
+INFO  14:32:18,813 - #40 ,
+INFO  14:32:18,813 - #49 bb
+INFO  14:32:18,813 - #40 ,
+INFO  14:32:18,814 - #49 cc
+INFO  14:32:18,814 - #46 [
+INFO  14:32:18,814 - #47 ]
+INFO  14:32:18,814 - #39 ;
+INFO  14:32:18,814 - #4 class
+INFO  14:32:18,814 - #49 kl
+INFO  14:32:18,814 - #42 {
+INFO  14:32:18,814 - #49 int
+INFO  14:32:18,814 - #49 aa
+INFO  14:32:18,814 - #46 [
+INFO  14:32:18,815 - #47 ]
+INFO  14:32:18,815 - #40 ,
+INFO  14:32:18,815 - #49 bb
+INFO  14:32:18,815 - #40 ,
+INFO  14:32:18,815 - #49 cc
+INFO  14:32:18,815 - #46 [
+INFO  14:32:18,815 - #47 ]
+INFO  14:32:18,815 - #39 ;
+INFO  14:32:18,815 - #43 }
+INFO  14:32:18,815 - #42 {
+INFO  14:32:18,815 - #43 }
+INFO  14:32:18,816 - Program(
+ MJProgram
+  ProgListClassDecl(
+    ProgListVarDecl(
+      ProgListConstDecl(
+        NoProgList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoProgList]
+        ConstDecl(
+          Type(
+           int
+          ) [Type]
+         a3
+          ConstTypeNumber(
+           5
+          ) [ConstTypeNumber]
+          YConstDeclList(
+            YConstDeclList(
+              NoConstDeclList(
+                Epsilon(
+                ) [Epsilon]
+              ) [NoConstDeclList]
+             b
+              ConstTypeNumber(
+               7
+              ) [ConstTypeNumber]
+            ) [YConstDeclList]
+           c
+            ConstTypeNumber(
+             8
+            ) [ConstTypeNumber]
+          ) [YConstDeclList]
+        ) [ConstDecl]
+      ) [ProgListConstDecl]
+      VarDeclSquare(
+        Type(
+         int
+        ) [Type]
+       aa
+        VarDeclListSquare(
+          VarDeclListNoSquare(
+            NoVarDeclList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoVarDeclList]
+           bb
+          ) [VarDeclListNoSquare]
+         cc
+        ) [VarDeclListSquare]
+      ) [VarDeclSquare]
+    ) [ProgListVarDecl]
+    ClassDeclNoType(
+     kl
+      YVarDeclListList(
+        NoVarDeclListList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoVarDeclListList]
+        VarDeclSquare(
+          Type(
+           int
+          ) [Type]
+         aa
+          VarDeclListSquare(
+            VarDeclListNoSquare(
+              NoVarDeclList(
+                Epsilon(
+                ) [Epsilon]
+              ) [NoVarDeclList]
+             bb
+            ) [VarDeclListNoSquare]
+           cc
+          ) [VarDeclListSquare]
+        ) [VarDeclSquare]
+      ) [YVarDeclListList]
+      NoConstrMeth(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoConstrMeth]
+    ) [ClassDeclNoType]
+  ) [ProgListClassDecl]
+) [Program]
+INFO  14:32:18,817 - ===================================

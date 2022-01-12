@@ -1,0 +1,96 @@
+INFO  14:20:19,974 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  14:20:19,987 - #2 program
+INFO  14:20:19,987 - #49 MJProgram
+INFO  14:20:19,987 - #7 const
+INFO  14:20:19,989 - #49 int
+INFO  14:20:19,989 - #49 a3
+INFO  14:20:19,989 - #35 =
+INFO  14:20:19,989 - #48 5
+INFO  14:20:19,990 - #40 ,
+INFO  14:20:19,990 - #49 b
+INFO  14:20:19,990 - #35 =
+INFO  14:20:19,990 - #48 7
+INFO  14:20:19,990 - #40 ,
+INFO  14:20:19,990 - #49 c
+INFO  14:20:19,990 - #35 =
+INFO  14:20:19,990 - #48 8
+INFO  14:20:19,990 - #39 ;
+INFO  14:20:19,990 - #49 int
+INFO  14:20:19,991 - #49 aa
+INFO  14:20:19,991 - #46 [
+INFO  14:20:19,991 - #47 ]
+INFO  14:20:19,991 - #40 ,
+INFO  14:20:19,991 - #49 bb
+INFO  14:20:19,992 - #40 ,
+INFO  14:20:19,993 - #49 cc
+INFO  14:20:19,993 - #46 [
+INFO  14:20:19,993 - #47 ]
+INFO  14:20:19,993 - #39 ;
+INFO  14:20:19,993 - #4 class
+INFO  14:20:19,993 - #49 kl
+INFO  14:20:19,993 - #42 {
+INFO  14:20:19,993 - #43 }
+INFO  14:20:19,993 - #42 {
+INFO  14:20:19,994 - #43 }
+INFO  14:20:19,994 - Program(
+ MJProgram
+  ProgListClassDecl(
+    ProgListVarDecl(
+      ProgListConstDecl(
+        NoProgList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoProgList]
+        ConstDecl(
+          Type(
+           int
+          ) [Type]
+         a3
+          ConstTypeNumber(
+           5
+          ) [ConstTypeNumber]
+          YConstDeclList(
+            YConstDeclList(
+              NoConstDeclList(
+                Epsilon(
+                ) [Epsilon]
+              ) [NoConstDeclList]
+             b
+              ConstTypeNumber(
+               7
+              ) [ConstTypeNumber]
+            ) [YConstDeclList]
+           c
+            ConstTypeNumber(
+             8
+            ) [ConstTypeNumber]
+          ) [YConstDeclList]
+        ) [ConstDecl]
+      ) [ProgListConstDecl]
+      VarDeclSquare(
+        Type(
+         int
+        ) [Type]
+       aa
+        VarDeclListSquare(
+          VarDeclListNoSquare(
+            NoVarDeclList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoVarDeclList]
+           bb
+          ) [VarDeclListNoSquare]
+         cc
+        ) [VarDeclListSquare]
+      ) [VarDeclSquare]
+    ) [ProgListVarDecl]
+    ClassDeclNoType(
+     kl
+      NoVarDeclListList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoVarDeclListList]
+    ) [ClassDeclNoType]
+  ) [ProgListClassDecl]
+) [Program]
+INFO  14:20:19,995 - ===================================

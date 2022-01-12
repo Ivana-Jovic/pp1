@@ -1,0 +1,85 @@
+INFO  14:11:07,542 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  14:11:07,551 - #2 program
+INFO  14:11:07,551 - #49 MJProgram
+INFO  14:11:07,551 - #7 const
+INFO  14:11:07,552 - #49 int
+INFO  14:11:07,552 - #49 a3
+INFO  14:11:07,552 - #35 =
+INFO  14:11:07,553 - #48 5
+INFO  14:11:07,553 - #40 ,
+INFO  14:11:07,553 - #49 b
+INFO  14:11:07,553 - #35 =
+INFO  14:11:07,553 - #48 7
+INFO  14:11:07,553 - #40 ,
+INFO  14:11:07,553 - #49 c
+INFO  14:11:07,553 - #35 =
+INFO  14:11:07,553 - #48 8
+INFO  14:11:07,553 - #39 ;
+INFO  14:11:07,554 - #49 int
+INFO  14:11:07,554 - #49 aa
+INFO  14:11:07,554 - #46 [
+INFO  14:11:07,554 - #47 ]
+INFO  14:11:07,554 - #40 ,
+INFO  14:11:07,555 - #49 bb
+INFO  14:11:07,556 - #46 [
+INFO  14:11:07,556 - #47 ]
+INFO  14:11:07,556 - #40 ,
+INFO  14:11:07,556 - #49 cc
+INFO  14:11:07,556 - #46 [
+INFO  14:11:07,556 - #47 ]
+INFO  14:11:07,556 - #39 ;
+INFO  14:11:07,556 - #42 {
+INFO  14:11:07,556 - #43 }
+INFO  14:11:07,557 - Program(
+ MJProgram
+  ProgListVarDecl(
+    ProgListConstDecl(
+      NoProgList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoProgList]
+      ConstDecl(
+        Type(
+         int
+        ) [Type]
+       a3
+        ConstTypeNumber(
+         5
+        ) [ConstTypeNumber]
+        YConstDeclList(
+          YConstDeclList(
+            NoConstDeclList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoConstDeclList]
+           b
+            ConstTypeNumber(
+             7
+            ) [ConstTypeNumber]
+          ) [YConstDeclList]
+         c
+          ConstTypeNumber(
+           8
+          ) [ConstTypeNumber]
+        ) [YConstDeclList]
+      ) [ConstDecl]
+    ) [ProgListConstDecl]
+    VarDeclSquare(
+      Type(
+       int
+      ) [Type]
+     aa
+      VarDeclListSquare(
+        VarDeclListSquare(
+          NoVarDeclList(
+            Epsilon(
+            ) [Epsilon]
+          ) [NoVarDeclList]
+         bb
+        ) [VarDeclListSquare]
+       cc
+      ) [VarDeclListSquare]
+    ) [VarDeclSquare]
+  ) [ProgListVarDecl]
+) [Program]
+INFO  14:11:07,557 - ===================================

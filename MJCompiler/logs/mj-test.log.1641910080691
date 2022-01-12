@@ -1,0 +1,65 @@
+INFO  15:07:05,158 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  15:07:05,190 - #2 program
+INFO  15:07:05,190 - #49 p
+INFO  15:07:05,190 - #7 const
+INFO  15:07:05,191 - #49 int
+INFO  15:07:05,191 - #49 size
+INFO  15:07:05,191 - #35 =
+INFO  15:07:05,191 - #48 10
+INFO  15:07:05,191 - #39 ;
+INFO  15:07:05,192 - #35 =
+ERROR 15:07:05,192 - 
+Sintaksna greska na liniji 3
+INFO  15:07:05,192 - #39 ;
+INFO  15:07:05,192 - #49 int
+INFO  15:07:05,192 - #49 a
+INFO  15:07:05,192 - #40 ,
+ERROR 15:07:05,192 - Const -Izvrsen oporavak do , u liniji 2
+INFO  15:07:05,193 - #49 b
+INFO  15:07:05,193 - #39 ;
+INFO  15:07:05,193 - #49 int
+INFO  15:07:05,193 - #49 c
+INFO  15:07:05,193 - #39 ;
+INFO  15:07:05,194 - #4 class
+INFO  15:07:05,194 - #49 A
+INFO  15:07:05,194 - #42 {
+INFO  15:07:05,195 - #43 }
+INFO  15:07:05,195 - #4 class
+INFO  15:07:05,195 - #49 B
+INFO  15:07:05,195 - #16 extends
+INFO  15:07:05,195 - #49 A
+INFO  15:07:05,195 - #42 {
+INFO  15:07:05,195 - #49 int
+INFO  15:07:05,195 - #49 a
+INFO  15:07:05,195 - #40 ,
+INFO  15:07:05,195 - #49 b
+INFO  15:07:05,195 - #46 [
+INFO  15:07:05,195 - #47 ]
+INFO  15:07:05,195 - #39 ;
+INFO  15:07:05,196 - #49 string
+INFO  15:07:05,196 - #49 s
+INFO  15:07:05,196 - #39 ;
+INFO  15:07:05,196 - #42 {
+INFO  15:07:05,196 - #15 void
+INFO  15:07:05,196 - #49 putp
+INFO  15:07:05,196 - #44 (
+INFO  15:07:05,196 - #49 int
+INFO  15:07:05,197 - #49 a
+INFO  15:07:05,197 - #40 ,
+INFO  15:07:05,197 - #49 int
+INFO  15:07:05,197 - #49 idx
+INFO  15:07:05,197 - #45 )
+INFO  15:07:05,197 - #42 {
+INFO  15:07:05,197 - #43 }
+INFO  15:07:05,197 - #49 int
+INFO  15:07:05,198 - #49 testingMore
+INFO  15:07:05,198 - #44 (
+INFO  15:07:05,198 - #45 )
+INFO  15:07:05,198 - #49 float
+INFO  15:07:05,198 - #49 random
+INFO  15:07:05,198 - #39 ;
+INFO  15:07:05,198 - #42 {
+INFO  15:07:05,198 - #35 =
+ERROR 15:07:05,198 - 
+Sintaksna greska na liniji 19
+ERROR 15:07:05,198 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 19
