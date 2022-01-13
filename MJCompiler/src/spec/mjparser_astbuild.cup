@@ -128,25 +128,25 @@ MethodDeclList ::= (YMethodDeclList) MethodDeclList:M1 MethodDecl:M2 {: RESULT=n
 
 
 
-ConstDecl ::= (ConstDeclNoError) CONST Type:T1 IDENT:I2 ASSIGN ConstType:C3 ConstDeclList:C4 SEMI {: RESULT=new ConstDeclNoError(T1, I2, C3, C4); RESULT.setLine(T1left); :}
+ConstDecl ::= (ConstDeclNoError) CONST Type:T1 ConstType:C2 ConstDeclList:C3 SEMI {: RESULT=new ConstDeclNoError(T1, C2, C3); RESULT.setLine(T1left); :}
 
 			| (ConstDeclError) CONST error SEMI:s
 			{:parser.report_error("*******Const -Izvrsen oporavak do ; u liniji " + sleft,null); :} {: RESULT=new ConstDeclError(); :}
 			;
-ConstDeclList::= (YConstDeclList) ConstDeclList:C1 COMMA IDENT:I2 ASSIGN ConstType:C3 {: RESULT=new YConstDeclList(C1, I2, C3); RESULT.setLine(C1left); :}
+ConstDeclList::= (YConstDeclList) ConstDeclList:C1 COMMA  ConstType:C2 {: RESULT=new YConstDeclList(C1, C2); RESULT.setLine(C1left); :}
 				|
 				(NoConstDeclList) Epsilon:E1 {: RESULT=new NoConstDeclList(E1); RESULT.setLine(E1left); :}
-				| 
-				(ConstDeclListError) error:e
-			{:parser.report_error("*******Const -Izvrsen oporavak do , u liniji " + eleft,null); :} {: RESULT=new ConstDeclListError(); :}
-			
 				;
-ConstType ::= (ConstTypeNumber) NUMBER:N1 {: RESULT=new ConstTypeNumber(N1); RESULT.setLine(N1left); :}
+ConstType ::= (ConstTypeNumber)IDENT:I1 ASSIGN NUMBER:N2 {: RESULT=new ConstTypeNumber(I1, N2); RESULT.setLine(I1left); :}
 			|
-			(ConstTypeChar) CHAR:C1 {: RESULT=new ConstTypeChar(C1); RESULT.setLine(C1left); :}
+			(ConstTypeChar)IDENT:I1 ASSIGN CHAR:C2 {: RESULT=new ConstTypeChar(I1, C2); RESULT.setLine(I1left); :}
 			|
-			(ConstTypeBool) BOOL:B1 {: RESULT=new ConstTypeBool(B1); RESULT.setLine(B1left); :}
-		
+			(ConstTypeBool)IDENT:I1 ASSIGN BOOL:B2 {: RESULT=new ConstTypeBool(I1, B2); RESULT.setLine(I1left); :}
+		| 
+				(ConstTypeError) error:e
+			{:parser.report_error("*******Const -Izvrsen oporavak do , u liniji " + eleft,null); :} {: RESULT=new ConstTypeError(); :}
+			
+				
 			;
 
 

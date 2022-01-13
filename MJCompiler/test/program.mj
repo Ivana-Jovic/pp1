@@ -1,9 +1,9 @@
 program p
 	
-	const int size =11,n= , b=10;
+	const int size =,n=7 , b=10;
 	//=; ZASTO NECE, SAMO U OVOM SLUCAJU
 	
-	int a, b;
+	int a, b,c;
 	//=;
 	int c;
 	class A {}
@@ -15,6 +15,7 @@ program p
 			int testingMore (int a ,double b ) float random; {
 //goto ; ovo prolazi iako ne treeba
 
+
 //s+;
 //s=5
 //= ovo je fat
@@ -25,7 +26,7 @@ program p
 
 				random = a.fetchRandomTest() * 100 + 1;
 				random++;
-				kk++-;
+				kk=*5;
 				//=;
 				//= ;  ovako samo kaze pogresnu liniju
 				//;  ovako samo kaze pogresnu liniju

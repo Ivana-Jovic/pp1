@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 12/0/2022 13:20:40
+// 13/0/2022 11:44:18
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,14 +8,12 @@ package rs.ac.bg.etf.pp1.ast;
 public class ConstDeclNoError extends ConstDecl {
 
     private Type Type;
-    private String I2;
     private ConstType ConstType;
     private ConstDeclList ConstDeclList;
 
-    public ConstDeclNoError (Type Type, String I2, ConstType ConstType, ConstDeclList ConstDeclList) {
+    public ConstDeclNoError (Type Type, ConstType ConstType, ConstDeclList ConstDeclList) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
-        this.I2=I2;
         this.ConstType=ConstType;
         if(ConstType!=null) ConstType.setParent(this);
         this.ConstDeclList=ConstDeclList;
@@ -28,14 +26,6 @@ public class ConstDeclNoError extends ConstDecl {
 
     public void setType(Type Type) {
         this.Type=Type;
-    }
-
-    public String getI2() {
-        return I2;
-    }
-
-    public void setI2(String I2) {
-        this.I2=I2;
     }
 
     public ConstType getConstType() {
@@ -87,9 +77,6 @@ public class ConstDeclNoError extends ConstDecl {
             buffer.append(Type.toString("  "+tab));
         else
             buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        buffer.append(" "+tab+I2);
         buffer.append("\n");
 
         if(ConstType!=null)

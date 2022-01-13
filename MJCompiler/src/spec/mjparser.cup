@@ -97,25 +97,25 @@ MethodDeclList ::= (YMethodDeclList) MethodDeclList MethodDecl
 
 
 
-ConstDecl ::= (ConstDeclNoError) CONST Type IDENT ASSIGN ConstType ConstDeclList SEMI
+ConstDecl ::= (ConstDeclNoError) CONST Type ConstType ConstDeclList SEMI
 
 			| (ConstDeclError) CONST error SEMI:s
 			{:parser.report_error("*******Const -Izvrsen oporavak do ; u liniji " + sleft,null); :}
 			;
-ConstDeclList::= (YConstDeclList) ConstDeclList COMMA IDENT ASSIGN ConstType
+ConstDeclList::= (YConstDeclList) ConstDeclList COMMA  ConstType
 				|
 				(NoConstDeclList) Epsilon
-				| 
-				(ConstDeclListError) error:e
+				;
+ConstType ::= (ConstTypeNumber)IDENT ASSIGN NUMBER
+			|
+			(ConstTypeChar)IDENT ASSIGN CHAR
+			|
+			(ConstTypeBool)IDENT ASSIGN BOOL
+		| 
+				(ConstTypeError) error:e
 			{:parser.report_error("*******Const -Izvrsen oporavak do , u liniji " + eleft,null); :}
 			
-				;
-ConstType ::= (ConstTypeNumber) NUMBER
-			|
-			(ConstTypeChar) CHAR
-			|
-			(ConstTypeBool) BOOL
-		
+				
 			;
 
 
