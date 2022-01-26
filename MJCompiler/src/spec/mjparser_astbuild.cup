@@ -65,27 +65,24 @@ terminal String IDENT ;
 terminal Character CHAR ;
 terminal String BOOL ;
 
-nonterminal Program Program;
 nonterminal Epsilon Epsilon;
 nonterminal ProgList ProgList;
 nonterminal MethodDeclList MethodDeclList;
 nonterminal ConstDecl ConstDecl;
 nonterminal ConstDeclList ConstDeclList;
-nonterminal ConstType ConstType;
 
 nonterminal VarDecl VarDecl;
 nonterminal VarDeclList VarDeclList;
 nonterminal ClassDecl ClassDecl;
 nonterminal VarDeclListList VarDeclListList;
+nonterminal ConstType ConstType;
 nonterminal ConstrMeth ConstrMeth;
 nonterminal MethodDeclListList MethodDeclListList;
 nonterminal RecordDecl RecordDecl;
 nonterminal MethodDecl MethodDecl;
-nonterminal MethDeclType MethDeclType;
 nonterminal FormParsList FormParsList;
 nonterminal StatementList StatementList;
 nonterminal FormPars FormPars;
-nonterminal Type Type;
 nonterminal Statement Statement;
 nonterminal SingleStatement SingleStatement;
 nonterminal Statements Statements;
@@ -94,10 +91,6 @@ nonterminal ActPars ActPars;
 nonterminal Condition Condition;
 nonterminal CondTerm CondTerm;
 nonterminal CondFact CondFact;
-nonterminal Expr Expr;
-nonterminal Term Term;
-nonterminal Factor Factor;
-nonterminal Designator Designator;
 nonterminal DesignList DesignList;
 nonterminal Label Label;
 nonterminal Assignop Assignop;
@@ -107,10 +100,22 @@ nonterminal Mulop Mulop;
 
 nonterminal DesStmtASSIGNOP DesStmtASSIGNOP;
 
+
+nonterminal Variable Variable;
+nonterminal DesignatorIdent DesignatorIdent;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName,Program,MethodTypeName,Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr, MethDeclType,Factor,Term, NCBConst ;
+
+
 precedence left ELSE;
 
 
-Program ::= (Program) PROG IDENT:I1 ProgList:P2 LBRACE MethodDeclList:M3 RBRACE {: RESULT=new Program(I1, P2, M3); RESULT.setLine(I1left); :} ;
+Program ::= (Program) PROG ProgName:P1 ProgList:P2 LBRACE MethodDeclList:M3 RBRACE {: RESULT=new Program(P1, P2, M3); RESULT.setLine(P1left); :} ;
+ProgName::= (ProgName)IDENT:progName {: RESULT=new ProgName(progName); RESULT.setLine(progNameleft); :} ;
+
 ProgList ::= (ProgListConstDecl) ProgList:P1 ConstDecl:C2 {: RESULT=new ProgListConstDecl(P1, C2); RESULT.setLine(P1left); :}
 			|
 			(ProgListVarDecl) ProgList:P1 VarDecl:V2 {: RESULT=new ProgListVarDecl(P1, V2); RESULT.setLine(P1left); :}
@@ -137,29 +142,60 @@ ConstDeclList::= (YConstDeclList) ConstDeclList:C1 COMMA  ConstType:C2 {: RESULT
 				|
 				(NoConstDeclList) Epsilon:E1 {: RESULT=new NoConstDeclList(E1); RESULT.setLine(E1left); :}
 				;
-ConstType ::= (ConstTypeNumber)IDENT:I1 ASSIGN NUMBER:N2 {: RESULT=new ConstTypeNumber(I1, N2); RESULT.setLine(I1left); :}
+/**OVAKO JE BILO: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ConstType ::= (ConstTypeNumber)IDENT:numIdent ASSIGN NUMBER:numVal
 			|
-			(ConstTypeChar)IDENT:I1 ASSIGN CHAR:C2 {: RESULT=new ConstTypeChar(I1, C2); RESULT.setLine(I1left); :}
+			(ConstTypeChar)IDENT:charIdent ASSIGN CHAR:charVal
 			|
-			(ConstTypeBool)IDENT:I1 ASSIGN BOOL:B2 {: RESULT=new ConstTypeBool(I1, B2); RESULT.setLine(I1left); :}
+			(ConstTypeBool)IDENT:booIdent ASSIGN BOOL:boolVal
 		| 
 				(ConstTypeError) error:e
+			{:parser.report_error("*******Const -Izvrsen oporavak do , u liniji " + eleft,null); :}
+			
+				
+			;
+**/
+ConstType ::= (ConstTypeNCB)IDENT:ncbIdent ASSIGN NCBConst:ncb {: RESULT=new ConstTypeNCB(ncbIdent, ncb); RESULT.setLine(ncbIdentleft); :}
+			|
+			(ConstTypeError) error:e
 			{:parser.report_error("*******Const -Izvrsen oporavak do , u liniji " + eleft,null); :} {: RESULT=new ConstTypeError(); :}
 			
 				
 			;
-
-
-
-VarDecl ::= (VarDeclSquare) Type:T1 IDENT:I2 LSQUARE RSQUARE VarDeclList:V3 SEMI {: RESULT=new VarDeclSquare(T1, I2, V3); RESULT.setLine(T1left); :}
+NCBConst::= (NCBConstNum) NUMBER:numVal {: RESULT=new NCBConstNum(numVal); RESULT.setLine(numValleft); :}
 			|
-			(VarDeclNoSquare) Type:T1 IDENT:I2 VarDeclList:V3 SEMI {: RESULT=new VarDeclNoSquare(T1, I2, V3); RESULT.setLine(T1left); :}
+			(NCBConstChar) CHAR:charVal {: RESULT=new NCBConstChar(charVal); RESULT.setLine(charValleft); :}
+			|
+			(NCBConstBool) BOOL:boolVal {: RESULT=new NCBConstBool(boolVal); RESULT.setLine(boolValleft); :}
 			;
-VarDeclList ::= (VarDeclListSquare) VarDeclList:V1 COMMA IDENT:I2 LSQUARE RSQUARE {: RESULT=new VarDeclListSquare(V1, I2); RESULT.setLine(V1left); :} 
-			| 
-			(VarDeclListNoSquare) VarDeclList:V1 COMMA IDENT:I2 {: RESULT=new VarDeclListNoSquare(V1, I2); RESULT.setLine(V1left); :} 
+/**PROVERI SAD DA LI JE OPORAVAK OD GRESKE OK za ovo gore !!!!!!!!!!!!!!!!!!!!!!!!!!!**/
+
+/**
+
+VarDecl ::= (VarDeclSquare) Type:varType IDENT:varName LSQUARE RSQUARE VarDeclList SEMI
 			|
-			(NoVarDeclList) Epsilon:E1 {: RESULT=new NoVarDeclList(E1); RESULT.setLine(E1left); :}
+			(VarDeclNoSquare) Type:varType IDENT:varName VarDeclList SEMI
+			;
+VarDeclList ::= (VarDeclListSquare) VarDeclList COMMA IDENT LSQUARE RSQUARE 
+			| 
+			(VarDeclListNoSquare) VarDeclList COMMA IDENT 
+			|
+			(NoVarDeclList) Epsilon
+			;
+
+**/
+
+
+VarDecl ::= (VarDeclSquare) Type:varType VarDeclList:V1 SEMI {: RESULT=new VarDeclSquare(varType, V1); RESULT.setLine(varTypeleft); :};
+VarDeclList ::= (VarDeclListLong) VarDeclList:V1 COMMA Variable:V2 {: RESULT=new VarDeclListLong(V1, V2); RESULT.setLine(V1left); :}
+			|
+			(VarDeclListNoLong)Variable:V1 {: RESULT=new VarDeclListNoLong(V1); RESULT.setLine(V1left); :}
+			;
+
+/**ISTO NOVO**/
+Variable::= (VariableNoArray) IDENT:varName {: RESULT=new VariableNoArray(varName); RESULT.setLine(varNameleft); :}
+			|
+			(VariableArray) IDENT:varName LSQUARE RSQUARE {: RESULT=new VariableArray(varName); RESULT.setLine(varNameleft); :}
 			;
 
 
@@ -195,7 +231,9 @@ RecordDecl ::= (RecordDecl) RECORD IDENT:I1 LBRACE VarDeclListList:V2 RBRACE {: 
 
 
 
-MethodDecl ::= (MethodDecl) MethDeclType:M1 IDENT:I2 LPAREN FormParsList:F3 RPAREN VarDeclListList:V4 LBRACE StatementList:S5 RBRACE {: RESULT=new MethodDecl(M1, I2, F3, V4, S5); RESULT.setLine(M1left); :};
+MethodDecl ::= (MethodDecl) MethodTypeName:M1 LPAREN FormParsList:F2 RPAREN VarDeclListList:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodDecl(M1, F2, V3, S4); RESULT.setLine(M1left); :};
+MethodTypeName::= (MethodTypeName) MethDeclType:rett IDENT:methodName {: RESULT=new MethodTypeName(rett, methodName); RESULT.setLine(rettleft); :};
+
 MethDeclType::= (MethDeclTypeType) Type:T1 {: RESULT=new MethDeclTypeType(T1); RESULT.setLine(T1left); :}
 				|
 				(MethDeclTypeVoid) VOID {: RESULT=new MethDeclTypeVoid(); :}
@@ -227,7 +265,7 @@ FormPars ::= (FormParsSquare)Type:T1 IDENT:I2 LSQUARE RSQUARE {: RESULT=new Form
 
 
 
-Type ::= (Type)IDENT:I1 {: RESULT=new Type(I1); RESULT.setLine(I1left); :};
+Type ::= (Type)IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :};
 
 
 
@@ -333,11 +371,11 @@ Factor ::= (FactorDesParenAct)Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=n
 			|
 			(FactorDesPar) Designator:D1 LPAREN RPAREN {: RESULT=new FactorDesPar(D1); RESULT.setLine(D1left); :}
 			|
-			(FactorNum) NUMBER:N1 {: RESULT=new FactorNum(N1); RESULT.setLine(N1left); :}
+			(FactorNum) NUMBER:val {: RESULT=new FactorNum(val); RESULT.setLine(valleft); :}
 			|
-			(FactorChar) CHAR:C1 {: RESULT=new FactorChar(C1); RESULT.setLine(C1left); :}
+			(FactorChar) CHAR:val {: RESULT=new FactorChar(val); RESULT.setLine(valleft); :}
 			|
-			(FactorBool) BOOL:B1 {: RESULT=new FactorBool(B1); RESULT.setLine(B1left); :}
+			(FactorBool) BOOL:val {: RESULT=new FactorBool(val); RESULT.setLine(valleft); :}
 			|
 			(FactorTypeExpr) NEW Type:T1 LSQUARE Expr:E2 RSQUARE {: RESULT=new FactorTypeExpr(T1, E2); RESULT.setLine(T1left); :}
 			|
@@ -345,15 +383,16 @@ Factor ::= (FactorDesParenAct)Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=n
 			|
 			(FactorParen) LPAREN Expr:E1 RPAREN {: RESULT=new FactorParen(E1); RESULT.setLine(E1left); :}
 			; 
-Designator ::= (Designator) IDENT:I1 DesignList:D2 {: RESULT=new Designator(I1, D2); RESULT.setLine(I1left); :};
+Designator ::= (Designator) DesignatorIdent:D1 DesignList:D2 {: RESULT=new Designator(D1, D2); RESULT.setLine(D1left); :};
+DesignatorIdent::= (DesignatorIdent)IDENT:designName {: RESULT=new DesignatorIdent(designName); RESULT.setLine(designNameleft); :};
 DesignList ::= (DesignListDot) DesignList:D1 DOT IDENT:I2 {: RESULT=new DesignListDot(D1, I2); RESULT.setLine(D1left); :}
 			| 
-			(DesignListSquare) DesignList:D1 LSQUARE Expr:E2 RSQUARE {: RESULT=new DesignListSquare(D1, E2); RESULT.setLine(D1left); :}
+			(DesignListSquare) DesignList:D1 LSQUARE Expr:exprr RSQUARE {: RESULT=new DesignListSquare(D1, exprr); RESULT.setLine(D1left); :}
 			|
 			(NoDesignList) Epsilon:E1 {: RESULT=new NoDesignList(E1); RESULT.setLine(E1left); :}
 			;
 	
-Label ::=(Label) IDENT:I1 {: RESULT=new Label(I1); RESULT.setLine(I1left); :};
+Label ::=(Label) IDENT:lab {: RESULT=new Label(lab); RESULT.setLine(lableft); :};
 Assignop::= (Assignop) ASSIGN {: RESULT=new Assignop(); :};
 Relop ::= (RelopEqual)EQUAL {: RESULT=new RelopEqual(); :} 
 		|

@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 13/0/2022 11:44:18
+// 25/0/2022 13:3:52
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,21 +9,24 @@ public class Designator implements SyntaxNode {
 
     private SyntaxNode parent;
     private int line;
-    private String I1;
+    public rs.etf.pp1.symboltable.concepts.Obj obj = null;
+
+    private DesignatorIdent DesignatorIdent;
     private DesignList DesignList;
 
-    public Designator (String I1, DesignList DesignList) {
-        this.I1=I1;
+    public Designator (DesignatorIdent DesignatorIdent, DesignList DesignList) {
+        this.DesignatorIdent=DesignatorIdent;
+        if(DesignatorIdent!=null) DesignatorIdent.setParent(this);
         this.DesignList=DesignList;
         if(DesignList!=null) DesignList.setParent(this);
     }
 
-    public String getI1() {
-        return I1;
+    public DesignatorIdent getDesignatorIdent() {
+        return DesignatorIdent;
     }
 
-    public void setI1(String I1) {
-        this.I1=I1;
+    public void setDesignatorIdent(DesignatorIdent DesignatorIdent) {
+        this.DesignatorIdent=DesignatorIdent;
     }
 
     public DesignList getDesignList() {
@@ -55,15 +58,18 @@ public class Designator implements SyntaxNode {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(DesignatorIdent!=null) DesignatorIdent.accept(visitor);
         if(DesignList!=null) DesignList.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(DesignatorIdent!=null) DesignatorIdent.traverseTopDown(visitor);
         if(DesignList!=null) DesignList.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(DesignatorIdent!=null) DesignatorIdent.traverseBottomUp(visitor);
         if(DesignList!=null) DesignList.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -73,7 +79,10 @@ public class Designator implements SyntaxNode {
         buffer.append(tab);
         buffer.append("Designator(\n");
 
-        buffer.append(" "+tab+I1);
+        if(DesignatorIdent!=null)
+            buffer.append(DesignatorIdent.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(DesignList!=null)

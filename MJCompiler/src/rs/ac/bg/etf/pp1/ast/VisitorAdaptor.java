@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 13/0/2022 11:44:18
+// 25/0/2022 13:3:52
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,7 +8,9 @@ package rs.ac.bg.etf.pp1.ast;
 public abstract class VisitorAdaptor implements Visitor { 
 
     public void visit(Mulop Mulop) { }
+    public void visit(NCBConst NCBConst) { }
     public void visit(Relop Relop) { }
+    public void visit(Variable Variable) { }
     public void visit(StatementList StatementList) { }
     public void visit(Addop Addop) { }
     public void visit(Factor Factor) { }
@@ -31,11 +33,11 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MethodDeclListList MethodDeclListList) { }
     public void visit(CondFact CondFact) { }
     public void visit(MethodDeclList MethodDeclList) { }
-    public void visit(DesStmtASSIGNOP DesStmtASSIGNOP) { }
     public void visit(ProgList ProgList) { }
+    public void visit(DesStmtASSIGNOP DesStmtASSIGNOP) { }
     public void visit(SingleStatement SingleStatement) { }
-    public void visit(FormPars FormPars) { }
     public void visit(MethDeclType MethDeclType) { }
+    public void visit(FormPars FormPars) { }
     public void visit(ConstType ConstType) { }
     public void visit(Epsilon Epsilon) { visit(); }
     public void visit(MulopMod MulopMod) { visit(); }
@@ -54,6 +56,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(NoDesignList NoDesignList) { visit(); }
     public void visit(DesignListSquare DesignListSquare) { visit(); }
     public void visit(DesignListDot DesignListDot) { visit(); }
+    public void visit(DesignatorIdent DesignatorIdent) { visit(); }
     public void visit(Designator Designator) { visit(); }
     public void visit(FactorParen FactorParen) { visit(); }
     public void visit(FactorType FactorType) { visit(); }
@@ -113,6 +116,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(YFormParsList YFormParsList) { visit(); }
     public void visit(MethDeclTypeVoid MethDeclTypeVoid) { visit(); }
     public void visit(MethDeclTypeType MethDeclTypeType) { visit(); }
+    public void visit(MethodTypeName MethodTypeName) { visit(); }
     public void visit(MethodDecl MethodDecl) { visit(); }
     public void visit(RecordDecl RecordDecl) { visit(); }
     public void visit(NoMethodDeclListList NoMethodDeclListList) { visit(); }
@@ -123,15 +127,16 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(YVarDeclListList YVarDeclListList) { visit(); }
     public void visit(ClassDeclNoType ClassDeclNoType) { visit(); }
     public void visit(ClassDeclType ClassDeclType) { visit(); }
-    public void visit(NoVarDeclList NoVarDeclList) { visit(); }
-    public void visit(VarDeclListNoSquare VarDeclListNoSquare) { visit(); }
-    public void visit(VarDeclListSquare VarDeclListSquare) { visit(); }
-    public void visit(VarDeclNoSquare VarDeclNoSquare) { visit(); }
+    public void visit(VariableArray VariableArray) { visit(); }
+    public void visit(VariableNoArray VariableNoArray) { visit(); }
+    public void visit(VarDeclListNoLong VarDeclListNoLong) { visit(); }
+    public void visit(VarDeclListLong VarDeclListLong) { visit(); }
     public void visit(VarDeclSquare VarDeclSquare) { visit(); }
+    public void visit(NCBConstBool NCBConstBool) { visit(); }
+    public void visit(NCBConstChar NCBConstChar) { visit(); }
+    public void visit(NCBConstNum NCBConstNum) { visit(); }
     public void visit(ConstTypeError ConstTypeError) { visit(); }
-    public void visit(ConstTypeBool ConstTypeBool) { visit(); }
-    public void visit(ConstTypeChar ConstTypeChar) { visit(); }
-    public void visit(ConstTypeNumber ConstTypeNumber) { visit(); }
+    public void visit(ConstTypeNCB ConstTypeNCB) { visit(); }
     public void visit(NoConstDeclList NoConstDeclList) { visit(); }
     public void visit(YConstDeclList YConstDeclList) { visit(); }
     public void visit(ConstDeclError ConstDeclError) { visit(); }
@@ -143,6 +148,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ProgListClassDecl ProgListClassDecl) { visit(); }
     public void visit(ProgListVarDecl ProgListVarDecl) { visit(); }
     public void visit(ProgListConstDecl ProgListConstDecl) { visit(); }
+    public void visit(ProgName ProgName) { visit(); }
     public void visit(Program Program) { visit(); }
 
 

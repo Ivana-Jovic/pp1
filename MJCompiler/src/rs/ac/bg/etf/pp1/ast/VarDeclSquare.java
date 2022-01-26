@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 13/0/2022 11:44:18
+// 25/0/2022 13:3:52
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,11 @@ package rs.ac.bg.etf.pp1.ast;
 public class VarDeclSquare extends VarDecl {
 
     private Type Type;
-    private String I2;
     private VarDeclList VarDeclList;
 
-    public VarDeclSquare (Type Type, String I2, VarDeclList VarDeclList) {
+    public VarDeclSquare (Type Type, VarDeclList VarDeclList) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
-        this.I2=I2;
         this.VarDeclList=VarDeclList;
         if(VarDeclList!=null) VarDeclList.setParent(this);
     }
@@ -25,14 +23,6 @@ public class VarDeclSquare extends VarDecl {
 
     public void setType(Type Type) {
         this.Type=Type;
-    }
-
-    public String getI2() {
-        return I2;
-    }
-
-    public void setI2(String I2) {
-        this.I2=I2;
     }
 
     public VarDeclList getVarDeclList() {
@@ -73,9 +63,6 @@ public class VarDeclSquare extends VarDecl {
             buffer.append(Type.toString("  "+tab));
         else
             buffer.append(tab+"  null");
-        buffer.append("\n");
-
-        buffer.append(" "+tab+I2);
         buffer.append("\n");
 
         if(VarDeclList!=null)

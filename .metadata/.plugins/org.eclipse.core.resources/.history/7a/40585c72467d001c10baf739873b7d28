@@ -1,0 +1,159 @@
+package rs.ac.bg.etf.pp1;
+import org.apache.log4j.Logger;
+import rs.ac.bg.etf.pp1.ast.*;
+
+import rs.etf.pp1.symboltable.*;
+import rs.etf.pp1.symboltable.concepts.*;
+
+public class SemanticPass  extends VisitorAdaptor{
+
+	
+	boolean errorDetected = false;
+	Logger log = Logger.getLogger(getClass());
+	
+	Struct currVarType=null;
+	
+	
+	public void report_error(String message, SyntaxNode info) {
+		errorDetected = true;
+		StringBuilder msg = new StringBuilder(message);
+		int line = (info == null) ? 0: info.getLine();
+		if (line != 0)
+			msg.append (" na liniji ").append(line);
+		log.error(msg.toString());
+	}
+
+	public void report_info(String message, SyntaxNode info) {
+		StringBuilder msg = new StringBuilder(message); 
+		int line = (info == null) ? 0: info.getLine();
+		if (line != 0)
+			msg.append (" na liniji ").append(line);
+		log.info(msg.toString());
+	}
+	
+	
+	 public void visit(ProgName progName){
+		 progName.obj=Tab.insert(Obj.Prog, progName.getProgName(), Tab.noType);
+	    Tab.openScope();
+	 }
+	    
+    public void visit(Program program){
+//    	nVars = Tab.currentScope.getnVars();
+    	Tab.chainLocalSymbols(program.getProgName().obj);
+    	Tab.closeScope();
+    }
+    
+	public void visit(VarDecl varDecl){
+		//varDeclCount++;
+///!!!!!!!!!!!!!!!!!!!!!!DODAJ
+//		report_info("Deklarisana promenljiva "+ varDecl.getVarName(), varDecl);
+//		Obj varNode = Tab.insert(Obj.Var, varDecl.getVarName(), varDecl.getType().struct);
+		currVarType=null;
+	}
+	
+	
+	public void visit(VariableNoArray variable){
+		Obj error_handler = Tab.find(variable.getVarName());
+		if(error_handler!= Tab.noObj) {//already exists in Tab
+//mirko ima if jos jedan
+			report_error("ERROR! VARIABLE " + variable.getVarName() + " ALREADY DEFINED IN SYMBOL TABLE! ", null);
+		}
+		if(currVarType==null) {
+			//da li treba proverriti ako je noType
+			report_error("ERROR! VARIABLE " + variable.getVarName() + " BEING DEFINED, BUT NO TYPE PROVIDED! ", null);
+		}
+		Obj objVar = Tab.insert(Obj.Var, variable.getVarName(), currVarType);
+		report_info("VARIABLE " + objVar.getName() + " IS BEING DEFINED!", variable);
+	}
+	
+	
+	public void visit(VariableArray variable){
+		Obj error_handler = Tab.find(variable.getVarName());
+		if(error_handler!= Tab.noObj) {//already exists in Tab
+			//mirko ima if jos jedan
+			report_error("ERROR! VARIABLE " + variable.getVarName() + " ALREADY DEFINED IN SYMBOL TABLE! ", null);
+		}
+		if(currVarType==null) {//nema tip
+			//da li treba proverriti ako je noType
+			report_error("ERROR! VARIABLE " + variable.getVarName() + " BEING DEFINED, BUT NO TYPE PROVIDED! ", null);
+		}
+		Obj objVar = Tab.insert(Obj.Var, variable.getVarName(), new Struct(Struct.Array,currVarType));
+		report_info("ARRAY VARIABLE " + objVar.getName() + " IS BEING DEFINED!", variable);
+				
+	}
+	
+	
+	 public void visit(Type type){
+		 Obj objType = Tab.find(type.getTypeName());
+			
+			if(objType == Tab.noObj){ //tip ne postoji
+				report_error("TYPE " + type.getTypeName() + " NOT FOUND IN SYMBOL TABLE! ", null);
+				currVarType=Tab.noType;
+				type.struct = Tab.noType;
+			}
+			else {
+				if(objType.getKind()!=Obj.Type) {//ako postoji ali nije tip
+					report_error("ERROR! " + type.getTypeName() + " IS NOT A VALID!", type);
+					currVarType=Tab.noType;
+					type.struct = Tab.noType;
+				}
+				else {
+					currVarType=objType.getType();
+					type.struct = objType.getType();
+				}
+			}
+			
+			//zasto se dodeljuje type structu
+
+	 }
+	 
+	////CONST 
+	 public void visit(ConstTypeNumber constant) {
+			
+			Obj error_handler = Tab.find(constant.getNumIdent());
+			if(error_handler!= Tab.noObj) {
+				report_error("ERROR! CONST VARIABLE " + constant.getNumIdent() + " ALREADY DEFINED IN SYMBOL TABLE! ", null);
+			}
+//			if(!constant.getValueOptions().struct.assignableTo(currVarType)) {
+//				report_error("ERROR! CONST VARIABLE " + constant.getConstVarName() + " WITH MULTIPLE TYPES! ", null);
+//			}
+			else if(currVarType.getKind()!=Struct.Int) {
+				report_error("ERROR! CONST VARIABLE " + constant.getNumIdent() + "WRONG TYPE! ", null);
+			}
+			else {
+				Obj numNode = Tab.insert(Obj.Con, constant.getNumIdent(), currVarType);
+				numNode.setAdr(constant.getNumVal());
+				report_info("CONST VARIABLE " + constant.getNumIdent() + " IS BEING DEFINED!", constant);
+			
+			}
+			}
+	 
+	 public void visit(ConstTypeChar constant) {}
+	 public void visit(ConstTypeBool constant) {}
+	////////
+	 ///PRISTUP ELEM NIZA
+	 String designatorIdentPomocnaProm="";
+	 public void visit(DesignatorIdent designatorIdent) {
+		 designatorIdentPomocnaProm=designatorIdent.getDesignName();
+	 }
+	 
+	 public void visit(DesignListSquare designListSquare) {
+		 Obj designNode = Tab.find(designatorIdentPomocnaProm);
+
+			if (designNode == Tab.noObj) {
+				report_error("DESIGNATOR IDENT " +designatorIdentPomocnaProm + " DOES NOT EXIST IN SYMBOL TABLE! ", designListSquare);
+			} else if (designNode.getKind() != Struct.Array) {
+				report_error("DESIGNATOR IDENT " + designatorIdentPomocnaProm+ " NOT AN ARRAY! ", designListSquare);
+			} else if (!designListSquare.getExpr().struct.assignableTo(Tab.intType)) {
+				report_error(" Izraz nije tipa int unutar zagrada " + designatorIdentPomocnaProm, designListSquare);
+			} else {
+				report_info(
+						"Niz  " + designatorIdentPomocnaProm + "se koristi na liniji " + designListSquare.getLine(),
+						designListSquare);
+			}
+
+	 }
+	 
+	 ///////
+	 
+}

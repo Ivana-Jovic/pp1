@@ -65,21 +65,33 @@ terminal String IDENT ;
 terminal Character CHAR ;
 terminal String BOOL ;
 
-nonterminal Program, Epsilon, ProgList, MethodDeclList, ConstDecl, ConstDeclList, ConstType;
+nonterminal Epsilon, ProgList, MethodDeclList, ConstDecl, ConstDeclList;
 
-nonterminal VarDecl, VarDeclList, ClassDecl, VarDeclListList;
-nonterminal ConstrMeth, MethodDeclListList, RecordDecl, MethodDecl, MethDeclType;
-nonterminal FormParsList, StatementList, FormPars, Type, Statement, SingleStatement;
+nonterminal VarDecl, VarDeclList, ClassDecl, VarDeclListList, ConstType;
+nonterminal ConstrMeth, MethodDeclListList, RecordDecl, MethodDecl;
+nonterminal FormParsList, StatementList, FormPars, Statement, SingleStatement;
 nonterminal Statements, DesignatorStatement;
-nonterminal ActPars, Condition, CondTerm, CondFact, Expr, Term, Factor, Designator;
+nonterminal ActPars, Condition, CondTerm, CondFact;
 nonterminal DesignList, Label, Assignop, Relop, Addop, Mulop;
 
 nonterminal DesStmtASSIGNOP;
 
+
+nonterminal Variable;
+nonterminal DesignatorIdent;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName,Program,MethodTypeName,Designator;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
+
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr, MethDeclType,Factor,Term, NCBConst ;
+
+
 precedence left ELSE;
 
 
-Program ::= (Program) PROG IDENT ProgList LBRACE MethodDeclList RBRACE ;
+Program ::= (Program) PROG ProgName ProgList LBRACE MethodDeclList RBRACE ;
+ProgName::= (ProgName)IDENT:progName ;
+
 ProgList ::= (ProgListConstDecl) ProgList ConstDecl
 			|
 			(ProgListVarDecl) ProgList VarDecl
@@ -106,29 +118,60 @@ ConstDeclList::= (YConstDeclList) ConstDeclList COMMA  ConstType
 				|
 				(NoConstDeclList) Epsilon
 				;
-ConstType ::= (ConstTypeNumber)IDENT ASSIGN NUMBER
+/**OVAKO JE BILO: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ConstType ::= (ConstTypeNumber)IDENT:numIdent ASSIGN NUMBER:numVal
 			|
-			(ConstTypeChar)IDENT ASSIGN CHAR
+			(ConstTypeChar)IDENT:charIdent ASSIGN CHAR:charVal
 			|
-			(ConstTypeBool)IDENT ASSIGN BOOL
+			(ConstTypeBool)IDENT:booIdent ASSIGN BOOL:boolVal
 		| 
 				(ConstTypeError) error:e
 			{:parser.report_error("*******Const -Izvrsen oporavak do , u liniji " + eleft,null); :}
 			
 				
 			;
-
-
-
-VarDecl ::= (VarDeclSquare) Type IDENT LSQUARE RSQUARE VarDeclList SEMI
+**/
+ConstType ::= (ConstTypeNCB)IDENT:ncbIdent ASSIGN NCBConst:ncb
 			|
-			(VarDeclNoSquare) Type IDENT VarDeclList SEMI
+			(ConstTypeError) error:e
+			{:parser.report_error("*******Const -Izvrsen oporavak do , u liniji " + eleft,null); :}
+			
+				
+			;
+NCBConst::= (NCBConstNum) NUMBER:numVal
+			|
+			(NCBConstChar) CHAR:charVal
+			|
+			(NCBConstBool) BOOL:boolVal
+			;
+/**PROVERI SAD DA LI JE OPORAVAK OD GRESKE OK za ovo gore !!!!!!!!!!!!!!!!!!!!!!!!!!!**/
+
+/**
+
+VarDecl ::= (VarDeclSquare) Type:varType IDENT:varName LSQUARE RSQUARE VarDeclList SEMI
+			|
+			(VarDeclNoSquare) Type:varType IDENT:varName VarDeclList SEMI
 			;
 VarDeclList ::= (VarDeclListSquare) VarDeclList COMMA IDENT LSQUARE RSQUARE 
 			| 
 			(VarDeclListNoSquare) VarDeclList COMMA IDENT 
 			|
 			(NoVarDeclList) Epsilon
+			;
+
+**/
+
+
+VarDecl ::= (VarDeclSquare) Type:varType VarDeclList SEMI;
+VarDeclList ::= (VarDeclListLong) VarDeclList COMMA Variable
+			|
+			(VarDeclListNoLong)Variable
+			;
+
+/**ISTO NOVO**/
+Variable::= (VariableNoArray) IDENT:varName
+			|
+			(VariableArray) IDENT:varName LSQUARE RSQUARE
 			;
 
 
@@ -164,7 +207,9 @@ RecordDecl ::= (RecordDecl) RECORD IDENT LBRACE VarDeclListList RBRACE;
 
 
 
-MethodDecl ::= (MethodDecl) MethDeclType IDENT LPAREN FormParsList RPAREN VarDeclListList LBRACE StatementList RBRACE;
+MethodDecl ::= (MethodDecl) MethodTypeName LPAREN FormParsList RPAREN VarDeclListList LBRACE StatementList RBRACE;
+MethodTypeName::= (MethodTypeName) MethDeclType:rett IDENT:methodName;
+
 MethDeclType::= (MethDeclTypeType) Type
 				|
 				(MethDeclTypeVoid) VOID
@@ -196,7 +241,7 @@ FormPars ::= (FormParsSquare)Type IDENT LSQUARE RSQUARE
 
 
 
-Type ::= (Type)IDENT;
+Type ::= (Type)IDENT:typeName;
 
 
 
@@ -302,11 +347,11 @@ Factor ::= (FactorDesParenAct)Designator LPAREN ActPars RPAREN
 			|
 			(FactorDesPar) Designator LPAREN RPAREN
 			|
-			(FactorNum) NUMBER
+			(FactorNum) NUMBER:val
 			|
-			(FactorChar) CHAR
+			(FactorChar) CHAR:val
 			|
-			(FactorBool) BOOL
+			(FactorBool) BOOL:val
 			|
 			(FactorTypeExpr) NEW Type LSQUARE Expr RSQUARE
 			|
@@ -314,15 +359,16 @@ Factor ::= (FactorDesParenAct)Designator LPAREN ActPars RPAREN
 			|
 			(FactorParen) LPAREN Expr RPAREN
 			; 
-Designator ::= (Designator) IDENT DesignList;
+Designator ::= (Designator) DesignatorIdent DesignList;
+DesignatorIdent::= (DesignatorIdent)IDENT:designName;
 DesignList ::= (DesignListDot) DesignList DOT IDENT
 			| 
-			(DesignListSquare) DesignList LSQUARE Expr RSQUARE
+			(DesignListSquare) DesignList LSQUARE Expr:exprr RSQUARE
 			|
 			(NoDesignList) Epsilon
 			;
 	
-Label ::=(Label) IDENT;
+Label ::=(Label) IDENT:lab;
 Assignop::= (Assignop) ASSIGN;
 Relop ::= (RelopEqual)EQUAL 
 		|
