@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/0/2022 13:3:52
+// 6/1/2022 23:53:27
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,12 +8,12 @@ package rs.ac.bg.etf.pp1.ast;
 public class FormParsSquare extends FormPars {
 
     private Type Type;
-    private String I2;
+    private String varN;
 
-    public FormParsSquare (Type Type, String I2) {
+    public FormParsSquare (Type Type, String varN) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
-        this.I2=I2;
+        this.varN=varN;
     }
 
     public Type getType() {
@@ -24,12 +24,12 @@ public class FormParsSquare extends FormPars {
         this.Type=Type;
     }
 
-    public String getI2() {
-        return I2;
+    public String getVarN() {
+        return varN;
     }
 
-    public void setI2(String I2) {
-        this.I2=I2;
+    public void setVarN(String varN) {
+        this.varN=varN;
     }
 
     public void accept(Visitor visitor) {
@@ -61,7 +61,7 @@ public class FormParsSquare extends FormPars {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        buffer.append(" "+tab+I2);
+        buffer.append(" "+tab+varN);
         buffer.append("\n");
 
         buffer.append(tab);

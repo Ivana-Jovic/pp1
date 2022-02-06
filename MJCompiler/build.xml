@@ -35,6 +35,7 @@
 			<arg value="src.rs.ac.bg.etf.pp1.ast"/>
 			<arg value="-parser"/>
 			<arg value="MJParser"/>
+			<!--<arg value="-dump_states"/>-->
 			<arg value="-buildtree"/>
 			<arg value="src/spec/mjparser.cup"/>
 		</java>

@@ -1,11 +1,11 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/0/2022 13:3:52
+// 6/1/2022 23:53:27
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class FactorBool extends Factor {
+public class FactorBool extends Factorfactor {
 
     private String val;
 

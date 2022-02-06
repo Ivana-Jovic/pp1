@@ -72,19 +72,20 @@ nonterminal ConstrMeth, MethodDeclListList, RecordDecl, MethodDecl;
 nonterminal FormParsList, StatementList, FormPars, Statement, SingleStatement;
 nonterminal Statements, DesignatorStatement;
 nonterminal ActPars, Condition, CondTerm, CondFact;
-nonterminal DesignList, Label, Assignop, Relop, Addop, Mulop;
+nonterminal Label, Assignop, Relop, Addop, Mulop;
 
 nonterminal DesStmtASSIGNOP;
 
 
 nonterminal Variable;
-nonterminal DesignatorIdent;
+nonterminal RecordDeclName, Unary;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName,Program,MethodTypeName;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, MethDeclType, NCBConst ;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName,Program,MethodTypeName,Designator;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr, MethDeclType,Factor,Term, NCBConst ;
-
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignList, DesignatorIdentRec, DesignatorIdentArr, DesignatorIdentRecArr, DesignRecElem ;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr, Term;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Factorfactor, Factor;
 
 precedence left ELSE;
 
@@ -197,8 +198,8 @@ MethodDeclListList ::= (YMethodDeclListList) MethodDeclListList MethodDecl
 	
 	
 	
-RecordDecl ::= (RecordDecl) RECORD IDENT LBRACE VarDeclListList RBRACE;
-
+RecordDecl ::= (RecordDecl) RECORD RecordDeclName LBRACE VarDeclListList RBRACE;
+RecordDeclName ::= (RecordDeclName) IDENT:recName;
 
 
 				
@@ -208,12 +209,18 @@ RecordDecl ::= (RecordDecl) RECORD IDENT LBRACE VarDeclListList RBRACE;
 
 
 MethodDecl ::= (MethodDecl) MethodTypeName LPAREN FormParsList RPAREN VarDeclListList LBRACE StatementList RBRACE;
-MethodTypeName::= (MethodTypeName) MethDeclType:rett IDENT:methodName;
+MethodTypeName::= (MethodTypeNameType) Type:rett IDENT:methodName
+				|
+				 (MethodTypeNameVoid) VOID:rett IDENT:methodName
+				 ;
+
+/*MethodTypeName::= (MethodTypeName) MethDeclType:rett IDENT:methodName;
 
 MethDeclType::= (MethDeclTypeType) Type
 				|
 				(MethDeclTypeVoid) VOID
 				;
+				*/
 FormParsList ::= (YFormParsList) FormPars
 				| 
 				(NoFormParsList) Epsilon
@@ -226,13 +233,13 @@ StatementList ::= (YStatementList) StatementList Statement
 
 
 
-FormPars ::= (FormParsSquare)Type IDENT LSQUARE RSQUARE
+FormPars ::= (FormParsSquare)Type IDENT:varN LSQUARE RSQUARE
 			|
-			(FormParsNoSquare) Type IDENT
+			(FormParsNoSquare) Type IDENT:varN
 			|
-			(FormParsSquareList) FormPars COMMA Type IDENT LSQUARE RSQUARE
+			(FormParsSquareList) FormPars COMMA Type IDENT:varN LSQUARE RSQUARE
 			|
-			(FormParsNoSquareList) FormPars COMMA Type IDENT
+			(FormParsNoSquareList) FormPars COMMA Type IDENT:varN
 			|
 			(FormParsError)  error:e 
 						{:parser.report_error("*******FormPars -Izvrsen oporavak do ,) u liniji " + eleft,null); :}
@@ -331,8 +338,9 @@ CondFact ::= (CondFactNoList) Expr
 			|
 			(CondFactList) Expr Relop Expr
 			;
-Expr ::= (ExprMin)MINUS Term
-		|
+/* *(ExprMin)MINUS Term
+*/
+Expr ::= 
 		(ExprTerm) Term
 		|
 		(ExprAddop) Expr Addop Term
@@ -341,7 +349,15 @@ Term ::= (TermFactor)Factor
 		|
 		(TermMlop)Term Mulop Factor
 		;
-Factor ::= (FactorDesParenAct)Designator LPAREN ActPars RPAREN
+		/*
+		*/
+Factor ::= (Factor) Unary Factorfactor;
+Unary ::= (UnaryMinus) MINUS
+			|
+			(UnaryNoMinus) Epsilon
+			;
+			
+Factorfactor ::= (FactorDesParenAct)Designator LPAREN ActPars RPAREN
 			|
 			(FactorDes) Designator
 			|
@@ -359,15 +375,39 @@ Factor ::= (FactorDesParenAct)Designator LPAREN ActPars RPAREN
 			|
 			(FactorParen) LPAREN Expr RPAREN
 			; 
-Designator ::= (Designator) DesignatorIdent DesignList;
-DesignatorIdent::= (DesignatorIdent)IDENT:designName;
-DesignList ::= (DesignListDot) DesignList DOT IDENT
-			| 
-			(DesignListSquare) DesignList LSQUARE Expr:exprr RSQUARE
-			|
-			(NoDesignList) Epsilon
-			;
-	
+			
+			/*
+				Designator ::= (Designator) DesignatorIdent DesignList;
+				DesignatorIdent::= (DesignatorIdent)IDENT:designName;
+				DesignList ::= (DesignListDot) DesignList DOT IDENT
+							| 
+							(DesignListSquare) DesignList LSQUARE Expr:exprr RSQUARE
+							|
+							(NoDesignList) Epsilon
+							;
+			*/
+Designator ::= (DesignatorId) IDENT:desName
+				|
+				(DesignatorRec) DesignatorIdentRec DesignList
+				|
+				(DesignatorExprNoList) DesignatorIdentArr LSQUARE Expr RSQUARE
+				|
+				(DesignatorExprList) DesignRecElem DesignList
+				;
+DesignRecElem ::=(DesignRecElem) DesignatorIdentArr LSQUARE Expr RSQUARE;
+DesignList ::= (DesignListIdNoList) DOT IDENT:desLiName
+				|
+				(DesignListExprNoList) DOT IDENT:desRAName LSQUARE Expr RSQUARE
+				|
+				(DesignListIdList) DesignList DOT IDENT:desLiName
+				| 
+				(DesignListExprList) DesignList DOT IDENT:desRAName LSQUARE Expr RSQUARE
+				;
+				
+DesignatorIdentRec::= (DesignatorIdentRec) IDENT:desRName;
+DesignatorIdentArr::= (DesignatorIdentArr) IDENT:desAName;
+
+
 Label ::=(Label) IDENT:lab;
 Assignop::= (Assignop) ASSIGN;
 Relop ::= (RelopEqual)EQUAL 

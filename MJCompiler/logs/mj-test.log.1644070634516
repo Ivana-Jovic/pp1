@@ -1,0 +1,114 @@
+INFO  15:16:48,891 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  15:16:48,993 - #2 program
+INFO  15:16:48,994 - #49 p
+INFO  15:16:48,994 - #7 const
+INFO  15:16:48,996 - #49 int
+INFO  15:16:48,996 - #49 pi
+INFO  15:16:48,997 - #35 =
+INFO  15:16:48,998 - #48 3
+INFO  15:16:48,998 - #40 ,
+INFO  15:16:48,999 - #49 g
+INFO  15:16:48,999 - #35 =
+INFO  15:16:48,999 - #48 11
+INFO  15:16:49,000 - #39 ;
+INFO  15:16:49,000 - #49 char
+INFO  15:16:49,001 - #49 x
+INFO  15:16:49,002 - #40 ,
+INFO  15:16:49,002 - #49 y
+INFO  15:16:49,003 - #46 [
+INFO  15:16:49,003 - #47 ]
+INFO  15:16:49,003 - #39 ;
+INFO  15:16:49,005 - #42 {
+INFO  15:16:49,007 - #15 void
+INFO  15:16:49,007 - #49 main
+INFO  15:16:49,009 - #44 (
+INFO  15:16:49,011 - #45 )
+INFO  15:16:49,011 - #42 {
+INFO  15:16:49,012 - #43 }
+INFO  15:16:49,012 - #43 }
+INFO  15:16:49,015 - Program(
+  ProgName(
+   p
+  ) [ProgName]
+  ProgListVarDecl(
+    ProgListConstDecl(
+      ProgListNoProgList(
+        Epsilon(
+        ) [Epsilon]
+      ) [ProgListNoProgList]
+      ConstDeclNoError(
+        Type(
+         int
+        ) [Type]
+        ConstTypeNCB(
+         pi
+          NCBConstNum(
+           3
+          ) [NCBConstNum]
+        ) [ConstTypeNCB]
+        YConstDeclList(
+          NoConstDeclList(
+            Epsilon(
+            ) [Epsilon]
+          ) [NoConstDeclList]
+          ConstTypeNCB(
+           g
+            NCBConstNum(
+             11
+            ) [NCBConstNum]
+          ) [ConstTypeNCB]
+        ) [YConstDeclList]
+      ) [ConstDeclNoError]
+    ) [ProgListConstDecl]
+    VarDeclSquare(
+      Type(
+       char
+      ) [Type]
+      VarDeclListLong(
+        VarDeclListNoLong(
+          VariableNoArray(
+           x
+          ) [VariableNoArray]
+        ) [VarDeclListNoLong]
+        VariableArray(
+         y
+        ) [VariableArray]
+      ) [VarDeclListLong]
+    ) [VarDeclSquare]
+  ) [ProgListVarDecl]
+  YMethodDeclList(
+    NoMethodDeclList(
+      Epsilon(
+      ) [Epsilon]
+    ) [NoMethodDeclList]
+    MethodDecl(
+      MethodTypeName(
+        MethDeclTypeVoid(
+        ) [MethDeclTypeVoid]
+       main
+      ) [MethodTypeName]
+      NoFormParsList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoFormParsList]
+      NoVarDeclListList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoVarDeclListList]
+      NoStatementList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoStatementList]
+    ) [MethodDecl]
+  ) [YMethodDeclList]
+) [Program]
+INFO  15:16:49,016 - ===================================
+INFO  15:16:49,034 - CONST VALUE 3 IS BEING USED! na liniji 2
+INFO  15:16:49,034 - CONST  pi IS BEING DEFINED! na liniji 2
+INFO  15:16:49,034 - CONST VALUE 11 IS BEING USED! na liniji 2
+INFO  15:16:49,034 - CONST  g IS BEING DEFINED! na liniji 2
+INFO  15:16:49,035 - VARIABLE x IS BEING DEFINED! na liniji 3
+INFO  15:16:49,035 - ARRAY VARIABLE y IS BEING DEFINED! na liniji 3
+INFO  15:16:49,035 - DEALING WITH FUNCTION main na liniji 8
+INFO  15:16:49,035 - BLA DEALING WITH FUNCTION 
+INFO  15:16:49,035 - ===================================

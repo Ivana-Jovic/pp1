@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 25/0/2022 13:3:52
+// 6/1/2022 23:53:27
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,14 +9,14 @@ public class FormParsSquareList extends FormPars {
 
     private FormPars FormPars;
     private Type Type;
-    private String I3;
+    private String varN;
 
-    public FormParsSquareList (FormPars FormPars, Type Type, String I3) {
+    public FormParsSquareList (FormPars FormPars, Type Type, String varN) {
         this.FormPars=FormPars;
         if(FormPars!=null) FormPars.setParent(this);
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
-        this.I3=I3;
+        this.varN=varN;
     }
 
     public FormPars getFormPars() {
@@ -35,12 +35,12 @@ public class FormParsSquareList extends FormPars {
         this.Type=Type;
     }
 
-    public String getI3() {
-        return I3;
+    public String getVarN() {
+        return varN;
     }
 
-    public void setI3(String I3) {
-        this.I3=I3;
+    public void setVarN(String varN) {
+        this.varN=varN;
     }
 
     public void accept(Visitor visitor) {
@@ -81,7 +81,7 @@ public class FormParsSquareList extends FormPars {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        buffer.append(" "+tab+I3);
+        buffer.append(" "+tab+varN);
         buffer.append("\n");
 
         buffer.append(tab);
