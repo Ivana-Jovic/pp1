@@ -88,9 +88,8 @@ nonterminal SingleStatement SingleStatement;
 nonterminal Statements Statements;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal ActPars ActPars;
-nonterminal Condition Condition;
-nonterminal CondTerm CondTerm;
-nonterminal CondFact CondFact;
+nonterminal ActParsWrap ActParsWrap;
+nonterminal ActParsFirst ActParsFirst;
 nonterminal Label Label;
 nonterminal Assignop Assignop;
 nonterminal Relop Relop;
@@ -103,13 +102,14 @@ nonterminal DesStmtASSIGNOP DesStmtASSIGNOP;
 nonterminal Variable Variable;
 nonterminal RecordDeclName RecordDeclName;
 nonterminal Unary Unary;
+nonterminal DoStmt DoStmt;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName,Program,MethodTypeName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, MethDeclType, NCBConst ;
 
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignList, DesignatorIdentRec, DesignatorIdentArr, DesignatorIdentRecArr, DesignRecElem ;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr, Term;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Factorfactor, Factor;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Factorfactor, Factor, Condition, CondTerm, CondFact;
 
 precedence left ELSE;
 
@@ -238,13 +238,13 @@ MethodTypeName::= (MethodTypeNameType) Type:rett IDENT:methodName {: RESULT=new 
 				 (MethodTypeNameVoid) VOID:rett IDENT:methodName {: RESULT=new MethodTypeNameVoid(methodName); RESULT.setLine(methodNameleft); :}
 				 ;
 
-/*MethodTypeName::= (MethodTypeName) MethDeclType:rett IDENT:methodName;
-
-MethDeclType::= (MethDeclTypeType) Type
-				|
-				(MethDeclTypeVoid) VOID
-				;
-				*/
+			/*MethodTypeName::= (MethodTypeName) MethDeclType:rett IDENT:methodName;
+			
+			MethDeclType::= (MethDeclTypeType) Type
+							|
+							(MethDeclTypeVoid) VOID
+							;
+							*/
 FormParsList ::= (YFormParsList) FormPars:F1 {: RESULT=new YFormParsList(F1); RESULT.setLine(F1left); :}
 				| 
 				(NoFormParsList) Epsilon:E1 {: RESULT=new NoFormParsList(E1); RESULT.setLine(E1left); :}
@@ -293,7 +293,7 @@ SingleStatement::= (SingleStatementDesi) DesignatorStatement:D1 SEMI {: RESULT=n
 					|
 					(SingleStatementIf) IF LPAREN Condition:C1 RPAREN Statement:S2 {: RESULT=new SingleStatementIf(C1, S2); RESULT.setLine(C1left); :}
 					|
-					(SingleStatementDo) DO Statement:S1 WHILE LPAREN Condition:C2 RPAREN SEMI {: RESULT=new SingleStatementDo(S1, C2); RESULT.setLine(S1left); :}
+					(SingleStatementDo) DoStmt:D1 Statement:S2 WHILE LPAREN Condition:C3 RPAREN SEMI {: RESULT=new SingleStatementDo(D1, S2, C3); RESULT.setLine(D1left); :}
 					|
 					(SingleStatementBreak) BREAK SEMI {: RESULT=new SingleStatementBreak(); :}
 					|
@@ -315,14 +315,14 @@ SingleStatement::= (SingleStatementDesi) DesignatorStatement:D1 SEMI {: RESULT=n
 
 					;
 					
-
+DoStmt::= (DoStmt) DO {: RESULT=new DoStmt(); :};
 
 
 
 Statements ::= (Statements) LBRACE StatementList:S1 RBRACE {: RESULT=new Statements(S1); RESULT.setLine(S1left); :};
 
 DesignatorStatement ::=
-						(DesignatorActpars) Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new DesignatorActpars(D1, A2); RESULT.setLine(D1left); :}
+						(DesignatorActpars) Designator:D1 LPAREN ActParsWrap:A2 RPAREN {: RESULT=new DesignatorActpars(D1, A2); RESULT.setLine(D1left); :}
 						|
 						(DesignatorParen) Designator:D1 LPAREN RPAREN {: RESULT=new DesignatorParen(D1); RESULT.setLine(D1left); :}
 						|
@@ -340,7 +340,8 @@ DesStmtASSIGNOP ::= (DesignatorAssignop) Designator:D1 Assignop:A2 Expr:E3 SEMI 
 						(DesignatorStatementError) error SEMI:e
 						{:parser.report_error("*******DesignatorStatement -Izvrsen oporavak do ; u liniji " + eleft,null); :} {: RESULT=new DesignatorStatementError(); :}
 			;
-						
+ActParsWrap::= (ActParsWrap) ActParsFirst:A1 ActPars:A2 {: RESULT=new ActParsWrap(A1, A2); RESULT.setLine(A1left); :};	
+ActParsFirst::= (ActParsFirst)	Epsilon:E1 {: RESULT=new ActParsFirst(E1); RESULT.setLine(E1left); :};				
 ActPars ::= (ActParsNoList)Expr:E1 {: RESULT=new ActParsNoList(E1); RESULT.setLine(E1left); :}
 			|
 			(ActParsList) ActPars:A1 COMMA Expr:E2 {: RESULT=new ActParsList(A1, E2); RESULT.setLine(A1left); :}
@@ -381,7 +382,7 @@ Unary ::= (UnaryMinus) MINUS {: RESULT=new UnaryMinus(); :}
 			(UnaryNoMinus) Epsilon:E1 {: RESULT=new UnaryNoMinus(E1); RESULT.setLine(E1left); :}
 			;
 			
-Factorfactor ::= (FactorDesParenAct)Designator:D1 LPAREN ActPars:A2 RPAREN {: RESULT=new FactorDesParenAct(D1, A2); RESULT.setLine(D1left); :}
+Factorfactor ::= (FactorDesParenAct)Designator:D1 LPAREN ActParsWrap:A2 RPAREN {: RESULT=new FactorDesParenAct(D1, A2); RESULT.setLine(D1left); :}
 			|
 			(FactorDes) Designator:D1 {: RESULT=new FactorDes(D1); RESULT.setLine(D1left); :}
 			|

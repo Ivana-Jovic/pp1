@@ -1,3 +1,63 @@
+
+program p
+const int pi = 3, g =11;
+char x, y[];
+//const bool t = true;
+record r1 { int pi; int y[];}
+record r11 { r1 obj[];}
+{
+
+	void main()  int a, b[]; char eol;r1 rr;{
+		//fx= 3+x[1]*2;
+		b[8]= 3;
+		a= 3+ b[2]*2;
+		//g=3;
+		//a= 3+b;
+		//a=b;
+		a=3;
+		b= new int[7];
+		b[2]=a;
+		b[9]=b[7];
+		b= null;
+		b[3]--;
+		//pi++;
+		//eol++;
+		read(y[2]);
+		print(1,4);
+		print(a,4);
+		print(eol,4);
+		print(false,4);
+		print(b[9],4);
+		rr.y[5]++;
+		//if(rr>null)a++;
+	}
+
+ bool bla(int i, char j, bool k[]) int aa; r1 r;{
+ main(i);
+ aa=1;
+ 
+ read(r.y[4]);
+ //return 5;!!!!!!!!!!!!!!
+ return;
+ }
+ int m2() int a; bool b;{
+ if(true || b && a <2) a++;
+ return 1;
+ b= bla();
+ 	do{
+ 	break;
+ 	do{
+ 	break;
+ 	}while(true);
+ 	break;
+ 	}while(true);
+ }
+}
+/////////////////////////////////
+
+
+
+
 //program MJProgram
 	//const int a3= 5, b=7, c=8;
 //	int aa[], bb,cc[];
@@ -190,4 +250,144 @@ program p
 	}
 	//1. pa kada je u const prvi pogresan
 	//3. ignorise svea na levo od greske
+}
+
+////////////////////////
+program Test 
+record r1 { int x[]; int y;} 
+record r2 { r1 obj[];} 
+record r3 { r2 obj[];} 
+
+int a;
+char b;
+int c;
+{ 
+
+	void main() r1 o1; r2 o2; r3 o3; r3 o3arr[];{ 
+		
+		o1 = new r1; 
+		o1.x = new int[1];
+		o1.x[0] = 0; 
+		o1.x[0]++; 
+		print(o1.x[0]); 
+		print(eol);
+		o1.y = 1;
+		o1.y++; 
+		print(o1.y);
+		print(eol);
+		 
+		o2 = new r2; 
+		o2.obj = new r1[1]; 
+		o2.obj[0] = new r1; 
+		o2.obj[0].y = 2; 
+		o2.obj[0].y++; 
+		print(o2.obj[0].y); 
+		print(eol); 
+		o2.obj[0].x = new int[1]; 
+		o2.obj[0].x[0] = 3;
+		 
+		o3 = new r3; 
+		o3.obj = new r2[1]; 
+		o3.obj[0] = new r2; 
+		o3.obj[0].obj = new r1[1]; 
+		o3.obj[0].obj[0] = new r1; 
+		o3.obj[0].obj[0].y = 4; 
+		o3.obj[0].obj[0].y++; 
+		print(o3.obj[0].obj[0].y); 
+		print(eol); 
+		o3.obj[0].obj[0].x = new int[1]; 
+		o3.obj[0].obj[0].x[0] = 5; 
+		o3.obj[0].obj[0].x[0]++; 
+		print(o3.obj[0].obj[0].x[0]); 
+		print(eol); 
+		
+		
+		o3arr = new r3 [1]; 
+		
+		o3arr[0] = new r3; 
+		o3arr[0].obj = new r2[1]; 
+		o3arr[0].obj[0] = new r2; 
+		o3arr[0].obj[0].obj = new r1[1]; 
+		o3arr[0].obj[0].obj[0] = new r1; 
+		o3arr[0].obj[0].obj[0].y = 6; 
+		o3arr[0].obj[0].obj[0].y++; 
+		print(o3arr[0].obj[0].obj[0].y); 
+		print(eol);
+		o3arr[0].obj[0].obj[0].x = new int[1];
+		o3arr[0].obj[0].obj[0].x[0] = 7;
+		o3arr[0].obj[0].obj[0].x[0]++;
+		print(o3arr[0].obj[0].obj[0].x[0]); 
+		print(eol);
+
+	}
+}
+
+
+
+//
+
+
+
+program p
+const int pi = 3, g =11;
+const char a='a';
+char x, y[];
+//const bool t = true;
+record r1 { int pi; int y[];}
+record r11 { r1 obj[];}
+{
+
+	void main()  int a, b[]; char eol;r1 rr;{
+		//fx= 3+x[1]*2;
+		b[8]= 3;
+		a= 3+ b[2]*2;
+		//g=3;
+		//a= 3+b;
+		//a=b;
+		a=3;
+		b= new int[7];
+		b[2]=a;
+		b[9]=b[7];
+		b= null;
+		b[3]--;
+		//pi++;
+		//eol++;
+		read(y[2]);
+		print(1,4);
+		print(a,4);
+		print(eol,4);
+		print(false,4);
+		print(b[9],4);
+		rr.y[5]++;
+		//if(rr>null)a++;
+		return;
+	
+	}
+	
+	//return;
+//
+ bool bla(int i, char j, bool k) int aa; r1 r;{
+ main();
+ aa=1;
+ 
+ read(r.y[4]);
+ //return 5;!!!!!!!!!!!!!!
+ return true;
+ }
+ int m2() int a; bool b;{
+ if(true || b && a <2) a++;
+ return a;
+ bla(0,'a',true);
+ //b= bla();
+ 	do{
+ 	break;
+ 	do{
+ 	break;
+ 	}while(true);
+ 	break;
+ 	}while(true);
+ }
+int f1(int x){return x;}
+int f2(int x, bool b, int g) int a; {return f1(x) + a + 1;}
+int f3(){ f2(f2(1,true,6), true, f2(1,false,5)); return 1;}
 }

@@ -1,0 +1,377 @@
+INFO  13:54:59,071 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  13:54:59,105 - #2 program
+INFO  13:54:59,105 - #49 p
+INFO  13:54:59,105 - #7 const
+INFO  13:54:59,106 - #49 int
+INFO  13:54:59,106 - #49 pi
+INFO  13:54:59,108 - #35 =
+INFO  13:54:59,108 - #48 3
+INFO  13:54:59,108 - #40 ,
+INFO  13:54:59,108 - #49 g
+INFO  13:54:59,108 - #35 =
+INFO  13:54:59,108 - #48 11
+INFO  13:54:59,108 - #39 ;
+INFO  13:54:59,108 - #49 char
+INFO  13:54:59,109 - #49 x
+INFO  13:54:59,109 - #40 ,
+INFO  13:54:59,109 - #49 y
+INFO  13:54:59,109 - #46 [
+INFO  13:54:59,109 - #47 ]
+INFO  13:54:59,109 - #39 ;
+INFO  13:54:59,109 - #21 record
+INFO  13:54:59,109 - #49 r1
+INFO  13:54:59,109 - #42 {
+INFO  13:54:59,109 - #49 int
+INFO  13:54:59,109 - #49 pi
+INFO  13:54:59,109 - #39 ;
+INFO  13:54:59,109 - #49 char
+INFO  13:54:59,110 - #49 y
+INFO  13:54:59,110 - #46 [
+INFO  13:54:59,110 - #47 ]
+INFO  13:54:59,110 - #39 ;
+INFO  13:54:59,110 - #43 }
+INFO  13:54:59,110 - #21 record
+INFO  13:54:59,110 - #49 r11
+INFO  13:54:59,110 - #42 {
+INFO  13:54:59,110 - #49 r1
+INFO  13:54:59,110 - #49 obj
+INFO  13:54:59,110 - #46 [
+INFO  13:54:59,111 - #47 ]
+INFO  13:54:59,111 - #39 ;
+INFO  13:54:59,111 - #43 }
+INFO  13:54:59,111 - #42 {
+INFO  13:54:59,111 - #15 void
+INFO  13:54:59,111 - #49 bla
+INFO  13:54:59,111 - #44 (
+INFO  13:54:59,111 - #49 int
+INFO  13:54:59,111 - #49 i
+INFO  13:54:59,111 - #40 ,
+INFO  13:54:59,111 - #49 char
+INFO  13:54:59,111 - #49 j
+INFO  13:54:59,111 - #40 ,
+INFO  13:54:59,111 - #49 bool
+INFO  13:54:59,112 - #49 k
+INFO  13:54:59,112 - #46 [
+INFO  13:54:59,112 - #47 ]
+INFO  13:54:59,112 - #45 )
+INFO  13:54:59,112 - #49 int
+INFO  13:54:59,112 - #49 aa
+INFO  13:54:59,112 - #40 ,
+INFO  13:54:59,112 - #49 bb
+INFO  13:54:59,112 - #40 ,
+INFO  13:54:59,112 - #49 cc
+INFO  13:54:59,112 - #46 [
+INFO  13:54:59,112 - #47 ]
+INFO  13:54:59,112 - #39 ;
+INFO  13:54:59,112 - #42 {
+INFO  13:54:59,112 - #43 }
+INFO  13:54:59,113 - #15 void
+INFO  13:54:59,114 - #49 main
+INFO  13:54:59,114 - #44 (
+INFO  13:54:59,114 - #45 )
+INFO  13:54:59,114 - #49 int
+INFO  13:54:59,114 - #49 a
+INFO  13:54:59,114 - #40 ,
+INFO  13:54:59,114 - #49 fpi
+INFO  13:54:59,114 - #46 [
+INFO  13:54:59,114 - #47 ]
+INFO  13:54:59,114 - #39 ;
+INFO  13:54:59,114 - #49 int
+INFO  13:54:59,114 - #49 x
+INFO  13:54:59,114 - #46 [
+INFO  13:54:59,114 - #47 ]
+INFO  13:54:59,114 - #39 ;
+INFO  13:54:59,114 - #49 r1
+INFO  13:54:59,114 - #49 obj
+INFO  13:54:59,114 - #39 ;
+INFO  13:54:59,115 - #42 {
+INFO  13:54:59,115 - #49 a
+INFO  13:54:59,115 - #35 =
+INFO  13:54:59,115 - #48 3
+INFO  13:54:59,115 - #39 ;
+INFO  13:54:59,116 - #43 }
+INFO  13:54:59,116 - #43 }
+INFO  13:54:59,117 - Program(
+  ProgName(
+   p
+  ) [ProgName]
+  ProgListRecordDecl(
+    ProgListRecordDecl(
+      ProgListVarDecl(
+        ProgListConstDecl(
+          ProgListNoProgList(
+            Epsilon(
+            ) [Epsilon]
+          ) [ProgListNoProgList]
+          ConstDeclNoError(
+            Type(
+             int
+            ) [Type]
+            ConstTypeNCB(
+             pi
+              NCBConstNum(
+               3
+              ) [NCBConstNum]
+            ) [ConstTypeNCB]
+            YConstDeclList(
+              NoConstDeclList(
+                Epsilon(
+                ) [Epsilon]
+              ) [NoConstDeclList]
+              ConstTypeNCB(
+               g
+                NCBConstNum(
+                 11
+                ) [NCBConstNum]
+              ) [ConstTypeNCB]
+            ) [YConstDeclList]
+          ) [ConstDeclNoError]
+        ) [ProgListConstDecl]
+        VarDeclSquare(
+          Type(
+           char
+          ) [Type]
+          VarDeclListLong(
+            VarDeclListNoLong(
+              VariableNoArray(
+               x
+              ) [VariableNoArray]
+            ) [VarDeclListNoLong]
+            VariableArray(
+             y
+            ) [VariableArray]
+          ) [VarDeclListLong]
+        ) [VarDeclSquare]
+      ) [ProgListVarDecl]
+      RecordDecl(
+        RecordDeclName(
+         r1
+        ) [RecordDeclName]
+        YVarDeclListList(
+          YVarDeclListList(
+            NoVarDeclListList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoVarDeclListList]
+            VarDeclSquare(
+              Type(
+               int
+              ) [Type]
+              VarDeclListNoLong(
+                VariableNoArray(
+                 pi
+                ) [VariableNoArray]
+              ) [VarDeclListNoLong]
+            ) [VarDeclSquare]
+          ) [YVarDeclListList]
+          VarDeclSquare(
+            Type(
+             char
+            ) [Type]
+            VarDeclListNoLong(
+              VariableArray(
+               y
+              ) [VariableArray]
+            ) [VarDeclListNoLong]
+          ) [VarDeclSquare]
+        ) [YVarDeclListList]
+      ) [RecordDecl]
+    ) [ProgListRecordDecl]
+    RecordDecl(
+      RecordDeclName(
+       r11
+      ) [RecordDeclName]
+      YVarDeclListList(
+        NoVarDeclListList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoVarDeclListList]
+        VarDeclSquare(
+          Type(
+           r1
+          ) [Type]
+          VarDeclListNoLong(
+            VariableArray(
+             obj
+            ) [VariableArray]
+          ) [VarDeclListNoLong]
+        ) [VarDeclSquare]
+      ) [YVarDeclListList]
+    ) [RecordDecl]
+  ) [ProgListRecordDecl]
+  YMethodDeclList(
+    YMethodDeclList(
+      NoMethodDeclList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoMethodDeclList]
+      MethodDecl(
+        MethodTypeNameVoid(
+         bla
+        ) [MethodTypeNameVoid]
+        YFormParsList(
+          FormParsSquareList(
+            FormParsNoSquareList(
+              FormParsNoSquare(
+                Type(
+                 int
+                ) [Type]
+               i
+              ) [FormParsNoSquare]
+              Type(
+               char
+              ) [Type]
+             j
+            ) [FormParsNoSquareList]
+            Type(
+             bool
+            ) [Type]
+           k
+          ) [FormParsSquareList]
+        ) [YFormParsList]
+        YVarDeclListList(
+          NoVarDeclListList(
+            Epsilon(
+            ) [Epsilon]
+          ) [NoVarDeclListList]
+          VarDeclSquare(
+            Type(
+             int
+            ) [Type]
+            VarDeclListLong(
+              VarDeclListLong(
+                VarDeclListNoLong(
+                  VariableNoArray(
+                   aa
+                  ) [VariableNoArray]
+                ) [VarDeclListNoLong]
+                VariableNoArray(
+                 bb
+                ) [VariableNoArray]
+              ) [VarDeclListLong]
+              VariableArray(
+               cc
+              ) [VariableArray]
+            ) [VarDeclListLong]
+          ) [VarDeclSquare]
+        ) [YVarDeclListList]
+        NoStatementList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoStatementList]
+      ) [MethodDecl]
+    ) [YMethodDeclList]
+    MethodDecl(
+      MethodTypeNameVoid(
+       main
+      ) [MethodTypeNameVoid]
+      NoFormParsList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoFormParsList]
+      YVarDeclListList(
+        YVarDeclListList(
+          YVarDeclListList(
+            NoVarDeclListList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoVarDeclListList]
+            VarDeclSquare(
+              Type(
+               int
+              ) [Type]
+              VarDeclListLong(
+                VarDeclListNoLong(
+                  VariableNoArray(
+                   a
+                  ) [VariableNoArray]
+                ) [VarDeclListNoLong]
+                VariableArray(
+                 fpi
+                ) [VariableArray]
+              ) [VarDeclListLong]
+            ) [VarDeclSquare]
+          ) [YVarDeclListList]
+          VarDeclSquare(
+            Type(
+             int
+            ) [Type]
+            VarDeclListNoLong(
+              VariableArray(
+               x
+              ) [VariableArray]
+            ) [VarDeclListNoLong]
+          ) [VarDeclSquare]
+        ) [YVarDeclListList]
+        VarDeclSquare(
+          Type(
+           r1
+          ) [Type]
+          VarDeclListNoLong(
+            VariableNoArray(
+             obj
+            ) [VariableNoArray]
+          ) [VarDeclListNoLong]
+        ) [VarDeclSquare]
+      ) [YVarDeclListList]
+      YStatementList(
+        NoStatementList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoStatementList]
+        StatementSingle(
+          SingleStatementDesStmtASSIGNOP(
+            DesignatorAssignop(
+              DesignatorId(
+               a
+              ) [DesignatorId]
+              Assignop(
+              ) [Assignop]
+              ExprTerm(
+                TermFactor(
+                  Factor(
+                    UnaryNoMinus(
+                      Epsilon(
+                      ) [Epsilon]
+                    ) [UnaryNoMinus]
+                    FactorNum(
+                     3
+                    ) [FactorNum]
+                  ) [Factor]
+                ) [TermFactor]
+              ) [ExprTerm]
+            ) [DesignatorAssignop]
+          ) [SingleStatementDesStmtASSIGNOP]
+        ) [StatementSingle]
+      ) [YStatementList]
+    ) [MethodDecl]
+  ) [YMethodDeclList]
+) [Program]
+INFO  13:54:59,117 - ===================================
+INFO  13:54:59,122 - CONST VALUE 3 IS BEING USED! na liniji 2
+INFO  13:54:59,122 - CONST  pi IS BEING DEFINED! na liniji 2
+INFO  13:54:59,123 - CONST VALUE 11 IS BEING USED! na liniji 2
+INFO  13:54:59,123 - CONST  g IS BEING DEFINED! na liniji 2
+INFO  13:54:59,123 - VARIABLE x IS BEING DEFINED! na liniji 3
+INFO  13:54:59,123 - ARRAY VARIABLE y IS BEING DEFINED! na liniji 3
+INFO  13:54:59,127 - RECORD  r1 IS BEING DEFINED! na liniji 5
+INFO  13:54:59,127 - VARIABLE pi IS BEING DEFINED! na liniji 5
+INFO  13:54:59,127 - ARRAY VARIABLE y IS BEING DEFINED! na liniji 5
+INFO  13:54:59,127 - RECORD  r11 IS BEING DEFINED! na liniji 6
+INFO  13:54:59,127 - ARRAY VARIABLE obj IS BEING DEFINED! na liniji 6
+INFO  13:54:59,127 - DEALING WITH FUNCTION bla na liniji 9
+INFO  13:54:59,127 - FORM PAR i IS BEING DEFINED! na liniji 9
+INFO  13:54:59,127 - FORM PAR j IS BEING DEFINED! na liniji 9
+INFO  13:54:59,127 - FORM PAR SQ k IS BEING DEFINED! na liniji 9
+INFO  13:54:59,127 - VARIABLE aa IS BEING DEFINED! na liniji 9
+INFO  13:54:59,127 - VARIABLE bb IS BEING DEFINED! na liniji 9
+INFO  13:54:59,127 - ARRAY VARIABLE cc IS BEING DEFINED! na liniji 9
+INFO  13:54:59,128 - DEALING WITH FUNCTION main na liniji 11
+INFO  13:54:59,128 - VARIABLE a IS BEING DEFINED! na liniji 11
+INFO  13:54:59,128 - ARRAY VARIABLE fpi IS BEING DEFINED! na liniji 11
+INFO  13:54:59,128 - ARRAY VARIABLE x IS BEING DEFINED! na liniji 11
+INFO  13:54:59,128 - VARIABLE obj IS BEING DEFINED! na liniji 11
+INFO  13:54:59,128 - CONST NUMBER 3 na liniji 13
+ERROR 13:54:59,128 - ERROR! DESIGN MUST BE VAR,ELEM OR FIELD a na liniji 13
+INFO  13:54:59,129 - ===================================
+INFO  13:54:59,129 - Parsiranje NIJE uspesno zavrseno

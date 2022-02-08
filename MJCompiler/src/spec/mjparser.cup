@@ -71,21 +71,21 @@ nonterminal VarDecl, VarDeclList, ClassDecl, VarDeclListList, ConstType;
 nonterminal ConstrMeth, MethodDeclListList, RecordDecl, MethodDecl;
 nonterminal FormParsList, StatementList, FormPars, Statement, SingleStatement;
 nonterminal Statements, DesignatorStatement;
-nonterminal ActPars, Condition, CondTerm, CondFact;
+nonterminal ActPars, ActParsWrap, ActParsFirst;
 nonterminal Label, Assignop, Relop, Addop, Mulop;
 
 nonterminal DesStmtASSIGNOP;
 
 
 nonterminal Variable;
-nonterminal RecordDeclName, Unary;
+nonterminal RecordDeclName, Unary, DoStmt;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName,Program,MethodTypeName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, MethDeclType, NCBConst ;
 
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignList, DesignatorIdentRec, DesignatorIdentArr, DesignatorIdentRecArr, DesignRecElem ;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr, Term;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Factorfactor, Factor;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Factorfactor, Factor, Condition, CondTerm, CondFact;
 
 precedence left ELSE;
 
@@ -214,13 +214,13 @@ MethodTypeName::= (MethodTypeNameType) Type:rett IDENT:methodName
 				 (MethodTypeNameVoid) VOID:rett IDENT:methodName
 				 ;
 
-/*MethodTypeName::= (MethodTypeName) MethDeclType:rett IDENT:methodName;
-
-MethDeclType::= (MethDeclTypeType) Type
-				|
-				(MethDeclTypeVoid) VOID
-				;
-				*/
+			/*MethodTypeName::= (MethodTypeName) MethDeclType:rett IDENT:methodName;
+			
+			MethDeclType::= (MethDeclTypeType) Type
+							|
+							(MethDeclTypeVoid) VOID
+							;
+							*/
 FormParsList ::= (YFormParsList) FormPars
 				| 
 				(NoFormParsList) Epsilon
@@ -269,7 +269,7 @@ SingleStatement::= (SingleStatementDesi) DesignatorStatement SEMI
 					|
 					(SingleStatementIf) IF LPAREN Condition RPAREN Statement
 					|
-					(SingleStatementDo) DO Statement WHILE LPAREN Condition RPAREN SEMI
+					(SingleStatementDo) DoStmt Statement WHILE LPAREN Condition RPAREN SEMI
 					|
 					(SingleStatementBreak) BREAK SEMI
 					|
@@ -291,14 +291,14 @@ SingleStatement::= (SingleStatementDesi) DesignatorStatement SEMI
 
 					;
 					
-
+DoStmt::= (DoStmt) DO;
 
 
 
 Statements ::= (Statements) LBRACE StatementList RBRACE;
 
 DesignatorStatement ::=
-						(DesignatorActpars) Designator LPAREN ActPars RPAREN
+						(DesignatorActpars) Designator LPAREN ActParsWrap RPAREN
 						|
 						(DesignatorParen) Designator LPAREN RPAREN
 						|
@@ -316,7 +316,8 @@ DesStmtASSIGNOP ::= (DesignatorAssignop) Designator Assignop Expr SEMI
 						(DesignatorStatementError) error SEMI:e
 						{:parser.report_error("*******DesignatorStatement -Izvrsen oporavak do ; u liniji " + eleft,null); :}
 			;
-						
+ActParsWrap::= (ActParsWrap) ActParsFirst ActPars;	
+ActParsFirst::= (ActParsFirst)	Epsilon;				
 ActPars ::= (ActParsNoList)Expr
 			|
 			(ActParsList) ActPars COMMA Expr
@@ -357,7 +358,7 @@ Unary ::= (UnaryMinus) MINUS
 			(UnaryNoMinus) Epsilon
 			;
 			
-Factorfactor ::= (FactorDesParenAct)Designator LPAREN ActPars RPAREN
+Factorfactor ::= (FactorDesParenAct)Designator LPAREN ActParsWrap RPAREN
 			|
 			(FactorDes) Designator
 			|
