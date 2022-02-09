@@ -1,0 +1,256 @@
+INFO  23:37:12,623 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  23:37:12,660 - #2 program
+INFO  23:37:12,660 - #49 p
+INFO  23:37:12,660 - #7 const
+INFO  23:37:12,661 - #49 int
+INFO  23:37:12,661 - #49 pi
+INFO  23:37:12,662 - #35 =
+INFO  23:37:12,662 - #48 3
+INFO  23:37:12,662 - #39 ;
+INFO  23:37:12,662 - #49 int
+INFO  23:37:12,663 - #49 x
+INFO  23:37:12,663 - #40 ,
+INFO  23:37:12,663 - #49 y
+INFO  23:37:12,663 - #46 [
+INFO  23:37:12,663 - #47 ]
+INFO  23:37:12,663 - #39 ;
+INFO  23:37:12,663 - #42 {
+INFO  23:37:12,664 - #15 void
+INFO  23:37:12,664 - #49 main
+INFO  23:37:12,664 - #44 (
+INFO  23:37:12,664 - #45 )
+INFO  23:37:12,664 - #49 int
+INFO  23:37:12,664 - #49 a
+INFO  23:37:12,665 - #40 ,
+INFO  23:37:12,665 - #49 b
+INFO  23:37:12,665 - #39 ;
+INFO  23:37:12,665 - #49 int
+INFO  23:37:12,665 - #49 carr
+INFO  23:37:12,666 - #46 [
+INFO  23:37:12,666 - #47 ]
+INFO  23:37:12,666 - #39 ;
+INFO  23:37:12,666 - #42 {
+INFO  23:37:12,666 - #49 carr
+INFO  23:37:12,666 - #35 =
+INFO  23:37:12,666 - #11 new
+INFO  23:37:12,667 - #49 int
+INFO  23:37:12,667 - #46 [
+INFO  23:37:12,667 - #48 5
+INFO  23:37:12,667 - #47 ]
+INFO  23:37:12,668 - #39 ;
+INFO  23:37:12,668 - #13 read
+INFO  23:37:12,668 - #44 (
+INFO  23:37:12,668 - #49 carr
+INFO  23:37:12,668 - #46 [
+INFO  23:37:12,668 - #48 4
+INFO  23:37:12,669 - #47 ]
+INFO  23:37:12,669 - #40 ,
+ERROR 23:37:12,669 - 
+Sintaksna greska na liniji 11
+INFO  23:37:12,669 - #48 4
+INFO  23:37:12,669 - #45 )
+INFO  23:37:12,669 - #39 ;
+INFO  23:37:12,669 - #12 print
+INFO  23:37:12,669 - #44 (
+INFO  23:37:12,669 - #49 carr
+ERROR 23:37:12,670 - *******DesignatorStatement -Izvrsen oporavak do ; u liniji 11
+INFO  23:37:12,670 - #46 [
+INFO  23:37:12,670 - #48 4
+INFO  23:37:12,670 - #47 ]
+INFO  23:37:12,670 - #45 )
+INFO  23:37:12,670 - #39 ;
+INFO  23:37:12,670 - #43 }
+INFO  23:37:12,670 - #43 }
+INFO  23:37:12,672 - Program(
+  ProgName(
+   p
+  ) [ProgName]
+  ProgListVarDecl(
+    ProgListConstDecl(
+      ProgListNoProgList(
+        Epsilon(
+        ) [Epsilon]
+      ) [ProgListNoProgList]
+      ConstDeclNoError(
+        Type(
+         int
+        ) [Type]
+        ConstTypeNCB(
+         pi
+          NCBConstNum(
+           3
+          ) [NCBConstNum]
+        ) [ConstTypeNCB]
+        NoConstDeclList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoConstDeclList]
+      ) [ConstDeclNoError]
+    ) [ProgListConstDecl]
+    VarDeclSquare(
+      Type(
+       int
+      ) [Type]
+      VarDeclListLong(
+        VarDeclListNoLong(
+          VariableNoArray(
+           x
+          ) [VariableNoArray]
+        ) [VarDeclListNoLong]
+        VariableArray(
+         y
+        ) [VariableArray]
+      ) [VarDeclListLong]
+    ) [VarDeclSquare]
+  ) [ProgListVarDecl]
+  YMethodDeclList(
+    NoMethodDeclList(
+      Epsilon(
+      ) [Epsilon]
+    ) [NoMethodDeclList]
+    MethodDecl(
+      MethodTypeNameVoid(
+       main
+      ) [MethodTypeNameVoid]
+      NoFormParsList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoFormParsList]
+      YVarDeclListList(
+        YVarDeclListList(
+          NoVarDeclListList(
+            Epsilon(
+            ) [Epsilon]
+          ) [NoVarDeclListList]
+          VarDeclSquare(
+            Type(
+             int
+            ) [Type]
+            VarDeclListLong(
+              VarDeclListNoLong(
+                VariableNoArray(
+                 a
+                ) [VariableNoArray]
+              ) [VarDeclListNoLong]
+              VariableNoArray(
+               b
+              ) [VariableNoArray]
+            ) [VarDeclListLong]
+          ) [VarDeclSquare]
+        ) [YVarDeclListList]
+        VarDeclSquare(
+          Type(
+           int
+          ) [Type]
+          VarDeclListNoLong(
+            VariableArray(
+             carr
+            ) [VariableArray]
+          ) [VarDeclListNoLong]
+        ) [VarDeclSquare]
+      ) [YVarDeclListList]
+      YStatementList(
+        YStatementList(
+          YStatementList(
+            NoStatementList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoStatementList]
+            StatementSingle(
+              SingleStatementDesStmtASSIGNOP(
+                DesignatorAssignop(
+                  DesignatorId(
+                   carr
+                  ) [DesignatorId]
+                  Assignop(
+                  ) [Assignop]
+                  ExprTerm(
+                    TermFactor(
+                      Factor(
+                        UnaryNoMinus(
+                          Epsilon(
+                          ) [Epsilon]
+                        ) [UnaryNoMinus]
+                        FactorTypeExpr(
+                          Type(
+                           int
+                          ) [Type]
+                          ExprTerm(
+                            TermFactor(
+                              Factor(
+                                UnaryNoMinus(
+                                  Epsilon(
+                                  ) [Epsilon]
+                                ) [UnaryNoMinus]
+                                FactorNum(
+                                 5
+                                ) [FactorNum]
+                              ) [Factor]
+                            ) [TermFactor]
+                          ) [ExprTerm]
+                        ) [FactorTypeExpr]
+                      ) [Factor]
+                    ) [TermFactor]
+                  ) [ExprTerm]
+                ) [DesignatorAssignop]
+              ) [SingleStatementDesStmtASSIGNOP]
+            ) [StatementSingle]
+          ) [YStatementList]
+          StatementSingle(
+            SingleStatementDesStmtASSIGNOP(
+              DesignatorStatementError(
+              ) [DesignatorStatementError]
+            ) [SingleStatementDesStmtASSIGNOP]
+          ) [StatementSingle]
+        ) [YStatementList]
+        StatementSingle(
+          SingleStatementPrint(
+            ExprTerm(
+              TermFactor(
+                Factor(
+                  UnaryNoMinus(
+                    Epsilon(
+                    ) [Epsilon]
+                  ) [UnaryNoMinus]
+                  FactorDes(
+                    DesignatorExprNoList(
+                      DesignatorIdentArr(
+                       carr
+                      ) [DesignatorIdentArr]
+                      ExprTerm(
+                        TermFactor(
+                          Factor(
+                            UnaryNoMinus(
+                              Epsilon(
+                              ) [Epsilon]
+                            ) [UnaryNoMinus]
+                            FactorNum(
+                             4
+                            ) [FactorNum]
+                          ) [Factor]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                    ) [DesignatorExprNoList]
+                  ) [FactorDes]
+                ) [Factor]
+              ) [TermFactor]
+            ) [ExprTerm]
+          ) [SingleStatementPrint]
+        ) [StatementSingle]
+      ) [YStatementList]
+    ) [MethodDecl]
+  ) [YMethodDeclList]
+) [Program]
+INFO  23:37:12,672 - ===================================
+INFO  23:37:12,678 - ~~CONST  pi IS BEING DEFINED!  { Con:  int  3  0} na liniji 6
+INFO  23:37:12,678 - ~~VARIABLE x IS BEING DEFINED!  { Var:  int  0  0} na liniji 7
+INFO  23:37:12,678 - ~~ARRAY VARIABLE y IS BEING DEFINED!  { Var:  arr  1  0} na liniji 7
+INFO  23:37:12,678 - ~~VARIABLE a IS BEING DEFINED!  { Var:  int  0  1} na liniji 9
+INFO  23:37:12,678 - ~~VARIABLE b IS BEING DEFINED!  { Var:  int  1  1} na liniji 9
+INFO  23:37:12,678 - ~~ARRAY VARIABLE carr IS BEING DEFINED!  { Var:  arr  2  1} na liniji 9
+INFO  23:37:12,678 - ~~USING DESIGNATOR LOCAL VAR carr!  { Var:  arr  2  1} na liniji 10
+INFO  23:37:12,679 - ~~USING ARRAY carr!  { Var:  arr  2  1} na liniji 12
+INFO  23:37:12,679 - ===================================
+INFO  23:37:12,680 - Parsiranje NIJE uspesno zavrseno
+INFO  23:37:12,680 - GRESAKA U PARS:true
+INFO  23:37:12,680 - GRESAKA U SEM:false

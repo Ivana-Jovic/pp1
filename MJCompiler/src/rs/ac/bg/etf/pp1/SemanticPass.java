@@ -31,6 +31,7 @@ public class SemanticPass  extends VisitorAdaptor{
 	List<Struct> formParamsList;// = new ArrayList<>();
 	List<Struct> finalactParamsList = new ArrayList<>();
 	Stack<List<Struct>> actParamsStack = new Stack<>();
+	int numOfVars;
 	
 	public SemanticPass() {
 		super();
@@ -88,6 +89,7 @@ public class SemanticPass  extends VisitorAdaptor{
 	@Override   
     public void visit(Program program){
 //    	Tab.chainLocalSymbols(program.getProgName().obj);
+		numOfVars=Tab.currentScope().getnVars();// glob var, ne const i ne metode;
     	Tab.chainLocalSymbols(currProgram);
     	Tab.closeScope();
     	currProgram= null;
@@ -172,18 +174,15 @@ if(currVarType==Tab.noType) {
 			if(objType == Tab.noObj){ //tip ne postoji
 				report_error("ERROR! TYPE " + type.getTypeName() + " NOT FOUND IN SYMBOL TABLE! ", type);
 				currVarType=Tab.noType;
-				//ovo nema na  snimku struct..
 				type.struct = Tab.noType;
 			}
 			else if(objType.getKind()!=Obj.Type) {//ako postoji ali nije tip
 				report_error("ERROR! " + type.getTypeName() + " IS NOT A VALID!", type);
 				currVarType=Tab.noType;
-				//ovo nema na  snimku struct..
 				type.struct = Tab.noType;
 			}
 			else {
 				currVarType=objType.getType();
-				//ovo nema na  snimku struct..
 				type.struct = objType.getType();
 			}
 	 }
@@ -240,6 +239,19 @@ if(currVarType==Tab.noType) {
 
 	// *************************** METH ***************************
 	@Override
+	public void visit(MethodDecl methodDecl){
+    	if(!returnFound && currentMethod.getType() != Tab.noType){// ako nije void
+			report_error("ERROR! RETURN NOT FOUND... " + currentMethod.getName() + " DOES NOT HAVE A RETURN STMT!", null);
+		}
+		Tab.chainLocalSymbols(currentMethod);
+		Tab.closeScope();
+		
+		returnFound = false;
+		isVoid=false;
+		currentMethod = null;
+	}
+	
+	@Override
 	public void visit(MethodTypeNameVoid methodTypeName){
 Obj methodNode = Tab.find(methodTypeName.getMethodName());
 if (methodNode != Tab.noObj) {
@@ -252,7 +264,7 @@ if (methodNode != Tab.noObj) {
 			if(methodTypeName.getMethodName().equalsIgnoreCase("main")) {
 				mainMethod = currentMethod;
 			}
-methodTypeName.obj = currentMethod;
+			methodTypeName.obj = currentMethod;
 			Tab.openScope();
 			//report_info("~~ DEFINIG FUNCTION " + methodTypeName.getMethodName(), methodTypeName);
 	 }
@@ -268,23 +280,12 @@ if (methodNode != Tab.noObj) {
 //			currentMethod = Tab.insert(Obj.Meth, methodTypeName.getMethodName(), methodTypeName.getMethDeclType().struct);
 			currentMethod = Tab.insert(Obj.Meth, methodTypeName.getMethodName(), currVarType);
 			
-methodTypeName.obj = currentMethod;
+			methodTypeName.obj = currentMethod;
 			Tab.openScope();
 			//report_info("~~DEFINING FUNCTION " + methodTypeName.getMethodName(), methodTypeName);
 	  }
 	}
-	@Override
-	public void visit(MethodDecl methodDecl){
-    	if(!returnFound && currentMethod.getType() != Tab.noType){// ako nije void
-			report_error("ERROR! RETURN NOT FOUND... " + currentMethod.getName() + " DOES NOT HAVE A RETURN STMT!", null);
-		}
-		Tab.chainLocalSymbols(currentMethod);
-		Tab.closeScope();
-		
-		returnFound = false;
-		isVoid=false;
-		currentMethod = null;
-	}
+
 	// *************************** SINGLE STMT ***************************
 	   @Override
 	   public void visit(SingleStatementRetExpr r){
