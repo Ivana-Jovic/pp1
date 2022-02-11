@@ -1,25 +1,25 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 0:34:21
+// 11/1/2022 16:57:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ConditionNoList extends Condition {
 
-    private CondTerm CondTerm;
+    private CondTermDone CondTermDone;
 
-    public ConditionNoList (CondTerm CondTerm) {
-        this.CondTerm=CondTerm;
-        if(CondTerm!=null) CondTerm.setParent(this);
+    public ConditionNoList (CondTermDone CondTermDone) {
+        this.CondTermDone=CondTermDone;
+        if(CondTermDone!=null) CondTermDone.setParent(this);
     }
 
-    public CondTerm getCondTerm() {
-        return CondTerm;
+    public CondTermDone getCondTermDone() {
+        return CondTermDone;
     }
 
-    public void setCondTerm(CondTerm CondTerm) {
-        this.CondTerm=CondTerm;
+    public void setCondTermDone(CondTermDone CondTermDone) {
+        this.CondTermDone=CondTermDone;
     }
 
     public void accept(Visitor visitor) {
@@ -27,16 +27,16 @@ public class ConditionNoList extends Condition {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(CondTerm!=null) CondTerm.accept(visitor);
+        if(CondTermDone!=null) CondTermDone.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(CondTerm!=null) CondTerm.traverseTopDown(visitor);
+        if(CondTermDone!=null) CondTermDone.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(CondTerm!=null) CondTerm.traverseBottomUp(visitor);
+        if(CondTermDone!=null) CondTermDone.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -45,8 +45,8 @@ public class ConditionNoList extends Condition {
         buffer.append(tab);
         buffer.append("ConditionNoList(\n");
 
-        if(CondTerm!=null)
-            buffer.append(CondTerm.toString("  "+tab));
+        if(CondTermDone!=null)
+            buffer.append(CondTermDone.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

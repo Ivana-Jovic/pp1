@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 0:34:21
+// 11/1/2022 16:57:17
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -20,7 +20,6 @@ public interface Visitor {
     public void visit(FormParsList FormParsList);
     public void visit(Condition Condition);
     public void visit(ConstDeclList ConstDeclList);
-    public void visit(DesignatorIdentRecArr DesignatorIdentRecArr);
     public void visit(VarDeclList VarDeclList);
     public void visit(Expr Expr);
     public void visit(VarDeclListList VarDeclListList);
@@ -57,6 +56,7 @@ public interface Visitor {
     public void visit(RelopEqual RelopEqual);
     public void visit(Assignop Assignop);
     public void visit(Label Label);
+    public void visit(DesignatorIdentRecArr DesignatorIdentRecArr);
     public void visit(DesignatorIdentArr DesignatorIdentArr);
     public void visit(DesignatorIdentRec DesignatorIdentRec);
     public void visit(DesignListExprList DesignListExprList);
@@ -88,9 +88,11 @@ public interface Visitor {
     public void visit(CondFactNoList CondFactNoList);
     public void visit(CondTermList CondTermList);
     public void visit(CondTermNoList CondTermNoList);
+    public void visit(CondTermDone CondTermDone);
     public void visit(ConditionError ConditionError);
     public void visit(ConditionList ConditionList);
     public void visit(ConditionNoList ConditionNoList);
+    public void visit(ConditionDone ConditionDone);
     public void visit(ActParsList ActParsList);
     public void visit(ActParsNoList ActParsNoList);
     public void visit(ActParsFirst ActParsFirst);
@@ -103,6 +105,7 @@ public interface Visitor {
     public void visit(DesignatorActpars DesignatorActpars);
     public void visit(Statements Statements);
     public void visit(DoStmt DoStmt);
+    public void visit(ElseWrapper ElseWrapper);
     public void visit(SingleStatemenGoto SingleStatemenGoto);
     public void visit(SingleStatementPrint SingleStatementPrint);
     public void visit(SingleStatementPrintNum SingleStatementPrintNum);

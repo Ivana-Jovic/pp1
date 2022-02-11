@@ -1,0 +1,302 @@
+INFO  17:13:23,787 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  17:13:23,825 - #2 program
+INFO  17:13:23,825 - #49 TestIf
+INFO  17:13:23,825 - #42 {
+INFO  17:13:23,826 - #15 void
+INFO  17:13:23,826 - #49 main
+INFO  17:13:23,826 - #44 (
+INFO  17:13:23,826 - #45 )
+INFO  17:13:23,827 - #49 int
+INFO  17:13:23,827 - #49 i
+INFO  17:13:23,827 - #40 ,
+INFO  17:13:23,827 - #49 j
+INFO  17:13:23,828 - #39 ;
+INFO  17:13:23,828 - #42 {
+INFO  17:13:23,828 - #49 i
+INFO  17:13:23,828 - #35 =
+INFO  17:13:23,828 - #48 0
+INFO  17:13:23,829 - #39 ;
+INFO  17:13:23,829 - #8 if
+INFO  17:13:23,830 - #44 (
+INFO  17:13:23,830 - #49 i
+INFO  17:13:23,830 - #27 ==
+INFO  17:13:23,830 - #48 2
+INFO  17:13:23,831 - #34 ||
+INFO  17:13:23,832 - #49 i
+INFO  17:13:23,832 - #32 <=
+INFO  17:13:23,832 - #48 3
+INFO  17:13:23,832 - #45 )
+INFO  17:13:23,833 - #12 print
+INFO  17:13:23,833 - #44 (
+INFO  17:13:23,833 - #48 5
+INFO  17:13:23,833 - #45 )
+INFO  17:13:23,833 - #39 ;
+INFO  17:13:23,833 - #6 else
+INFO  17:13:23,833 - #12 print
+INFO  17:13:23,833 - #44 (
+INFO  17:13:23,834 - #48 7
+INFO  17:13:23,834 - #45 )
+INFO  17:13:23,834 - #39 ;
+INFO  17:13:23,834 - #12 print
+INFO  17:13:23,834 - #44 (
+INFO  17:13:23,834 - #49 eol
+INFO  17:13:23,834 - #45 )
+INFO  17:13:23,834 - #39 ;
+INFO  17:13:23,834 - #49 i
+INFO  17:13:23,834 - #35 =
+INFO  17:13:23,834 - #48 5
+INFO  17:13:23,834 - #39 ;
+INFO  17:13:23,834 - #43 }
+INFO  17:13:23,834 - #43 }
+INFO  17:13:23,836 - Program(
+  ProgName(
+   TestIf
+  ) [ProgName]
+  ProgListNoProgList(
+    Epsilon(
+    ) [Epsilon]
+  ) [ProgListNoProgList]
+  YMethodDeclList(
+    NoMethodDeclList(
+      Epsilon(
+      ) [Epsilon]
+    ) [NoMethodDeclList]
+    MethodDecl(
+      MethodTypeNameVoid(
+       main
+      ) [MethodTypeNameVoid]
+      NoFormParsList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoFormParsList]
+      YVarDeclListList(
+        NoVarDeclListList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoVarDeclListList]
+        VarDeclSquare(
+          Type(
+           int
+          ) [Type]
+          VarDeclListLong(
+            VarDeclListNoLong(
+              VariableNoArray(
+               i
+              ) [VariableNoArray]
+            ) [VarDeclListNoLong]
+            VariableNoArray(
+             j
+            ) [VariableNoArray]
+          ) [VarDeclListLong]
+        ) [VarDeclSquare]
+      ) [YVarDeclListList]
+      YStatementList(
+        YStatementList(
+          YStatementList(
+            YStatementList(
+              NoStatementList(
+                Epsilon(
+                ) [Epsilon]
+              ) [NoStatementList]
+              StatementSingle(
+                SingleStatementDesStmtASSIGNOP(
+                  DesignatorAssignop(
+                    DesignatorId(
+                     i
+                    ) [DesignatorId]
+                    Assignop(
+                    ) [Assignop]
+                    ExprTerm(
+                      TermFactor(
+                        Factor(
+                          UnaryNoMinus(
+                            Epsilon(
+                            ) [Epsilon]
+                          ) [UnaryNoMinus]
+                          FactorNum(
+                           0
+                          ) [FactorNum]
+                        ) [Factor]
+                      ) [TermFactor]
+                    ) [ExprTerm]
+                  ) [DesignatorAssignop]
+                ) [SingleStatementDesStmtASSIGNOP]
+              ) [StatementSingle]
+            ) [YStatementList]
+            StatementSingle(
+              SingleStatementIfElse(
+                ConditionDone(
+                  ConditionList(
+                    ConditionNoList(
+                      CondTermDone(
+                        CondTermNoList(
+                          CondFactList(
+                            ExprTerm(
+                              TermFactor(
+                                Factor(
+                                  UnaryNoMinus(
+                                    Epsilon(
+                                    ) [Epsilon]
+                                  ) [UnaryNoMinus]
+                                  FactorDes(
+                                    DesignatorId(
+                                     i
+                                    ) [DesignatorId]
+                                  ) [FactorDes]
+                                ) [Factor]
+                              ) [TermFactor]
+                            ) [ExprTerm]
+                            RelopEqual(
+                            ) [RelopEqual]
+                            ExprTerm(
+                              TermFactor(
+                                Factor(
+                                  UnaryNoMinus(
+                                    Epsilon(
+                                    ) [Epsilon]
+                                  ) [UnaryNoMinus]
+                                  FactorNum(
+                                   2
+                                  ) [FactorNum]
+                                ) [Factor]
+                              ) [TermFactor]
+                            ) [ExprTerm]
+                          ) [CondFactList]
+                        ) [CondTermNoList]
+                      ) [CondTermDone]
+                    ) [ConditionNoList]
+                    CondTermDone(
+                      CondTermNoList(
+                        CondFactList(
+                          ExprTerm(
+                            TermFactor(
+                              Factor(
+                                UnaryNoMinus(
+                                  Epsilon(
+                                  ) [Epsilon]
+                                ) [UnaryNoMinus]
+                                FactorDes(
+                                  DesignatorId(
+                                   i
+                                  ) [DesignatorId]
+                                ) [FactorDes]
+                              ) [Factor]
+                            ) [TermFactor]
+                          ) [ExprTerm]
+                          RelopLesse(
+                          ) [RelopLesse]
+                          ExprTerm(
+                            TermFactor(
+                              Factor(
+                                UnaryNoMinus(
+                                  Epsilon(
+                                  ) [Epsilon]
+                                ) [UnaryNoMinus]
+                                FactorNum(
+                                 3
+                                ) [FactorNum]
+                              ) [Factor]
+                            ) [TermFactor]
+                          ) [ExprTerm]
+                        ) [CondFactList]
+                      ) [CondTermNoList]
+                    ) [CondTermDone]
+                  ) [ConditionList]
+                ) [ConditionDone]
+                StatementSingle(
+                  SingleStatementPrint(
+                    ExprTerm(
+                      TermFactor(
+                        Factor(
+                          UnaryNoMinus(
+                            Epsilon(
+                            ) [Epsilon]
+                          ) [UnaryNoMinus]
+                          FactorNum(
+                           5
+                          ) [FactorNum]
+                        ) [Factor]
+                      ) [TermFactor]
+                    ) [ExprTerm]
+                  ) [SingleStatementPrint]
+                ) [StatementSingle]
+                ElseWrapper(
+                ) [ElseWrapper]
+                StatementSingle(
+                  SingleStatementPrint(
+                    ExprTerm(
+                      TermFactor(
+                        Factor(
+                          UnaryNoMinus(
+                            Epsilon(
+                            ) [Epsilon]
+                          ) [UnaryNoMinus]
+                          FactorNum(
+                           7
+                          ) [FactorNum]
+                        ) [Factor]
+                      ) [TermFactor]
+                    ) [ExprTerm]
+                  ) [SingleStatementPrint]
+                ) [StatementSingle]
+              ) [SingleStatementIfElse]
+            ) [StatementSingle]
+          ) [YStatementList]
+          StatementSingle(
+            SingleStatementPrint(
+              ExprTerm(
+                TermFactor(
+                  Factor(
+                    UnaryNoMinus(
+                      Epsilon(
+                      ) [Epsilon]
+                    ) [UnaryNoMinus]
+                    FactorDes(
+                      DesignatorId(
+                       eol
+                      ) [DesignatorId]
+                    ) [FactorDes]
+                  ) [Factor]
+                ) [TermFactor]
+              ) [ExprTerm]
+            ) [SingleStatementPrint]
+          ) [StatementSingle]
+        ) [YStatementList]
+        StatementSingle(
+          SingleStatementDesStmtASSIGNOP(
+            DesignatorAssignop(
+              DesignatorId(
+               i
+              ) [DesignatorId]
+              Assignop(
+              ) [Assignop]
+              ExprTerm(
+                TermFactor(
+                  Factor(
+                    UnaryNoMinus(
+                      Epsilon(
+                      ) [Epsilon]
+                    ) [UnaryNoMinus]
+                    FactorNum(
+                     5
+                    ) [FactorNum]
+                  ) [Factor]
+                ) [TermFactor]
+              ) [ExprTerm]
+            ) [DesignatorAssignop]
+          ) [SingleStatementDesStmtASSIGNOP]
+        ) [StatementSingle]
+      ) [YStatementList]
+    ) [MethodDecl]
+  ) [YMethodDeclList]
+) [Program]
+INFO  17:13:23,837 - ===================================
+INFO  17:13:23,843 - ~~VARIABLE i IS BEING DEFINED!  { Var:  int  0  1} na liniji 8
+INFO  17:13:23,843 - ~~VARIABLE j IS BEING DEFINED!  { Var:  int  1  1} na liniji 8
+INFO  17:13:23,843 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  0  1} na liniji 10
+INFO  17:13:23,844 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  0  1} na liniji 12
+INFO  17:13:23,844 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  0  1} na liniji 12
+INFO  17:13:23,844 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 20
+INFO  17:13:23,844 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  0  1} na liniji 22
+INFO  17:13:23,844 - ===================================
+INFO  17:13:23,848 - Parsiranje uspesno zavrseno

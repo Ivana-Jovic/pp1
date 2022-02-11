@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 0:34:21
+// 11/1/2022 16:57:17
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -9,15 +9,15 @@ public class SingleStatementDo extends SingleStatement {
 
     private DoStmt DoStmt;
     private Statement Statement;
-    private Condition Condition;
+    private ConditionDone ConditionDone;
 
-    public SingleStatementDo (DoStmt DoStmt, Statement Statement, Condition Condition) {
+    public SingleStatementDo (DoStmt DoStmt, Statement Statement, ConditionDone ConditionDone) {
         this.DoStmt=DoStmt;
         if(DoStmt!=null) DoStmt.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
-        this.Condition=Condition;
-        if(Condition!=null) Condition.setParent(this);
+        this.ConditionDone=ConditionDone;
+        if(ConditionDone!=null) ConditionDone.setParent(this);
     }
 
     public DoStmt getDoStmt() {
@@ -36,12 +36,12 @@ public class SingleStatementDo extends SingleStatement {
         this.Statement=Statement;
     }
 
-    public Condition getCondition() {
-        return Condition;
+    public ConditionDone getConditionDone() {
+        return ConditionDone;
     }
 
-    public void setCondition(Condition Condition) {
-        this.Condition=Condition;
+    public void setConditionDone(ConditionDone ConditionDone) {
+        this.ConditionDone=ConditionDone;
     }
 
     public void accept(Visitor visitor) {
@@ -51,20 +51,20 @@ public class SingleStatementDo extends SingleStatement {
     public void childrenAccept(Visitor visitor) {
         if(DoStmt!=null) DoStmt.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
-        if(Condition!=null) Condition.accept(visitor);
+        if(ConditionDone!=null) ConditionDone.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(DoStmt!=null) DoStmt.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
-        if(Condition!=null) Condition.traverseTopDown(visitor);
+        if(ConditionDone!=null) ConditionDone.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(DoStmt!=null) DoStmt.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
-        if(Condition!=null) Condition.traverseBottomUp(visitor);
+        if(ConditionDone!=null) ConditionDone.traverseBottomUp(visitor);
         accept(visitor);
     }
 
@@ -85,8 +85,8 @@ public class SingleStatementDo extends SingleStatement {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        if(Condition!=null)
-            buffer.append(Condition.toString("  "+tab));
+        if(ConditionDone!=null)
+            buffer.append(ConditionDone.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

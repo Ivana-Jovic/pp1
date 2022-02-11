@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 0:34:21
+// 11/1/2022 16:57:17
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,14 @@ package rs.ac.bg.etf.pp1.ast;
 public class DesignListExprList extends DesignList {
 
     private DesignList DesignList;
-    private String desRAName;
+    private DesignatorIdentRecArr DesignatorIdentRecArr;
     private Expr Expr;
 
-    public DesignListExprList (DesignList DesignList, String desRAName, Expr Expr) {
+    public DesignListExprList (DesignList DesignList, DesignatorIdentRecArr DesignatorIdentRecArr, Expr Expr) {
         this.DesignList=DesignList;
         if(DesignList!=null) DesignList.setParent(this);
-        this.desRAName=desRAName;
+        this.DesignatorIdentRecArr=DesignatorIdentRecArr;
+        if(DesignatorIdentRecArr!=null) DesignatorIdentRecArr.setParent(this);
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
     }
@@ -27,12 +28,12 @@ public class DesignListExprList extends DesignList {
         this.DesignList=DesignList;
     }
 
-    public String getDesRAName() {
-        return desRAName;
+    public DesignatorIdentRecArr getDesignatorIdentRecArr() {
+        return DesignatorIdentRecArr;
     }
 
-    public void setDesRAName(String desRAName) {
-        this.desRAName=desRAName;
+    public void setDesignatorIdentRecArr(DesignatorIdentRecArr DesignatorIdentRecArr) {
+        this.DesignatorIdentRecArr=DesignatorIdentRecArr;
     }
 
     public Expr getExpr() {
@@ -49,17 +50,20 @@ public class DesignListExprList extends DesignList {
 
     public void childrenAccept(Visitor visitor) {
         if(DesignList!=null) DesignList.accept(visitor);
+        if(DesignatorIdentRecArr!=null) DesignatorIdentRecArr.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
         if(DesignList!=null) DesignList.traverseTopDown(visitor);
+        if(DesignatorIdentRecArr!=null) DesignatorIdentRecArr.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
         if(DesignList!=null) DesignList.traverseBottomUp(visitor);
+        if(DesignatorIdentRecArr!=null) DesignatorIdentRecArr.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -75,7 +79,10 @@ public class DesignListExprList extends DesignList {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        buffer.append(" "+tab+desRAName);
+        if(DesignatorIdentRecArr!=null)
+            buffer.append(DesignatorIdentRecArr.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(Expr!=null)

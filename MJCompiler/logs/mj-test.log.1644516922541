@@ -1,0 +1,266 @@
+INFO  23:37:55,037 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  23:37:55,072 - #2 program
+INFO  23:37:55,072 - #49 p
+INFO  23:37:55,072 - #7 const
+INFO  23:37:55,073 - #49 int
+INFO  23:37:55,073 - #49 pi
+INFO  23:37:55,073 - #35 =
+INFO  23:37:55,073 - #48 3
+INFO  23:37:55,074 - #39 ;
+INFO  23:37:55,074 - #49 int
+INFO  23:37:55,074 - #49 x
+INFO  23:37:55,074 - #40 ,
+INFO  23:37:55,074 - #49 y
+INFO  23:37:55,074 - #46 [
+INFO  23:37:55,074 - #47 ]
+INFO  23:37:55,074 - #39 ;
+INFO  23:37:55,075 - #42 {
+INFO  23:37:55,075 - #15 void
+INFO  23:37:55,075 - #49 main
+INFO  23:37:55,075 - #44 (
+INFO  23:37:55,075 - #45 )
+INFO  23:37:55,076 - #49 int
+INFO  23:37:55,076 - #49 a
+INFO  23:37:55,077 - #40 ,
+INFO  23:37:55,077 - #49 b
+INFO  23:37:55,077 - #39 ;
+INFO  23:37:55,077 - #49 int
+INFO  23:37:55,077 - #49 carr
+INFO  23:37:55,077 - #46 [
+INFO  23:37:55,077 - #47 ]
+INFO  23:37:55,077 - #39 ;
+INFO  23:37:55,077 - #42 {
+INFO  23:37:55,077 - #49 carr
+INFO  23:37:55,077 - #35 =
+INFO  23:37:55,078 - #11 new
+INFO  23:37:55,078 - #49 int
+INFO  23:37:55,078 - #46 [
+INFO  23:37:55,078 - #48 5
+INFO  23:37:55,078 - #47 ]
+INFO  23:37:55,079 - #39 ;
+INFO  23:37:55,079 - #13 read
+INFO  23:37:55,079 - #44 (
+INFO  23:37:55,080 - #49 carr
+INFO  23:37:55,080 - #46 [
+INFO  23:37:55,081 - #48 4
+INFO  23:37:55,081 - #47 ]
+INFO  23:37:55,081 - #45 )
+INFO  23:37:55,081 - #39 ;
+INFO  23:37:55,081 - #12 print
+INFO  23:37:55,081 - #44 (
+INFO  23:37:55,082 - #49 carr
+INFO  23:37:55,082 - #46 [
+INFO  23:37:55,082 - #48 4
+INFO  23:37:55,082 - #47 ]
+INFO  23:37:55,082 - #45 )
+INFO  23:37:55,082 - #39 ;
+INFO  23:37:55,082 - #43 }
+INFO  23:37:55,082 - #43 }
+INFO  23:37:55,084 - Program(
+  ProgName(
+   p
+  ) [ProgName]
+  ProgListVarDecl(
+    ProgListConstDecl(
+      ProgListNoProgList(
+        Epsilon(
+        ) [Epsilon]
+      ) [ProgListNoProgList]
+      ConstDeclNoError(
+        Type(
+         int
+        ) [Type]
+        ConstTypeNCB(
+         pi
+          NCBConstNum(
+           3
+          ) [NCBConstNum]
+        ) [ConstTypeNCB]
+        NoConstDeclList(
+          Epsilon(
+          ) [Epsilon]
+        ) [NoConstDeclList]
+      ) [ConstDeclNoError]
+    ) [ProgListConstDecl]
+    VarDeclSquare(
+      Type(
+       int
+      ) [Type]
+      VarDeclListLong(
+        VarDeclListNoLong(
+          VariableNoArray(
+           x
+          ) [VariableNoArray]
+        ) [VarDeclListNoLong]
+        VariableArray(
+         y
+        ) [VariableArray]
+      ) [VarDeclListLong]
+    ) [VarDeclSquare]
+  ) [ProgListVarDecl]
+  YMethodDeclList(
+    NoMethodDeclList(
+      Epsilon(
+      ) [Epsilon]
+    ) [NoMethodDeclList]
+    MethodDecl(
+      MethodTypeNameVoid(
+       main
+      ) [MethodTypeNameVoid]
+      NoFormParsList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoFormParsList]
+      YVarDeclListList(
+        YVarDeclListList(
+          NoVarDeclListList(
+            Epsilon(
+            ) [Epsilon]
+          ) [NoVarDeclListList]
+          VarDeclSquare(
+            Type(
+             int
+            ) [Type]
+            VarDeclListLong(
+              VarDeclListNoLong(
+                VariableNoArray(
+                 a
+                ) [VariableNoArray]
+              ) [VarDeclListNoLong]
+              VariableNoArray(
+               b
+              ) [VariableNoArray]
+            ) [VarDeclListLong]
+          ) [VarDeclSquare]
+        ) [YVarDeclListList]
+        VarDeclSquare(
+          Type(
+           int
+          ) [Type]
+          VarDeclListNoLong(
+            VariableArray(
+             carr
+            ) [VariableArray]
+          ) [VarDeclListNoLong]
+        ) [VarDeclSquare]
+      ) [YVarDeclListList]
+      YStatementList(
+        YStatementList(
+          YStatementList(
+            NoStatementList(
+              Epsilon(
+              ) [Epsilon]
+            ) [NoStatementList]
+            StatementSingle(
+              SingleStatementDesStmtASSIGNOP(
+                DesignatorAssignop(
+                  DesignatorId(
+                   carr
+                  ) [DesignatorId]
+                  Assignop(
+                  ) [Assignop]
+                  ExprTerm(
+                    TermFactor(
+                      Factor(
+                        UnaryNoMinus(
+                          Epsilon(
+                          ) [Epsilon]
+                        ) [UnaryNoMinus]
+                        FactorTypeExpr(
+                          Type(
+                           int
+                          ) [Type]
+                          ExprTerm(
+                            TermFactor(
+                              Factor(
+                                UnaryNoMinus(
+                                  Epsilon(
+                                  ) [Epsilon]
+                                ) [UnaryNoMinus]
+                                FactorNum(
+                                 5
+                                ) [FactorNum]
+                              ) [Factor]
+                            ) [TermFactor]
+                          ) [ExprTerm]
+                        ) [FactorTypeExpr]
+                      ) [Factor]
+                    ) [TermFactor]
+                  ) [ExprTerm]
+                ) [DesignatorAssignop]
+              ) [SingleStatementDesStmtASSIGNOP]
+            ) [StatementSingle]
+          ) [YStatementList]
+          StatementSingle(
+            SingleStatementRead(
+              DesignatorExprNoList(
+                DesignatorIdentArr(
+                 carr
+                ) [DesignatorIdentArr]
+                ExprTerm(
+                  TermFactor(
+                    Factor(
+                      UnaryNoMinus(
+                        Epsilon(
+                        ) [Epsilon]
+                      ) [UnaryNoMinus]
+                      FactorNum(
+                       4
+                      ) [FactorNum]
+                    ) [Factor]
+                  ) [TermFactor]
+                ) [ExprTerm]
+              ) [DesignatorExprNoList]
+            ) [SingleStatementRead]
+          ) [StatementSingle]
+        ) [YStatementList]
+        StatementSingle(
+          SingleStatementPrint(
+            ExprTerm(
+              TermFactor(
+                Factor(
+                  UnaryNoMinus(
+                    Epsilon(
+                    ) [Epsilon]
+                  ) [UnaryNoMinus]
+                  FactorDes(
+                    DesignatorExprNoList(
+                      DesignatorIdentArr(
+                       carr
+                      ) [DesignatorIdentArr]
+                      ExprTerm(
+                        TermFactor(
+                          Factor(
+                            UnaryNoMinus(
+                              Epsilon(
+                              ) [Epsilon]
+                            ) [UnaryNoMinus]
+                            FactorNum(
+                             4
+                            ) [FactorNum]
+                          ) [Factor]
+                        ) [TermFactor]
+                      ) [ExprTerm]
+                    ) [DesignatorExprNoList]
+                  ) [FactorDes]
+                ) [Factor]
+              ) [TermFactor]
+            ) [ExprTerm]
+          ) [SingleStatementPrint]
+        ) [StatementSingle]
+      ) [YStatementList]
+    ) [MethodDecl]
+  ) [YMethodDeclList]
+) [Program]
+INFO  23:37:55,084 - ===================================
+INFO  23:37:55,089 - ~~CONST  pi IS BEING DEFINED!  { Con:  int  3  0} na liniji 6
+INFO  23:37:55,089 - ~~VARIABLE x IS BEING DEFINED!  { Var:  int  0  0} na liniji 7
+INFO  23:37:55,089 - ~~ARRAY VARIABLE y IS BEING DEFINED!  { Var:  arr  1  0} na liniji 7
+INFO  23:37:55,089 - ~~VARIABLE a IS BEING DEFINED!  { Var:  int  0  1} na liniji 9
+INFO  23:37:55,089 - ~~VARIABLE b IS BEING DEFINED!  { Var:  int  1  1} na liniji 9
+INFO  23:37:55,090 - ~~ARRAY VARIABLE carr IS BEING DEFINED!  { Var:  arr  2  1} na liniji 9
+INFO  23:37:55,090 - ~~USING DESIGNATOR LOCAL VAR carr!  { Var:  arr  2  1} na liniji 10
+INFO  23:37:55,090 - ~~USING ARRAY carr!  { Var:  arr  2  1} na liniji 11
+INFO  23:37:55,090 - ~~USING ARRAY carr!  { Var:  arr  2  1} na liniji 12
+INFO  23:37:55,090 - ===================================
+INFO  23:37:55,093 - Parsiranje uspesno zavrseno

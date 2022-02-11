@@ -625,6 +625,23 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 			 report_info("~~USING RECORD " + desObj.getName() + "!"+printObjNode(desObj), designator);
 		 }
 	 }
+	 /////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!PROVERI
+//	 @Override
+//	 public void visit(DesignatorIdentRecArr designator) {
+//		 Obj desObj = Tab.find(designator.getDesRAName());
+//		 if (desObj == Tab.noObj) {
+//			 designator.obj= Tab.noObj;
+//			 report_error("ERROR! DESIGN RECARR NAME " + designator.getDesRAName() + " NOT DEFINED IN SYMBOL TABLE! ", designator);
+//		}
+//		 else if(desObj.getType().getKind() != Struct.Array || desObj.getKind() != Obj.Var ) {
+//			 designator.obj= Tab.noObj;
+//			 report_error("ERROR! DESIGN RECARR " + designator.getDesRAName() + " TYPE IS NOT OK! ", designator);
+//		 }
+//		 else {
+//			 designator.obj= desObj;
+//			 //report_info("~~USING ARRAY-RECARR " + desObj.getName() + "!"+printObjNode(desObj), designator);
+//		 }
+//	 }
 	 @Override
 	 public void visit(DesignRecElem designator) {// OVO JE SIGURNO ELEMENT NIZA -- LISTA!!!
 		 Obj desObj = designator.getDesignatorIdentArr().obj;
@@ -687,17 +704,18 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 				report_error("ERROR! DesignListExprNoList INDEX OF AN ARRAY MUST BE INT ", designator);
 	    	}
 		  else {
-			  String fname= designator.getDesRAName();
+			  String fname=  designator.getDesignatorIdentRecArr().getDesRAName();//menjano
 			  for(Obj f : currRecord.getMembers()) {
 				  if(f.getName().equals(fname) && f.getType().getKind()== Struct.Array){
 					  currRecord= null;
 					  designator.obj=new Obj(Obj.Elem,fname + "[$]", f.getType().getElemType());
-					 return;
+					  designator.getDesignatorIdentRecArr().obj=f;//menjano
+					  return;
 				  }
 			  }
 			  designator.obj= Tab.noObj;
 			  currRecord= null;
-			  report_error("ERROR! DESIGN DesignListExprNoList " + designator.getDesRAName() + "NOT OK! ", designator);
+			  report_error("ERROR! DESIGN DesignListExprNoList " + fname + "NOT OK! ", designator);
 		 }
 	 }
 	 @Override
@@ -729,16 +747,19 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 				report_error("ERROR! DesignListExprList INDEX OF AN ARRAY MUST BE INT ", designator);
 	    	}
 		  else {
-			  String fname= designator.getDesRAName();
+			  String fname= designator.getDesignatorIdentRecArr().getDesRAName();//menjano
 			  for(Obj f : rec.getMembers()) {
 				  if(f.getName().equals(fname) && f.getType().getKind()== Struct.Array){
 					  designator.obj=new Obj(Obj.Elem,fname + "[$]", f.getType().getElemType());
-					 return;
+					  designator.getDesignatorIdentRecArr().obj=f;//menjano
+					 // currRecord= null;//menjano
+					  return;
 				  }
 			  }
 			  designator.obj= Tab.noObj;
-			  report_error("ERROR! DESIGN DesignListExprNoList " + designator.getDesRAName() + "NOT OK! ", designator);
+			  report_error("ERROR! DESIGN DesignListExprNoList " + fname + "NOT OK! ", designator);
 		 }
+		 // currRecord= null;//menjno
 	 }
 	 @Override
 	 public void visit(DesignatorActpars designator) {
@@ -827,22 +848,22 @@ public void visit(SingleStatementRead singleStatementRead) {
 	 @Override
     public void visit(SingleStatementDo singleStatementDo) {
 	    doWhileCnt-=1;
-	    if(!singleStatementDo.getCondition().struct.equals(boolStruct)) {
-	    	report_error("ERROR! CONDITION ( kind:"+ singleStatementDo.getCondition().struct.getKind()+") MUST BE BOOL",singleStatementDo);
+	    if(!singleStatementDo.getConditionDone().struct.equals(boolStruct)) {
+	    	report_error("ERROR! CONDITION ( kind:"+ singleStatementDo.getConditionDone().struct.getKind()+") MUST BE BOOL",singleStatementDo);
 		 }
 	}
     
     @Override
     public void visit(SingleStatementIf singleStatementIf) {
-	    if(!singleStatementIf.getCondition().struct.equals(boolStruct)) {
-	    	report_error("ERROR! CONDITION ( kind:"+ singleStatementIf.getCondition().struct.getKind()+") MUST BE BOOL",singleStatementIf);
+	    if(!singleStatementIf.getConditionDone().struct.equals(boolStruct)) {
+	    	report_error("ERROR! CONDITION ( kind:"+ singleStatementIf.getConditionDone().struct.getKind()+") MUST BE BOOL",singleStatementIf);
 		 }
 	}
     
     @Override
     public void visit(SingleStatementIfElse singleStatementIfElse) {
-	    if(!singleStatementIfElse.getCondition().struct.equals(boolStruct)) {
-	    	report_error("ERROR! CONDITION ( kind:"+ singleStatementIfElse.getCondition().struct.getKind()+") MUST BE BOOL",singleStatementIfElse);
+	    if(!singleStatementIfElse.getConditionDone().struct.equals(boolStruct)) {
+	    	report_error("ERROR! CONDITION ( kind:"+ singleStatementIfElse.getConditionDone().struct.getKind()+") MUST BE BOOL",singleStatementIfElse);
 		 }
 	}
     
@@ -915,7 +936,14 @@ public void visit(SingleStatementRead singleStatementRead) {
     		condFactList.struct= boolStruct;
     	}
     }
-
+	@Override
+    public void visit(ConditionDone conditionDone) {
+		conditionDone.struct = conditionDone.getCondition().struct;
+	}
+	@Override
+    public void visit(CondTermDone condTermDone) {
+		condTermDone.struct = condTermDone.getCondTerm().struct;
+	}
 	@Override
     public void visit(CondTermNoList condTermNoList) {
     	condTermNoList.struct = condTermNoList.getCondFact().struct;
@@ -937,7 +965,7 @@ public void visit(SingleStatementRead singleStatementRead) {
 	}
 	@Override
     public void visit(ConditionNoList conditionNoList) {
-    	conditionNoList.struct = conditionNoList.getCondTerm().struct;
+    	conditionNoList.struct = conditionNoList.getCondTermDone().struct;
 	}
 	@Override
     public void visit(ConditionList conditionList) {
@@ -945,7 +973,7 @@ public void visit(SingleStatementRead singleStatementRead) {
     		conditionList.struct =Tab.noType;
 			report_error("ERROR! OR CONDITION IS NOT TYPE BOOL", conditionList);
 		}
-    	else if (!conditionList.getCondTerm().struct.equals(boolStruct)) {
+    	else if (!conditionList.getCondTermDone().struct.equals(boolStruct)) {
     		conditionList.struct =Tab.noType;
 			report_error("ERROR! OR CONDITION IS NOT TYPE BOOL", conditionList);
 		}

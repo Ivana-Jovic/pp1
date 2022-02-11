@@ -103,13 +103,14 @@ nonterminal Variable Variable;
 nonterminal RecordDeclName RecordDeclName;
 nonterminal Unary Unary;
 nonterminal DoStmt DoStmt;
+nonterminal ElseWrapper ElseWrapper;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName,Program,MethodTypeName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, MethDeclType, NCBConst ;
 
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj Designator, DesignList, DesignatorIdentRec, DesignatorIdentArr, DesignatorIdentRecArr, DesignRecElem ;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Expr, Term;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Factorfactor, Factor, Condition, CondTerm, CondFact;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Factorfactor, Factor, Condition, CondTerm, CondFact, ConditionDone, CondTermDone;
 
 precedence left ELSE;
 
@@ -289,11 +290,11 @@ SingleStatement::= (SingleStatementDesi) DesignatorStatement:D1 SEMI {: RESULT=n
 |
 (SingleStatementDesStmtASSIGNOP)DesStmtASSIGNOP:D1 {: RESULT=new SingleStatementDesStmtASSIGNOP(D1); RESULT.setLine(D1left); :}
 					|
-					(SingleStatementIfElse) IF LPAREN Condition:C1 RPAREN Statement:S2 ELSE Statement:S3 {: RESULT=new SingleStatementIfElse(C1, S2, S3); RESULT.setLine(C1left); :}
+					(SingleStatementIfElse) IF LPAREN ConditionDone:C1 RPAREN Statement:S2 ElseWrapper:E3 Statement:S4 {: RESULT=new SingleStatementIfElse(C1, S2, E3, S4); RESULT.setLine(C1left); :}
 					|
-					(SingleStatementIf) IF LPAREN Condition:C1 RPAREN Statement:S2 {: RESULT=new SingleStatementIf(C1, S2); RESULT.setLine(C1left); :}
+					(SingleStatementIf) IF LPAREN ConditionDone:C1 RPAREN Statement:S2 {: RESULT=new SingleStatementIf(C1, S2); RESULT.setLine(C1left); :}
 					|
-					(SingleStatementDo) DoStmt:D1 Statement:S2 WHILE LPAREN Condition:C3 RPAREN SEMI {: RESULT=new SingleStatementDo(D1, S2, C3); RESULT.setLine(D1left); :}
+					(SingleStatementDo) DoStmt:D1 Statement:S2 WHILE LPAREN ConditionDone:C3 RPAREN SEMI {: RESULT=new SingleStatementDo(D1, S2, C3); RESULT.setLine(D1left); :}
 					|
 					(SingleStatementBreak) BREAK SEMI {: RESULT=new SingleStatementBreak(); :}
 					|
@@ -310,11 +311,10 @@ SingleStatement::= (SingleStatementDesi) DesignatorStatement:D1 SEMI {: RESULT=n
 					(SingleStatementPrint) PRINT LPAREN Expr:E1 RPAREN SEMI {: RESULT=new SingleStatementPrint(E1); RESULT.setLine(E1left); :}
 					|
 					(SingleStatemenGoto) GOTO Label:L1 SEMI {: RESULT=new SingleStatemenGoto(L1); RESULT.setLine(L1left); :}
-					
-					
-
 					;
 					
+					
+ElseWrapper ::=	(ElseWrapper) ELSE {: RESULT=new ElseWrapper(); :};				
 DoStmt::= (DoStmt) DO {: RESULT=new DoStmt(); :};
 
 
@@ -346,15 +346,16 @@ ActPars ::= (ActParsNoList)Expr:E1 {: RESULT=new ActParsNoList(E1); RESULT.setLi
 			|
 			(ActParsList) ActPars:A1 COMMA Expr:E2 {: RESULT=new ActParsList(A1, E2); RESULT.setLine(A1left); :}
 			;
-
-Condition ::= (ConditionNoList) CondTerm:C1 {: RESULT=new ConditionNoList(C1); RESULT.setLine(C1left); :}
+ConditionDone ::= (ConditionDone) Condition:C1 {: RESULT=new ConditionDone(C1); RESULT.setLine(C1left); :};
+Condition ::= (ConditionNoList) CondTermDone:C1 {: RESULT=new ConditionNoList(C1); RESULT.setLine(C1left); :}
 			|
-			(ConditionList) Condition:C1 OR CondTerm:C2 {: RESULT=new ConditionList(C1, C2); RESULT.setLine(C1left); :}
+			(ConditionList) Condition:C1 OR CondTermDone:C2 {: RESULT=new ConditionList(C1, C2); RESULT.setLine(C1left); :}
 			|
 			(ConditionError) error:e
 						{:parser.report_error("*******Condition -Izvrsen oporavak do ; u liniji " + eleft,null); :} {: RESULT=new ConditionError(); :}
-			
+		
 			;
+CondTermDone ::= (CondTermDone) CondTerm:C1 {: RESULT=new CondTermDone(C1); RESULT.setLine(C1left); :};
 CondTerm ::= (CondTermNoList) CondFact:C1 {: RESULT=new CondTermNoList(C1); RESULT.setLine(C1left); :}
 			|
 			(CondTermList) CondTerm:C1 AND CondFact:C2 {: RESULT=new CondTermList(C1, C2); RESULT.setLine(C1left); :}
@@ -422,16 +423,16 @@ Designator ::= (DesignatorId) IDENT:desName {: RESULT=new DesignatorId(desName);
 DesignRecElem ::=(DesignRecElem) DesignatorIdentArr:D1 LSQUARE Expr:E2 RSQUARE {: RESULT=new DesignRecElem(D1, E2); RESULT.setLine(D1left); :};
 DesignList ::= (DesignListIdNoList) DOT IDENT:desLiName {: RESULT=new DesignListIdNoList(desLiName); RESULT.setLine(desLiNameleft); :}
 				|
-				(DesignListExprNoList) DOT IDENT:desRAName LSQUARE Expr:E1 RSQUARE {: RESULT=new DesignListExprNoList(desRAName, E1); RESULT.setLine(desRANameleft); :}
+				(DesignListExprNoList) DOT DesignatorIdentRecArr:D1 LSQUARE Expr:E2 RSQUARE {: RESULT=new DesignListExprNoList(D1, E2); RESULT.setLine(D1left); :}
 				|
 				(DesignListIdList) DesignList:D1 DOT IDENT:desLiName {: RESULT=new DesignListIdList(D1, desLiName); RESULT.setLine(D1left); :}
 				| 
-				(DesignListExprList) DesignList:D1 DOT IDENT:desRAName LSQUARE Expr:E2 RSQUARE {: RESULT=new DesignListExprList(D1, desRAName, E2); RESULT.setLine(D1left); :}
+				(DesignListExprList) DesignList:D1 DOT DesignatorIdentRecArr:D2 LSQUARE Expr:E3 RSQUARE {: RESULT=new DesignListExprList(D1, D2, E3); RESULT.setLine(D1left); :}
 				;
 				
 DesignatorIdentRec::= (DesignatorIdentRec) IDENT:desRName {: RESULT=new DesignatorIdentRec(desRName); RESULT.setLine(desRNameleft); :};
 DesignatorIdentArr::= (DesignatorIdentArr) IDENT:desAName {: RESULT=new DesignatorIdentArr(desAName); RESULT.setLine(desANameleft); :};
-
+DesignatorIdentRecArr::= (DesignatorIdentRecArr) IDENT:desRAName {: RESULT=new DesignatorIdentRecArr(desRAName); RESULT.setLine(desRANameleft); :};
 
 Label ::=(Label) IDENT:lab {: RESULT=new Label(lab); RESULT.setLine(lableft); :};
 Assignop::= (Assignop) ASSIGN {: RESULT=new Assignop(); :};

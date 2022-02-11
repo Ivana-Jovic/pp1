@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 0:34:21
+// 11/1/2022 16:57:17
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -20,7 +20,6 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(FormParsList FormParsList) { }
     public void visit(Condition Condition) { }
     public void visit(ConstDeclList ConstDeclList) { }
-    public void visit(DesignatorIdentRecArr DesignatorIdentRecArr) { }
     public void visit(VarDeclList VarDeclList) { }
     public void visit(Expr Expr) { }
     public void visit(VarDeclListList VarDeclListList) { }
@@ -57,6 +56,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(RelopEqual RelopEqual) { visit(); }
     public void visit(Assignop Assignop) { visit(); }
     public void visit(Label Label) { visit(); }
+    public void visit(DesignatorIdentRecArr DesignatorIdentRecArr) { visit(); }
     public void visit(DesignatorIdentArr DesignatorIdentArr) { visit(); }
     public void visit(DesignatorIdentRec DesignatorIdentRec) { visit(); }
     public void visit(DesignListExprList DesignListExprList) { visit(); }
@@ -88,9 +88,11 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(CondFactNoList CondFactNoList) { visit(); }
     public void visit(CondTermList CondTermList) { visit(); }
     public void visit(CondTermNoList CondTermNoList) { visit(); }
+    public void visit(CondTermDone CondTermDone) { visit(); }
     public void visit(ConditionError ConditionError) { visit(); }
     public void visit(ConditionList ConditionList) { visit(); }
     public void visit(ConditionNoList ConditionNoList) { visit(); }
+    public void visit(ConditionDone ConditionDone) { visit(); }
     public void visit(ActParsList ActParsList) { visit(); }
     public void visit(ActParsNoList ActParsNoList) { visit(); }
     public void visit(ActParsFirst ActParsFirst) { visit(); }
@@ -103,6 +105,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(DesignatorActpars DesignatorActpars) { visit(); }
     public void visit(Statements Statements) { visit(); }
     public void visit(DoStmt DoStmt) { visit(); }
+    public void visit(ElseWrapper ElseWrapper) { visit(); }
     public void visit(SingleStatemenGoto SingleStatemenGoto) { visit(); }
     public void visit(SingleStatementPrint SingleStatementPrint) { visit(); }
     public void visit(SingleStatementPrintNum SingleStatementPrintNum) { visit(); }

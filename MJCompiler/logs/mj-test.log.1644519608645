@@ -1,0 +1,380 @@
+INFO  19:59:45,779 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  19:59:45,813 - #2 program
+INFO  19:59:45,813 - #49 Test
+INFO  19:59:45,813 - #21 record
+INFO  19:59:45,814 - #49 r1
+INFO  19:59:45,814 - #42 {
+INFO  19:59:45,815 - #49 int
+INFO  19:59:45,815 - #49 x
+INFO  19:59:45,815 - #46 [
+INFO  19:59:45,815 - #47 ]
+INFO  19:59:45,815 - #39 ;
+INFO  19:59:45,816 - #49 int
+INFO  19:59:45,816 - #49 y
+INFO  19:59:45,816 - #39 ;
+INFO  19:59:45,816 - #43 }
+INFO  19:59:45,816 - #21 record
+INFO  19:59:45,817 - #49 r2
+INFO  19:59:45,817 - #42 {
+INFO  19:59:45,817 - #49 r1
+INFO  19:59:45,817 - #49 obj
+INFO  19:59:45,817 - #46 [
+INFO  19:59:45,817 - #47 ]
+INFO  19:59:45,817 - #39 ;
+INFO  19:59:45,818 - #43 }
+INFO  19:59:45,818 - #21 record
+INFO  19:59:45,818 - #49 r3
+INFO  19:59:45,818 - #42 {
+INFO  19:59:45,818 - #49 r2
+INFO  19:59:45,818 - #49 obj
+INFO  19:59:45,818 - #46 [
+INFO  19:59:45,818 - #47 ]
+INFO  19:59:45,818 - #39 ;
+INFO  19:59:45,818 - #43 }
+INFO  19:59:45,818 - #49 int
+INFO  19:59:45,818 - #49 a
+INFO  19:59:45,818 - #39 ;
+INFO  19:59:45,818 - #49 char
+INFO  19:59:45,819 - #49 b
+INFO  19:59:45,819 - #39 ;
+INFO  19:59:45,819 - #49 int
+INFO  19:59:45,819 - #49 c
+INFO  19:59:45,819 - #39 ;
+INFO  19:59:45,819 - #42 {
+INFO  19:59:45,819 - #15 void
+INFO  19:59:45,819 - #49 main
+INFO  19:59:45,819 - #44 (
+INFO  19:59:45,819 - #45 )
+INFO  19:59:45,819 - #49 r1
+INFO  19:59:45,819 - #49 o1
+INFO  19:59:45,820 - #39 ;
+INFO  19:59:45,820 - #49 r2
+INFO  19:59:45,820 - #49 o2
+INFO  19:59:45,820 - #39 ;
+INFO  19:59:45,820 - #49 r3
+INFO  19:59:45,820 - #49 o3
+INFO  19:59:45,820 - #39 ;
+INFO  19:59:45,820 - #49 r3
+INFO  19:59:45,820 - #49 o3arr
+INFO  19:59:45,820 - #46 [
+INFO  19:59:45,820 - #47 ]
+INFO  19:59:45,820 - #39 ;
+INFO  19:59:45,820 - #42 {
+INFO  19:59:45,820 - #49 o3arr
+INFO  19:59:45,820 - #35 =
+INFO  19:59:45,821 - #11 new
+INFO  19:59:45,821 - #49 r3
+INFO  19:59:45,821 - #46 [
+INFO  19:59:45,821 - #48 1
+INFO  19:59:45,821 - #47 ]
+INFO  19:59:45,822 - #39 ;
+INFO  19:59:45,822 - #49 o3arr
+INFO  19:59:45,822 - #46 [
+INFO  19:59:45,823 - #48 0
+INFO  19:59:45,823 - #47 ]
+INFO  19:59:45,823 - #35 =
+INFO  19:59:45,823 - #11 new
+INFO  19:59:45,823 - #49 r3
+INFO  19:59:45,823 - #39 ;
+INFO  19:59:45,823 - #43 }
+INFO  19:59:45,823 - #43 }
+INFO  19:59:45,825 - Program(
+  ProgName(
+   Test
+  ) [ProgName]
+  ProgListVarDecl(
+    ProgListVarDecl(
+      ProgListVarDecl(
+        ProgListRecordDecl(
+          ProgListRecordDecl(
+            ProgListRecordDecl(
+              ProgListNoProgList(
+                Epsilon(
+                ) [Epsilon]
+              ) [ProgListNoProgList]
+              RecordDecl(
+                RecordDeclName(
+                 r1
+                ) [RecordDeclName]
+                YVarDeclListList(
+                  YVarDeclListList(
+                    NoVarDeclListList(
+                      Epsilon(
+                      ) [Epsilon]
+                    ) [NoVarDeclListList]
+                    VarDeclSquare(
+                      Type(
+                       int
+                      ) [Type]
+                      VarDeclListNoLong(
+                        VariableArray(
+                         x
+                        ) [VariableArray]
+                      ) [VarDeclListNoLong]
+                    ) [VarDeclSquare]
+                  ) [YVarDeclListList]
+                  VarDeclSquare(
+                    Type(
+                     int
+                    ) [Type]
+                    VarDeclListNoLong(
+                      VariableNoArray(
+                       y
+                      ) [VariableNoArray]
+                    ) [VarDeclListNoLong]
+                  ) [VarDeclSquare]
+                ) [YVarDeclListList]
+              ) [RecordDecl]
+            ) [ProgListRecordDecl]
+            RecordDecl(
+              RecordDeclName(
+               r2
+              ) [RecordDeclName]
+              YVarDeclListList(
+                NoVarDeclListList(
+                  Epsilon(
+                  ) [Epsilon]
+                ) [NoVarDeclListList]
+                VarDeclSquare(
+                  Type(
+                   r1
+                  ) [Type]
+                  VarDeclListNoLong(
+                    VariableArray(
+                     obj
+                    ) [VariableArray]
+                  ) [VarDeclListNoLong]
+                ) [VarDeclSquare]
+              ) [YVarDeclListList]
+            ) [RecordDecl]
+          ) [ProgListRecordDecl]
+          RecordDecl(
+            RecordDeclName(
+             r3
+            ) [RecordDeclName]
+            YVarDeclListList(
+              NoVarDeclListList(
+                Epsilon(
+                ) [Epsilon]
+              ) [NoVarDeclListList]
+              VarDeclSquare(
+                Type(
+                 r2
+                ) [Type]
+                VarDeclListNoLong(
+                  VariableArray(
+                   obj
+                  ) [VariableArray]
+                ) [VarDeclListNoLong]
+              ) [VarDeclSquare]
+            ) [YVarDeclListList]
+          ) [RecordDecl]
+        ) [ProgListRecordDecl]
+        VarDeclSquare(
+          Type(
+           int
+          ) [Type]
+          VarDeclListNoLong(
+            VariableNoArray(
+             a
+            ) [VariableNoArray]
+          ) [VarDeclListNoLong]
+        ) [VarDeclSquare]
+      ) [ProgListVarDecl]
+      VarDeclSquare(
+        Type(
+         char
+        ) [Type]
+        VarDeclListNoLong(
+          VariableNoArray(
+           b
+          ) [VariableNoArray]
+        ) [VarDeclListNoLong]
+      ) [VarDeclSquare]
+    ) [ProgListVarDecl]
+    VarDeclSquare(
+      Type(
+       int
+      ) [Type]
+      VarDeclListNoLong(
+        VariableNoArray(
+         c
+        ) [VariableNoArray]
+      ) [VarDeclListNoLong]
+    ) [VarDeclSquare]
+  ) [ProgListVarDecl]
+  YMethodDeclList(
+    NoMethodDeclList(
+      Epsilon(
+      ) [Epsilon]
+    ) [NoMethodDeclList]
+    MethodDecl(
+      MethodTypeNameVoid(
+       main
+      ) [MethodTypeNameVoid]
+      NoFormParsList(
+        Epsilon(
+        ) [Epsilon]
+      ) [NoFormParsList]
+      YVarDeclListList(
+        YVarDeclListList(
+          YVarDeclListList(
+            YVarDeclListList(
+              NoVarDeclListList(
+                Epsilon(
+                ) [Epsilon]
+              ) [NoVarDeclListList]
+              VarDeclSquare(
+                Type(
+                 r1
+                ) [Type]
+                VarDeclListNoLong(
+                  VariableNoArray(
+                   o1
+                  ) [VariableNoArray]
+                ) [VarDeclListNoLong]
+              ) [VarDeclSquare]
+            ) [YVarDeclListList]
+            VarDeclSquare(
+              Type(
+               r2
+              ) [Type]
+              VarDeclListNoLong(
+                VariableNoArray(
+                 o2
+                ) [VariableNoArray]
+              ) [VarDeclListNoLong]
+            ) [VarDeclSquare]
+          ) [YVarDeclListList]
+          VarDeclSquare(
+            Type(
+             r3
+            ) [Type]
+            VarDeclListNoLong(
+              VariableNoArray(
+               o3
+              ) [VariableNoArray]
+            ) [VarDeclListNoLong]
+          ) [VarDeclSquare]
+        ) [YVarDeclListList]
+        VarDeclSquare(
+          Type(
+           r3
+          ) [Type]
+          VarDeclListNoLong(
+            VariableArray(
+             o3arr
+            ) [VariableArray]
+          ) [VarDeclListNoLong]
+        ) [VarDeclSquare]
+      ) [YVarDeclListList]
+      YStatementList(
+        YStatementList(
+          NoStatementList(
+            Epsilon(
+            ) [Epsilon]
+          ) [NoStatementList]
+          StatementSingle(
+            SingleStatementDesStmtASSIGNOP(
+              DesignatorAssignop(
+                DesignatorId(
+                 o3arr
+                ) [DesignatorId]
+                Assignop(
+                ) [Assignop]
+                ExprTerm(
+                  TermFactor(
+                    Factor(
+                      UnaryNoMinus(
+                        Epsilon(
+                        ) [Epsilon]
+                      ) [UnaryNoMinus]
+                      FactorTypeExpr(
+                        Type(
+                         r3
+                        ) [Type]
+                        ExprTerm(
+                          TermFactor(
+                            Factor(
+                              UnaryNoMinus(
+                                Epsilon(
+                                ) [Epsilon]
+                              ) [UnaryNoMinus]
+                              FactorNum(
+                               1
+                              ) [FactorNum]
+                            ) [Factor]
+                          ) [TermFactor]
+                        ) [ExprTerm]
+                      ) [FactorTypeExpr]
+                    ) [Factor]
+                  ) [TermFactor]
+                ) [ExprTerm]
+              ) [DesignatorAssignop]
+            ) [SingleStatementDesStmtASSIGNOP]
+          ) [StatementSingle]
+        ) [YStatementList]
+        StatementSingle(
+          SingleStatementDesStmtASSIGNOP(
+            DesignatorAssignop(
+              DesignatorExprNoList(
+                DesignatorIdentArr(
+                 o3arr
+                ) [DesignatorIdentArr]
+                ExprTerm(
+                  TermFactor(
+                    Factor(
+                      UnaryNoMinus(
+                        Epsilon(
+                        ) [Epsilon]
+                      ) [UnaryNoMinus]
+                      FactorNum(
+                       0
+                      ) [FactorNum]
+                    ) [Factor]
+                  ) [TermFactor]
+                ) [ExprTerm]
+              ) [DesignatorExprNoList]
+              Assignop(
+              ) [Assignop]
+              ExprTerm(
+                TermFactor(
+                  Factor(
+                    UnaryNoMinus(
+                      Epsilon(
+                      ) [Epsilon]
+                    ) [UnaryNoMinus]
+                    FactorType(
+                      Type(
+                       r3
+                      ) [Type]
+                    ) [FactorType]
+                  ) [Factor]
+                ) [TermFactor]
+              ) [ExprTerm]
+            ) [DesignatorAssignop]
+          ) [SingleStatementDesStmtASSIGNOP]
+        ) [StatementSingle]
+      ) [YStatementList]
+    ) [MethodDecl]
+  ) [YMethodDeclList]
+) [Program]
+INFO  19:59:45,825 - ===================================
+INFO  19:59:45,830 - ~~RECORD  r1 IS BEING DEFINED!  { Type:  class  0  0} na liniji 3
+INFO  19:59:45,830 - ~~ARRAY VARIABLE x IS BEING DEFINED!  { Fld:  arr  0  2} na liniji 3
+INFO  19:59:45,830 - ~~VARIABLE y IS BEING DEFINED!  { Fld:  int  1  2} na liniji 3
+INFO  19:59:45,830 - ~~RECORD  r2 IS BEING DEFINED!  { Type:  class  0  0} na liniji 4
+INFO  19:59:45,830 - ~~ARRAY VARIABLE obj IS BEING DEFINED!  { Fld:  arr  0  2} na liniji 4
+INFO  19:59:45,830 - ~~RECORD  r3 IS BEING DEFINED!  { Type:  class  0  0} na liniji 5
+INFO  19:59:45,830 - ~~ARRAY VARIABLE obj IS BEING DEFINED!  { Fld:  arr  0  2} na liniji 5
+INFO  19:59:45,830 - ~~VARIABLE a IS BEING DEFINED!  { Var:  int  0  0} na liniji 7
+INFO  19:59:45,830 - ~~VARIABLE b IS BEING DEFINED!  { Var:  char  1  0} na liniji 8
+INFO  19:59:45,830 - ~~VARIABLE c IS BEING DEFINED!  { Var:  int  2  0} na liniji 9
+INFO  19:59:45,831 - ~~VARIABLE o1 IS BEING DEFINED!  { Var:  class  0  1} na liniji 12
+INFO  19:59:45,831 - ~~VARIABLE o2 IS BEING DEFINED!  { Var:  class  1  1} na liniji 12
+INFO  19:59:45,831 - ~~VARIABLE o3 IS BEING DEFINED!  { Var:  class  2  1} na liniji 12
+INFO  19:59:45,831 - ~~ARRAY VARIABLE o3arr IS BEING DEFINED!  { Var:  arr  3  1} na liniji 12
+INFO  19:59:45,831 - ~~USING DESIGNATOR LOCAL VAR o3arr!  { Var:  arr  3  1} na liniji 14
+INFO  19:59:45,831 - ~~USING ARRAY o3arr!  { Var:  arr  3  1} na liniji 16
+INFO  19:59:45,831 - ===================================
+INFO  19:59:45,833 - Parsiranje uspesno zavrseno

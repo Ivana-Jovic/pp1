@@ -1,27 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 0:34:21
+// 11/1/2022 16:57:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class DesignListExprNoList extends DesignList {
 
-    private String desRAName;
+    private DesignatorIdentRecArr DesignatorIdentRecArr;
     private Expr Expr;
 
-    public DesignListExprNoList (String desRAName, Expr Expr) {
-        this.desRAName=desRAName;
+    public DesignListExprNoList (DesignatorIdentRecArr DesignatorIdentRecArr, Expr Expr) {
+        this.DesignatorIdentRecArr=DesignatorIdentRecArr;
+        if(DesignatorIdentRecArr!=null) DesignatorIdentRecArr.setParent(this);
         this.Expr=Expr;
         if(Expr!=null) Expr.setParent(this);
     }
 
-    public String getDesRAName() {
-        return desRAName;
+    public DesignatorIdentRecArr getDesignatorIdentRecArr() {
+        return DesignatorIdentRecArr;
     }
 
-    public void setDesRAName(String desRAName) {
-        this.desRAName=desRAName;
+    public void setDesignatorIdentRecArr(DesignatorIdentRecArr DesignatorIdentRecArr) {
+        this.DesignatorIdentRecArr=DesignatorIdentRecArr;
     }
 
     public Expr getExpr() {
@@ -37,15 +38,18 @@ public class DesignListExprNoList extends DesignList {
     }
 
     public void childrenAccept(Visitor visitor) {
+        if(DesignatorIdentRecArr!=null) DesignatorIdentRecArr.accept(visitor);
         if(Expr!=null) Expr.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
+        if(DesignatorIdentRecArr!=null) DesignatorIdentRecArr.traverseTopDown(visitor);
         if(Expr!=null) Expr.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
+        if(DesignatorIdentRecArr!=null) DesignatorIdentRecArr.traverseBottomUp(visitor);
         if(Expr!=null) Expr.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -55,7 +59,10 @@ public class DesignListExprNoList extends DesignList {
         buffer.append(tab);
         buffer.append("DesignListExprNoList(\n");
 
-        buffer.append(" "+tab+desRAName);
+        if(DesignatorIdentRecArr!=null)
+            buffer.append(DesignatorIdentRecArr.toString("  "+tab));
+        else
+            buffer.append(tab+"  null");
         buffer.append("\n");
 
         if(Expr!=null)

@@ -1,0 +1,22 @@
+
+program Test 
+record r1 { int x[]; int y;} 
+record r2 { r1 obj[];} 
+record r3 { r2 obj[];} 
+
+int a;
+char b;
+int c;
+{ 
+
+	void main() r1 o1; r2 o2; r3 o3; r3 o3arr[];{ 
+	
+
+		o3arr = new r3 [7]; 
+		
+		o3arr[6] = new r3; 
+		o3arr[6].obj[0] = new r2[1]; 
+		
+		
+	}
+}

@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 8/1/2022 0:34:21
+// 11/1/2022 16:57:17
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class SingleStatementIf extends SingleStatement {
 
-    private Condition Condition;
+    private ConditionDone ConditionDone;
     private Statement Statement;
 
-    public SingleStatementIf (Condition Condition, Statement Statement) {
-        this.Condition=Condition;
-        if(Condition!=null) Condition.setParent(this);
+    public SingleStatementIf (ConditionDone ConditionDone, Statement Statement) {
+        this.ConditionDone=ConditionDone;
+        if(ConditionDone!=null) ConditionDone.setParent(this);
         this.Statement=Statement;
         if(Statement!=null) Statement.setParent(this);
     }
 
-    public Condition getCondition() {
-        return Condition;
+    public ConditionDone getConditionDone() {
+        return ConditionDone;
     }
 
-    public void setCondition(Condition Condition) {
-        this.Condition=Condition;
+    public void setConditionDone(ConditionDone ConditionDone) {
+        this.ConditionDone=ConditionDone;
     }
 
     public Statement getStatement() {
@@ -38,18 +38,18 @@ public class SingleStatementIf extends SingleStatement {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(Condition!=null) Condition.accept(visitor);
+        if(ConditionDone!=null) ConditionDone.accept(visitor);
         if(Statement!=null) Statement.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(Condition!=null) Condition.traverseTopDown(visitor);
+        if(ConditionDone!=null) ConditionDone.traverseTopDown(visitor);
         if(Statement!=null) Statement.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(Condition!=null) Condition.traverseBottomUp(visitor);
+        if(ConditionDone!=null) ConditionDone.traverseBottomUp(visitor);
         if(Statement!=null) Statement.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class SingleStatementIf extends SingleStatement {
         buffer.append(tab);
         buffer.append("SingleStatementIf(\n");
 
-        if(Condition!=null)
-            buffer.append(Condition.toString("  "+tab));
+        if(ConditionDone!=null)
+            buffer.append(ConditionDone.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

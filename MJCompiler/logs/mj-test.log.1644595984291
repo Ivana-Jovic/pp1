@@ -1,0 +1,57 @@
+INFO  17:12:55,048 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  17:12:55,084 - #2 program
+INFO  17:12:55,084 - #49 TestIf
+INFO  17:12:55,084 - #42 {
+INFO  17:12:55,085 - #15 void
+INFO  17:12:55,085 - #49 main
+INFO  17:12:55,085 - #44 (
+INFO  17:12:55,085 - #45 )
+INFO  17:12:55,085 - #49 int
+INFO  17:12:55,085 - #49 i
+INFO  17:12:55,086 - #40 ,
+INFO  17:12:55,086 - #49 j
+INFO  17:12:55,086 - #39 ;
+INFO  17:12:55,086 - #42 {
+INFO  17:12:55,087 - #49 i
+INFO  17:12:55,087 - #35 =
+INFO  17:12:55,087 - #48 50
+INFO  17:12:55,087 - #39 ;
+INFO  17:12:55,088 - #8 if
+INFO  17:12:55,089 - #44 (
+INFO  17:12:55,089 - #49 i
+INFO  17:12:55,089 - #27 ==
+INFO  17:12:55,089 - #48 2
+INFO  17:12:55,090 - #34 ||
+INFO  17:12:55,091 - #49 i
+INFO  17:12:55,091 - #32 <=
+INFO  17:12:55,091 - #48 3
+INFO  17:12:55,091 - #45 )
+INFO  17:12:55,092 - #42 {
+INFO  17:12:55,092 - #12 print
+INFO  17:12:55,092 - #44 (
+INFO  17:12:55,092 - #48 5
+INFO  17:12:55,092 - #45 )
+INFO  17:12:55,092 - #39 ;
+INFO  17:12:55,092 - #6 else
+ERROR 17:12:55,092 - 
+Sintaksna greska na liniji 16
+INFO  17:12:55,092 - #12 print
+INFO  17:12:55,093 - #44 (
+INFO  17:12:55,093 - #48 7
+INFO  17:12:55,093 - #45 )
+INFO  17:12:55,093 - #39 ;
+INFO  17:12:55,093 - #12 print
+INFO  17:12:55,093 - #44 (
+INFO  17:12:55,093 - #49 eol
+ERROR 17:12:55,093 - *******DesignatorStatement -Izvrsen oporavak do ; u liniji 14
+INFO  17:12:55,094 - #45 )
+INFO  17:12:55,094 - #39 ;
+INFO  17:12:55,094 - #49 i
+INFO  17:12:55,094 - #35 =
+INFO  17:12:55,094 - #48 5
+INFO  17:12:55,094 - #39 ;
+INFO  17:12:55,094 - #43 }
+INFO  17:12:55,094 - #43 }
+ERROR 17:12:55,094 - 
+Sintaksna greska na liniji 27
+ERROR 17:12:55,095 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 27
