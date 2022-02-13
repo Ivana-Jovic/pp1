@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %d{ABSOLUTE} - %m%n" />
+		</layout>
+	</appender>
+
+<appender name="infoOut" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="test/infoOut.out"></param>
+		<param name="Append" value="false" />
+		
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %d{ABSOLUTE} - %m%n" />
+		</layout>
+		
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="INFO"/>
+			<param name="levelMax" value="INFO"/>
+		</filter>
+	
+	</appender>
+	
+	<appender name="errorOut" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="test/errorOut.err"></param>
+		<param name="Append" value="false" />
+		
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p %d{ABSOLUTE} - %m%n" />
+		</layout>
+		
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="levelMin" value="ERROR"/>
+			<param name="levelMax" value="ERROR"/>
+		</filter>
+		
+	</appender>	
+	<root>
+		<priority value="debug" />
+		<appender-ref ref="infoOut" />
+		<appender-ref ref="errorOut" />
+		<appender-ref ref="console" />
+	</root>
+
+</log4j:configuration>  
