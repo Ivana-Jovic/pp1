@@ -1,0 +1,58 @@
+
+program p
+const int q = 4, w =11;
+char x, y[];
+const bool b = true;
+record r1 { int a; int y[];}
+record r2 { r1 c[];}
+{
+	 bool bla(int i, char j) int aa; r1 r;{
+		 aa=1;
+		 r = new r1;
+		r.y= new int[5];
+		read(r.y[4]);
+		 //return 5;!!!!!!!!!!!!!!
+		 return true;
+	}
+	
+	int m2() int a; bool b;{// petlje, break
+		a=1;
+		 if(true || b && a <2) a++;
+		 
+		 b= bla();
+		 do{
+		 	break;
+		 	do{
+		 		break;
+		 	}while(true);
+		 	break;
+		 }while(true);
+		return 1;
+	}
+	
+	void main()  int a, b[]; char e; r1 rr;{
+		//fx= 3+x[1]*2;
+		//b[8]= 3;
+		//a= 3+ b[2]*2;
+		//g=3;
+		//a= 3+b;
+		//a=b;
+		a=3;
+		b= new int[7];
+		b[2]=a;
+		//b[9]=b[7];
+		//b= null;
+		b[3]--;
+		//pi++;
+		//eol++;
+		//read(y[2]);
+		print(1,4);
+		print(a,4);
+		print(eol,4);
+		print(false,4);
+		//print(b[9],4);
+		//rr.y[5]++;
+		//if(rr>null)a++;
+	}
+
+}

@@ -73,8 +73,35 @@ public class SemanticAnalyzer  extends VisitorAdaptor{
 	public String printObjNode(Obj o) {
 //		return "Name: "+o.getName()+" Kind: "+ o.getKind()+
 //				" Type: "+ o.getType()+" Adr: "+ o.getAdr()+" Level: "+o.getLevel()+" FpPos: "+ o.getFpPos();
-		return "  { "+ convertKindToStr(o.getKind(),true)+":  "+convertKindToStr(o.getType().getKind(), false)+
-				"  "+ o.getAdr()+"  "+o.getLevel()+ "}";
+		String out="";
+		if(convertKindToStr(o.getType().getKind(),false).equalsIgnoreCase("class")) {
+			out="  { "+ convertKindToStr(o.getKind(),true)+":  "+convertKindToStr(o.getType().getKind(), false) + " ";
+			
+			for (Obj obj:o.getType().getMembers()) {
+				out+="  [ "+ convertKindToStr(obj.getKind(),true)+":  "+convertKindToStr(obj.getType().getKind(), false)+"  "+ obj.getAdr()+"  "+obj.getLevel()+ "]";
+			}
+			
+			out+="  "+ o.getAdr()+"  "+o.getLevel()+ "}";
+		}
+		else if(convertKindToStr(o.getKind(),true).equalsIgnoreCase("Meth")) {
+			out="  { "+ convertKindToStr(o.getKind(),true)+":  "+convertKindToStr(o.getType().getKind(), false) + " ";
+			out+="  "+ o.getAdr()+"  "+o.getLevel()+ "}";
+			
+			for (Obj obj:o.getLocalSymbols()) {
+				//out+="\n";
+				out+="  [ "+ convertKindToStr(obj.getKind(),true)+":  "+convertKindToStr(obj.getType().getKind(), false)+"  "+ obj.getAdr()+"  "+obj.getLevel()+ "]";
+			}
+		}
+		else if(convertKindToStr(o.getType().getKind(),false).equalsIgnoreCase("arr")) {
+			out="  { "+ convertKindToStr(o.getKind(),true)+":  "+convertKindToStr(o.getType().getKind(), false) ;
+			out+= " of " + convertKindToStr(o.getType().getElemType().getKind(), false) ;
+			out+="  "+ o.getAdr()+"  "+o.getLevel()+ "}";
+			
+		}
+		else {
+			out="  { "+ convertKindToStr(o.getKind(),true)+":  "+convertKindToStr(o.getType().getKind(), false)+ "  "+ o.getAdr()+"  "+o.getLevel()+ "}";
+		}
+		return out;
 	}
 	public boolean passed() {
 		return !errorDetected;
@@ -82,29 +109,24 @@ public class SemanticAnalyzer  extends VisitorAdaptor{
 	// *************************** PROGRAM ***************************
 	@Override
 	 public void visit(ProgName progName){
-//		 progName.obj=Tab.insert(Obj.Prog, progName.getProgName(), Tab.noType);
 		 currProgram=Tab.insert(Obj.Prog, progName.getProgName(), Tab.noType);
 		 Tab.openScope();
 	 }
 	@Override   
     public void visit(Program program){
-//    	Tab.chainLocalSymbols(program.getProgName().obj);
 		numOfVars=Tab.currentScope().getnVars();// glob var, ne const i ne metode;
     	Tab.chainLocalSymbols(currProgram);
     	Tab.closeScope();
     	currProgram= null;
     	
     	if(mainMethod == null || mainMethod.getLevel()>0) {
-    		report_error("ERROR! NO MAIN METHOD IN THIS PROGRAM OR HAS FORM PAR", program);
+    		report_error("ERROR! (Program) NO MAIN METHOD IN THIS PROGRAM OR HAS FORM PAR", program);
     	}
     }
 	// *************************** VARS ***************************
+	
 	@Override
 	public void visit(VarDecl varDecl){
-		//varDeclCount++;
-///!!!!!!!!!!!!!!!!!!!!!!DODAJ
-		//report_info("Deklarisana promenljiva "+ varDecl.get(), varDecl);
-//		Obj varNode = Tab.insert(Obj.Var, varDecl.getVarName(), varDecl.getType().struct);
 		currVarType=null;
 	}
 	
@@ -117,7 +139,7 @@ public class SemanticAnalyzer  extends VisitorAdaptor{
 			varObj= Tab.currentScope().findSymbol(variable.getVarName());
 		}
 if(currVarType==Tab.noType) {
-	report_error("ERROR! VARIABLE " + variable.getVarName() + " IS BEING DEFINED, BUT NO TYPE PROVIDED! ", variable);
+	report_error("ERROR! (VariableNoArray) VARIABLE " + variable.getVarName() + " IS BEING DEFINED, BUT NO TYPE PROVIDED! ", variable);
 }
 		else if(varObj==null ||varObj== Tab.noObj) {
 			if(currRecord== null) {
@@ -133,7 +155,7 @@ if(currVarType==Tab.noType) {
 		}
 		else {//already exists in Tab
 			//mima if jos jedan
-			report_error("ERROR! VARIABLE " + variable.getVarName() + " ALREADY DEFINED IN SYMBOL TABLE! ", variable);
+			report_error("ERROR! (VariableNoArray) VARIABLE " + variable.getVarName() + " ALREADY DEFINED IN SYMBOL TABLE! ", variable);
 		}
 	}
 	
@@ -147,7 +169,7 @@ if(currVarType==Tab.noType) {
 		}
 		
 if(currVarType==Tab.noType) {
-	report_error("ERROR! VARIABLE " + variable.getVarName() + " BEING DEFINED, BUT NO TYPE PROVIDED! ", variable);
+	report_error("ERROR! (VariableArray)  VARIABLE " + variable.getVarName() + " BEING DEFINED, BUT NO TYPE PROVIDED! ", variable);
 		} else if(varObj==null ||varObj== Tab.noObj) {//already exists in Tab
 			if(currRecord== null) {
 				varObj = Tab.insert(Obj.Var, variable.getVarName(), new Struct(Struct.Array,currVarType));
@@ -162,7 +184,7 @@ if(currVarType==Tab.noType) {
 		}
 		else {
 			//mima if jos jedan
-			report_error("ERROR! ARRAY VARIABLE " + variable.getVarName() + " ALREADY DEFINED IN SYMBOL TABLE! ", variable);
+			report_error("ERROR! (VariableArray) ARRAY VARIABLE " + variable.getVarName() + " ALREADY DEFINED IN SYMBOL TABLE! ", variable);
 		}
 	}
 	
@@ -172,12 +194,12 @@ if(currVarType==Tab.noType) {
 		 Obj objType = Tab.find(type.getTypeName());
 			
 			if(objType == Tab.noObj){ //tip ne postoji
-				report_error("ERROR! TYPE " + type.getTypeName() + " NOT FOUND IN SYMBOL TABLE! ", type);
+				report_error("ERROR! (Type) TYPE " + type.getTypeName() + " NOT FOUND IN SYMBOL TABLE! ", type);
 				currVarType=Tab.noType;
 				type.struct = Tab.noType;
 			}
 			else if(objType.getKind()!=Obj.Type) {//ako postoji ali nije tip
-				report_error("ERROR! " + type.getTypeName() + " IS NOT A VALID!", type);
+				report_error("ERROR! (Type) " + type.getTypeName() + " IS NOT A VALID!", type);
 				currVarType=Tab.noType;
 				type.struct = Tab.noType;
 			}
@@ -213,7 +235,7 @@ if(currVarType==Tab.noType) {
 			constValue = 0;
 		}
 		else {
-			report_error("ERROR! BOOLEAN MUST BE TRUE OR FALSE! ", null);
+			report_error("ERROR! (NCBConstBool) BOOLEAN MUST BE TRUE OR FALSE! ", null);
 		}
 		//report_info("CONST VALUE " + constBool.getBoolVal() + " IS BEING USED!", constBool);
 	}
@@ -221,10 +243,10 @@ if(currVarType==Tab.noType) {
 	 public void visit(ConstTypeNCB constant) {	
 			Obj constObj = Tab.find(constant.getNcbIdent());
 			if(constObj!= Tab.noObj) {
-				report_error("ERROR! CONST " + constant.getNcbIdent() + " ALREADY DEFINED IN SYMBOL TABLE! ", constant);
+				report_error("ERROR! (ConstTypeNCB) CONST " + constant.getNcbIdent() + " ALREADY DEFINED IN SYMBOL TABLE! ", constant);
 			}
 			else if(!constType.assignableTo(currVarType)) {
-				report_error("ERROR! CONST " + constant.getNcbIdent() + " WRONG TYPE! ", null);
+				report_error("ERROR! (ConstTypeNCB) CONST " + constant.getNcbIdent() + " WRONG TYPE! ", null);
 			}
 			////PROVERI OVO
 			//else if(currVarType.getKind()!=Struct.Int) {
@@ -241,7 +263,7 @@ if(currVarType==Tab.noType) {
 	@Override
 	public void visit(MethodDecl methodDecl){
     	if(!returnFound && currentMethod.getType() != Tab.noType){// ako nije void
-			report_error("ERROR! RETURN NOT FOUND... " + currentMethod.getName() + " DOES NOT HAVE A RETURN STMT!", null);
+			report_error("ERROR! (MethodDecl) RETURN NOT FOUND... " + currentMethod.getName() + " DOES NOT HAVE A RETURN STMT!", null);
 		}
 		Tab.chainLocalSymbols(currentMethod);
 		Tab.closeScope();
@@ -255,7 +277,7 @@ if(currVarType==Tab.noType) {
 	public void visit(MethodTypeNameVoid methodTypeName){
 Obj methodNode = Tab.find(methodTypeName.getMethodName());
 if (methodNode != Tab.noObj) {
-	report_error("ERROR! METHOD IDENT " + methodTypeName.getMethodName() + " EXISTS IN SYMBOL TABLE! ", null);
+	report_error("ERROR! (MethodTypeNameVoid) METHOD IDENT " + methodTypeName.getMethodName() + " EXISTS IN SYMBOL TABLE! ", null);
 } 
 		else {	
 			////VRATII
@@ -273,7 +295,7 @@ if (methodNode != Tab.noObj) {
 	public void visit(MethodTypeNameType methodTypeName){
 Obj methodNode = Tab.find(methodTypeName.getMethodName());
 if (methodNode != Tab.noObj) {
-	report_error("ERROR! METHOD IDENT " + methodTypeName.getMethodName() + " EXISTS IN SYMBOL TABLE! ", null);
+	report_error("ERROR! (MethodTypeNameType) METHOD IDENT " + methodTypeName.getMethodName() + " EXISTS IN SYMBOL TABLE! ", null);
 } 
 		else {
 			////VRATII
@@ -291,14 +313,14 @@ if (methodNode != Tab.noObj) {
 	   public void visit(SingleStatementRetExpr r){
 //		   if(currentMethod.getType()== Tab.noType) {}// ako je void
 			if(!currentMethod.getType().equals(r.getExpr().struct)) {//nije void
-				report_error("ERROR! RETURN WITH P... " + currentMethod.getName() + " BUT RET VALUE IS NOT COMPATIBLE!", null);
+				report_error("ERROR! (SingleStatementRetExpr) RETURN WITH P... " + currentMethod.getName() + " BUT RET VALUE IS NOT COMPATIBLE!", null);
 			}
 			returnFound = true;
 	   }
 	   @Override
 	   public void visit(SingleStatementRet r){
 			if(currentMethod.getType()!= Tab.noType) {//nije void
-				report_error("ERROR! RETURN WITHOUT P... " + currentMethod.getName() + " BUT METHOD IS NOT VOID!", null);
+				report_error("ERROR! (SingleStatementRet) RETURN WITHOUT P... " + currentMethod.getName() + " BUT METHOD IS NOT VOID!", null);
 			}
 		   returnFound = true;
 	   }
@@ -308,13 +330,13 @@ if (methodNode != Tab.noObj) {
 	public void visit(FormParsNoSquare formP){
 		Obj varObj= null;
 		if(currentMethod==null) {//globalno
-			report_error("ERROR! FORM PARS " + formP.getVarN() + " NOT IN METHOD! ", formP);
+			report_error("ERROR! (FormParsNoSquare) FORM PARS " + formP.getVarN() + " NOT IN METHOD! ", formP);
 		} else {// localno
 			varObj= Tab.currentScope().findSymbol(formP.getVarN());
 		}
 		
 if(currVarType==Tab.noType) {
-	report_error("ERROR! FORM PAR " + formP.getVarN() + " IS BEING DEFINED, BUT NO TYPE PROVIDED! ", formP);
+	report_error("ERROR! (FormParsNoSquare) FORM PAR " + formP.getVarN() + " IS BEING DEFINED, BUT NO TYPE PROVIDED! ", formP);
 }
 		else if(varObj==null ||varObj== Tab.noObj) {//already exists in Tab
 			varObj = Tab.insert(Obj.Var, formP.getVarN(), currVarType);
@@ -323,20 +345,20 @@ if(currVarType==Tab.noType) {
 			report_info("~~FORM PAR " + varObj.getName() + " IS BEING USED!"+ printObjNode(varObj), formP);
 		}
 		else {
-			report_error("ERROR! FORM PAR " + formP.getVarN() + " ALREADY DEFINED IN SYMBOL TABLE! ", formP);
+			report_error("ERROR! (FormParsNoSquare) FORM PAR " + formP.getVarN() + " ALREADY DEFINED IN SYMBOL TABLE! ", formP);
 		}
 	}
    @Override
 	public void visit(FormParsSquare formP){
 		Obj varObj= null;
 		if(currentMethod==null) {//globalno
-			report_error("ERROR! FORM PARS SQ " + formP.getVarN() + " NOT IN METHOD! ", formP);
+			report_error("ERROR! (FormParsSquare) FORM PARS SQ " + formP.getVarN() + " NOT IN METHOD! ", formP);
 			
 		} else {// localno
 			varObj= Tab.currentScope().findSymbol(formP.getVarN());
 		}
 if(currVarType==Tab.noType) {
-	report_error("ERROR! FORM PAR SQ" + formP.getVarN() + " IS BEING DEFINED, BUT NO TYPE PROVIDED! ", formP);
+	report_error("ERROR! (FormParsSquare) FORM PAR SQ" + formP.getVarN() + " IS BEING DEFINED, BUT NO TYPE PROVIDED! ", formP);
 }
 		else if(varObj==null ||varObj== Tab.noObj) {//already exists in Tab
 			varObj = Tab.insert(Obj.Var, formP.getVarN(), new Struct(Struct.Array,currVarType));
@@ -345,19 +367,19 @@ if(currVarType==Tab.noType) {
 			report_info("~~FORM PAR SQ " + varObj.getName() + " IS BEING USED!"+printObjNode(varObj), formP);
 		}
 		else {
-			report_error("ERROR! FORM PAR SQ " + formP.getVarN() + " ALREADY DEFINED IN SYMBOL TABLE! ", formP);
+			report_error("ERROR! (FormParsSquare) FORM PAR SQ " + formP.getVarN() + " ALREADY DEFINED IN SYMBOL TABLE! ", formP);
 		}
 	}
    @Override
 	public void visit(FormParsNoSquareList  formP){
 		Obj varObj= null;
 		if(currentMethod==null) {//globalno
-			report_error("ERROR! FORM PARS " + formP.getVarN() + " NOT IN METHOD! ", formP);
+			report_error("ERROR! (FormParsNoSquareList) FORM PARS " + formP.getVarN() + " NOT IN METHOD! ", formP);
 		} else {// localno
 			varObj= Tab.currentScope().findSymbol(formP.getVarN());
 		}
 if(currVarType==Tab.noType) {
-	report_error("ERROR! FORM PAR " + formP.getVarN() + " IS BEING DEFINED, BUT NO TYPE PROVIDED! ", formP);
+	report_error("ERROR! (FormParsNoSquareList) FORM PAR " + formP.getVarN() + " IS BEING DEFINED, BUT NO TYPE PROVIDED! ", formP);
 }
 		else if(varObj==null ||varObj== Tab.noObj) {//already exists in Tab
 			varObj = Tab.insert(Obj.Var, formP.getVarN(), currVarType);
@@ -366,20 +388,20 @@ if(currVarType==Tab.noType) {
 			report_info("~~FORM PAR " + varObj.getName() + " IS BEING USED!"+printObjNode(varObj), formP);
 		}
 		else {
-			report_error("ERROR! FORM PAR " + formP.getVarN() + " ALREADY DEFINED IN SYMBOL TABLE! ", formP);
+			report_error("ERROR! (FormParsNoSquareList) FORM PAR " + formP.getVarN() + " ALREADY DEFINED IN SYMBOL TABLE! ", formP);
 		}
 	}
    @Override
 	public void visit(FormParsSquareList formP){
 		Obj varObj= null;
 		if(currentMethod==null) {//globalno
-			report_error("ERROR! FORM PARS SQ " + formP.getVarN() + " NOT IN METHOD! ", formP);
+			report_error("ERROR! (FormParsSquareList) FORM PARS SQ " + formP.getVarN() + " NOT IN METHOD! ", formP);
 			
 		} else {// localno
 			varObj= Tab.currentScope().findSymbol(formP.getVarN());
 		}
 if(currVarType==Tab.noType) {
-	report_error("ERROR! FORM PAR SQ" + formP.getVarN() + " IS BEING DEFINED, BUT NO TYPE PROVIDED! ", formP);
+	report_error("ERROR! FormParsSquareList() FORM PAR SQ" + formP.getVarN() + " IS BEING DEFINED, BUT NO TYPE PROVIDED! ", formP);
 }
 		else if(varObj==null ||varObj== Tab.noObj) {//already exists in Tab
 			varObj = Tab.insert(Obj.Var, formP.getVarN(), new Struct(Struct.Array,currVarType));
@@ -388,21 +410,23 @@ if(currVarType==Tab.noType) {
 			report_info("~~FORM PAR SQ " + varObj.getName() + " IS BEING USED!"+printObjNode(varObj), formP);
 		}
 		else {
-			report_error("ERROR! FORM PAR SQ " + formP.getVarN() + " ALREADY DEFINED IN SYMBOL TABLE! ", formP);
+			report_error("ERROR! (FormParsSquareList) FORM PAR SQ " + formP.getVarN() + " ALREADY DEFINED IN SYMBOL TABLE! ", formP);
 		}
 	}
 	// *************************** REC DECL ***************************
+
 	   @Override
 	public void visit(RecordDeclName recordDeclName) {
 		Obj recObj = Tab.find(recordDeclName.getRecName());
 		if(recObj!= Tab.noObj) {
-			report_error("ERROR! RECORD NAME " + recordDeclName.getRecName() + " ALREADY DEFINED IN SYMBOL TABLE! ", recordDeclName);
+			report_error("ERROR! (RecordDeclName) RECORD NAME " + recordDeclName.getRecName() + " ALREADY DEFINED IN SYMBOL TABLE! ", recordDeclName);
 		}
 		else {
 			currRecord = new Struct(Struct.Class);
 			recObj = Tab.insert(Obj.Type, recordDeclName.getRecName(), currRecord);
 			Tab.openScope();
-			report_info("~~RECORD  " + recordDeclName.getRecName() + " IS BEING DEFINED!"+ printObjNode(recObj), recordDeclName);
+			report_info("~~RECORD  " + recObj.getName()+ " IS BEING DEFINED!"+ printObjNode(recObj), recordDeclName);
+
 		}
 	}
 	   @Override
@@ -420,7 +444,7 @@ if(currVarType==Tab.noType) {
 				 factor.struct = Tab.intType;
 			 }
 			 else {
-				 report_error("ERROR! MINUS IN FRONT OF NON INT VALUE! ", factor);
+				 report_error("ERROR! (Factor) MINUS IN FRONT OF NON INT VALUE! ", factor);
 				 factor.struct = Tab.noType;// da je factor Obj bilo bi noObj
 			 }
 		 }
@@ -447,19 +471,39 @@ if(currVarType==Tab.noType) {
    @Override
     public void visit(FactorDesPar factor) {
     	if(factor.getDesignator().obj.getKind()!= Obj.Meth) {
-			 report_error("ERROR! DESIGN FactorDesPar " + factor.getDesignator().obj.getName() + "NOT OK - NOT A METHOD! ", factor);
+			 report_error("ERROR! (FactorDesPar) DESIGN " + factor.getDesignator().obj.getName() + "NOT OK - NOT A METHOD! ", factor);
 			 factor.struct= Tab.noType;
     	}
     	else {
     		factor.struct = factor.getDesignator().obj.getType();
-    		report_info("~~FUNC CALL " + factor.getDesignator().obj.getName() + "!"+printObjNode(factor.getDesignator().obj), factor);
+    		/// DODALA
+    		finalactParamsList=new ArrayList<>();//DODALA
+    		formParamsList = new ArrayList<>();
+			 for(Obj form: factor.getDesignator().obj.getLocalSymbols()) {
+//?????????? kind lvl
+				 if(form.getFpPos()!=-1 && form.getKind()==Obj.Var && form.getLevel()==1) {// kind Var, lvl 1
+					 formParamsList.add(form.getType());
+				 }
+			 }
+			 if(finalactParamsList.size() != formParamsList.size()) {
+				 report_error("ERROR! (FactorDesPar) FORM PARS LIST SIZE (" +formParamsList.size()+") NOT THE SAME SIZE AS ACT PARS LIST("+ finalactParamsList.size()+")" + factor.getDesignator().obj.getName(), factor);
+			 }
+			 else {
+//				 for(int i=0; i<finalactParamsList.size();i++) {
+//					 if(!finalactParamsList.get(i).assignableTo(formParamsList.get(i))) {
+//						 report_error("ERROR! ACT PARS LIST  (" +finalactParamsList.size()+") NOT COMAPTIBLE TO FORM PARS LIST("+ formParamsList.size()+") on i=" +i+"; "+ factor.getDesignator().obj.getName(), factor);
+//					}
+//				 }
+			 }
+    		//
+    		report_info("~~FUNC CALL (FactorDesPar)" + factor.getDesignator().obj.getName() + "!"+printObjNode(factor.getDesignator().obj), factor);
 			
     	}
     }
    @Override
    public void visit(FactorDesParenAct factor) {
 	   if(factor.getDesignator().obj.getKind()!= Obj.Meth) {
-			 report_error("ERROR! DESIGN FactorDesParenAct " + factor.getDesignator().obj.getName() + "NOT OK - NOT A METHOD! ", factor);
+			 report_error("ERROR! (FactorDesParenAct) DESIGN  " + factor.getDesignator().obj.getName() + "NOT OK - NOT A METHOD! ", factor);
 			 factor.struct= Tab.noType;
 	   }
 	   else {
@@ -473,16 +517,16 @@ if(currVarType==Tab.noType) {
 				 }
 			 }
 			 if(finalactParamsList.size() != formParamsList.size()) {
-				 report_error("ERROR! FORM PARS LIST SIZE (" +formParamsList.size()+") NOT THE SAME SIZE AS ACT PARS LIST("+ finalactParamsList.size()+")" + factor.getDesignator().obj.getName(), factor);
+				 report_error("ERROR! (FactorDesParenAct) FORM PARS LIST SIZE (" +formParamsList.size()+") NOT THE SAME SIZE AS ACT PARS LIST("+ finalactParamsList.size()+")" + factor.getDesignator().obj.getName(), factor);
 			 }
 			 else {
 				 for(int i=0; i<finalactParamsList.size();i++) {
 					 if(!finalactParamsList.get(i).assignableTo(formParamsList.get(i))) {
-						 report_error("ERROR! ACT PARS LIST  (" +finalactParamsList.size()+") NOT COMAPTIBLE TO FORM PARS LIST("+ formParamsList.size()+") on i=" +i+"; "+ factor.getDesignator().obj.getName(), factor);
+						 report_error("ERROR! (FactorDesParenAct) ACT PARS LIST  (" +finalactParamsList.size()+") NOT COMAPTIBLE TO FORM PARS LIST("+ formParamsList.size()+") on i=" +i+"; "+ factor.getDesignator().obj.getName(), factor);
 					}
 				 }
 			 }
-			 report_info("~~FUNC CALL " + factor.getDesignator().obj.getName() + "!"+printObjNode(factor.getDesignator().obj), factor);
+			 report_info("~~FUNC CALL " +finalactParamsList.size()+"--"+formParamsList.size() + factor.getDesignator().obj.getName() + "!"+printObjNode(factor.getDesignator().obj), factor);
 				
 	   }
     }
@@ -494,7 +538,7 @@ if(currVarType==Tab.noType) {
     public void visit(FactorTypeExpr factorTypeExpr) {// pravi se niz
     	if (!factorTypeExpr.getExpr().struct.equals(Tab.intType)) {
     		factorTypeExpr.struct= Tab.noType;
-			report_error("ERROR! INDEX OF AN ARRAY MUST BE INT ", factorTypeExpr);
+			report_error("ERROR! (FactorTypeExpr) INDEX OF AN ARRAY MUST BE INT ", factorTypeExpr);
     	}
     	else {
 			factorTypeExpr.struct = new Struct(Struct.Array, currVarType);
@@ -514,11 +558,11 @@ if(currVarType==Tab.noType) {
     public void visit(TermMlop termMlop) {
 		if (!termMlop.getTerm().struct.equals(Tab.intType)) {
 			termMlop.struct = Tab.noType;
-			report_error("ERROR! TERM IS NOT TYPE INT ", termMlop);
+			report_error("ERROR! (TermMlop) TERM IS NOT TYPE INT ", termMlop);
 		}
 		else if (! termMlop.getFactor().struct.equals(Tab.intType)) {
 			termMlop.struct = Tab.noType;
-			report_error("ERROR! FACTOR IS NOT TYPE INT ", termMlop);
+			report_error("ERROR! (TermMlop) FACTOR IS NOT TYPE INT ", termMlop);
 		}
 		else {
 			termMlop.struct = Tab.intType;
@@ -533,15 +577,15 @@ if(currVarType==Tab.noType) {
     public void visit(ExprAddop exprAddop) {
     	if (!exprAddop.getTerm().struct.equals(Tab.intType)) {
     		exprAddop.struct =Tab.noType;
-			report_error("ERROR! TERM(in exprAdd)IS NOT TYPE INT", exprAddop);
+			report_error("ERROR! (ExprAddop) TERMIS NOT TYPE INT", exprAddop);
 		}
     	else if (!exprAddop.getExpr().struct.equals(Tab.intType)) {
     		exprAddop.struct =Tab.noType;
-			report_error("ERROR! EXPR(in exprAdd)IS NOT TYPE INT", exprAddop);
+			report_error("ERROR! (ExprAddop) EXPR IS NOT TYPE INT", exprAddop);
 		}
     	///??????
 else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) ) {
-	report_error("ERROR! EXPR NOT COMPATIBLE WITH TERM", exprAddop);
+	report_error("ERROR! (ExprAddop) EXPR NOT COMPATIBLE WITH TERM", exprAddop);
 }
     	else {
 			exprAddop.struct = Tab.intType ;
@@ -556,11 +600,11 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 		 Obj desObj = Tab.find(designatorIdent.getDesName());
 		 if (desObj == Tab.noObj) {
 			 designatorIdent.obj= Tab.noObj;
-			 report_error("ERROR! DESIGN NAME " + designatorIdent.getDesName() + " NOT DEFINED IN SYMBOL TABLE! ", designatorIdent);
+			 report_error("ERROR! (DesignatorId) DESIGN NAME " + designatorIdent.getDesName() + " NOT DEFINED IN SYMBOL TABLE! ", designatorIdent);
 		}
 		 else if(desObj.getKind() != Obj.Con &&desObj.getKind() != Obj.Var &&desObj.getKind() != Obj.Meth ) {
 			 designatorIdent.obj= Tab.noObj;
-			 report_error("ERROR! DESIGN " + designatorIdent.getDesName() + " TYPE IS NOT OK! ", designatorIdent);
+			 report_error("ERROR! (DesignatorId) DESIGN " + designatorIdent.getDesName() + " TYPE IS NOT OK! ", designatorIdent);
 		 }
 		 else {
 			 designatorIdent.obj= desObj;
@@ -576,15 +620,15 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 		 Obj desObj = Tab.find(designator.getDesAName());
 		 if (desObj == Tab.noObj) {
 			 designator.obj= Tab.noObj;
-			 report_error("ERROR! DESIGN ARR NAME " + designator.getDesAName() + " NOT DEFINED IN SYMBOL TABLE! ", designator);
+			 report_error("ERROR! (DesignatorIdentArr) DESIGN ARR NAME " + designator.getDesAName() + " NOT DEFINED IN SYMBOL TABLE! ", designator);
 		}
 		 else if(desObj.getType().getKind() != Struct.Array || desObj.getKind() != Obj.Var ) {
 			 designator.obj= Tab.noObj;
-			 report_error("ERROR! DESIGN ARR " + designator.getDesAName() + " TYPE IS NOT OK! ", designator);
+			 report_error("ERROR! (DesignatorIdentArr) DESIGN ARR " + designator.getDesAName() + " TYPE IS NOT OK! ", designator);
 		 }
 		 else {
 			 designator.obj= desObj;
-			 report_info("~~USING ARRAY " + desObj.getName() + "!"+printObjNode(desObj), designator);
+			// report_info("~~USING ELEM OF ARR " + desObj.getName() + "!"+printObjNode(desObj), designator);
 		 }
 	 }
 	 @Override
@@ -592,14 +636,15 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 		 Obj desObj = designator.getDesignatorIdentArr().obj;
 		 if (desObj == Tab.noObj) {
 			 designator.obj= Tab.noObj;
-			 report_error("ERROR! DESIGN ARR NAME ENL " + designator.getDesignatorIdentArr().getDesAName()+ " ALREADY DEFINED IN SYMBOL TABLE! ", designator);
+			 report_error("ERROR! (DesignatorExprNoList) DESIGN ARR NAME ENL " + designator.getDesignatorIdentArr().getDesAName()+ " ALREADY DEFINED IN SYMBOL TABLE! ", designator);
 		}
 		 else if(!designator.getExpr().struct.equals(Tab.intType)) {
 			 designator.obj= Tab.noObj;
-			 report_error("ERROR! DESIGN ARR ENL " + designator.getDesignatorIdentArr().getDesAName() + " TYPE IS NOT OK! ", designator);
+			 report_error("ERROR! (DesignatorExprNoList) DESIGN ARR ENL " + designator.getDesignatorIdentArr().getDesAName() + " TYPE IS NOT OK! ", designator);
 		 }
 		 else {
 			 designator.obj= new Obj(Obj.Elem,desObj.getName() + "[$]", desObj.getType().getElemType());
+			 report_info("~~USING ELEM OF ARR " + desObj.getName() + "!"+printObjNode(desObj), designator);
 		 }
 	 }
 	 @Override
@@ -612,12 +657,12 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 		 if (desObj == Tab.noObj) {
 			 designator.obj= Tab.noObj;
 			 currRecord = Tab.noType;
-			 report_error("ERROR! DESIGN REC NAME " + designator.getDesRName() + " ALREADY DEFINED IN SYMBOL TABLE! ", designator);
+			 report_error("ERROR! (DesignatorExprNoList) DESIGN REC NAME " + designator.getDesRName() + " ALREADY DEFINED IN SYMBOL TABLE! ", designator);
 		}
 		 else if(desObj.getType().getKind() != Struct.Class || desObj.getKind() != Obj.Var ) {
 			 designator.obj= Tab.noObj;
 			 currRecord = Tab.noType;
-			 report_error("ERROR! DESIGN REC " + designator.getDesRName() + " TYPE IS NOT OK! ", designator);
+			 report_error("ERROR! (DesignatorExprNoList) DESIGN REC " + designator.getDesRName() + " TYPE IS NOT OK! ", designator);
 		 }
 		 else {
 			 currRecord= desObj.getType();// u  ovom slcaju je upotreba ove prom drugacija
@@ -648,17 +693,17 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 		 if (desObj == Tab.noObj) {
 			 designator.obj= Tab.noObj;
 			 currRecord = Tab.noType;
-			 report_error("ERROR! DESIGN ARR NAME ENL " + designator.getDesignatorIdentArr().getDesAName()+ " ALREADY DEFINED IN SYMBOL TABLE! ", designator);
+			 report_error("ERROR! (DesignRecElem) DESIGN ARR NAME ENL " + designator.getDesignatorIdentArr().getDesAName()+ " ALREADY DEFINED IN SYMBOL TABLE! ", designator);
 		}
 		 else if(!designator.getExpr().struct.equals(Tab.intType)) {
 			 designator.obj= Tab.noObj;
 			 currRecord = Tab.noType;
-			 report_error("ERROR! DESIGN ARR ENL " + designator.getDesignatorIdentArr().getDesAName() + " TYPE IS NOT OK! ", designator);
+			 report_error("ERROR! (DesignRecElem) DESIGN ARR ENL " + designator.getDesignatorIdentArr().getDesAName() + " TYPE IS NOT OK! ", designator);
 		 }
 		 else {
 			  Obj recObj= new Obj(Obj.Elem,desObj.getName() + "[$]", desObj.getType().getElemType());
 			 if(recObj.getType().getKind()!= Struct.Class) {
-				 report_error("ERROR! DESIGN REC LI " + designator.getDesignatorIdentArr().getDesAName() + " TYPE IS NOT OK! ", designator);
+				 report_error("ERROR! (DesignRecElem) DESIGN REC LI " + designator.getDesignatorIdentArr().getDesAName() + " TYPE IS NOT OK! ", designator);
 				 designator.obj= Tab.noObj;  
 				 currRecord = Tab.noType;
 			 }
@@ -689,7 +734,7 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 			  }
 			  designator.obj= Tab.noObj;
 			  currRecord= null;
-			  report_error("ERROR! DESIGN DesignListIdNoList " + designator.getDesLiName() + "NOT OK! ", designator);
+			  report_error("ERROR! (DesignListIdNoList) DESIGN DesignListIdNoList " + designator.getDesLiName() + "NOT OK! ", designator);
 		 }
 	 }
 	 @Override
@@ -701,7 +746,7 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 		  else if (!designator.getExpr().struct.equals(Tab.intType)) {
 			  designator.obj= Tab.noObj;
 			  currRecord= null;
-				report_error("ERROR! DesignListExprNoList INDEX OF AN ARRAY MUST BE INT ", designator);
+				report_error("ERROR! (DesignListExprNoList) DesignListExprNoList INDEX OF AN ARRAY MUST BE INT ", designator);
 	    	}
 		  else {
 			  String fname=  designator.getDesignatorIdentRecArr().getDesRAName();//menjano
@@ -715,7 +760,7 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 			  }
 			  designator.obj= Tab.noObj;
 			  currRecord= null;
-			  report_error("ERROR! DESIGN DesignListExprNoList " + fname + "NOT OK! ", designator);
+			  report_error("ERROR! (DesignListExprNoList) DESIGN DesignListExprNoList " + fname + "NOT OK! ", designator);
 		 }
 	 }
 	 @Override
@@ -733,7 +778,7 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 				  }
 			  }
 			  designator.obj= Tab.noObj;
-			  report_error("ERROR! DESIGN DesignListIdNoList " + designator.getDesLiName() + "NOT OK! ", designator);
+			  report_error("ERROR! (DesignListIdList) DESIGN DesignListIdNoList " + designator.getDesLiName() + "NOT OK! ", designator);
 		 }
 	 }
 	 @Override
@@ -744,7 +789,7 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 		  }
 		  else if (!designator.getExpr().struct.equals(Tab.intType)) {
 			  designator.obj= Tab.noObj;
-				report_error("ERROR! DesignListExprList INDEX OF AN ARRAY MUST BE INT ", designator);
+				report_error("ERROR! (DesignListExprList) DesignListExprList INDEX OF AN ARRAY MUST BE INT ", designator);
 	    	}
 		  else {
 			  String fname= designator.getDesignatorIdentRecArr().getDesRAName();//menjano
@@ -757,14 +802,14 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 				  }
 			  }
 			  designator.obj= Tab.noObj;
-			  report_error("ERROR! DESIGN DesignListExprNoList " + fname + "NOT OK! ", designator);
+			  report_error("ERROR! (DesignListExprList) DESIGN DesignListExprNoList " + fname + "NOT OK! ", designator);
 		 }
 		 // currRecord= null;//menjno
 	 }
 	 @Override
 	 public void visit(DesignatorActpars designator) {
 		 if(designator.getDesignator().obj.getKind()!= Obj.Meth) {
-			 report_error("ERROR! DESIGN DesignatorActpars " + designator.getDesignator().obj.getName() + "NOT OK - NOT A METHOD! ", designator);
+			 report_error("ERROR! (DesignatorActpars)  DESIGN " + designator.getDesignator().obj.getName() + "NOT OK - NOT A METHOD! ", designator);
 		 }
 		 else {
 			 formParamsList = new ArrayList<>();
@@ -775,16 +820,16 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 				 }
 			 }
 			 if(finalactParamsList.size() != formParamsList.size()) {
-				 report_error("ERROR! FORM PARS LIST SIZE (" +formParamsList.size()+") NOT THE SAME SIZE AS ACT PARS LIST("+ finalactParamsList.size()+")" + designator.getDesignator().obj.getName(), designator);
+				 report_error("ERROR! (DesignatorActpars) FORM PARS LIST SIZE (" +formParamsList.size()+") NOT THE SAME SIZE AS ACT PARS LIST("+ finalactParamsList.size()+")" + designator.getDesignator().obj.getName(), designator);
 			 }
 			 else {
 				 for(int i=0; i<finalactParamsList.size();i++) {
 					 if(!finalactParamsList.get(i).assignableTo(formParamsList.get(i))) {
-						 report_error("ERROR! ACT PARS LIST  (" +finalactParamsList.size()+") NOT COMAPTIBLE TO FORM PARS LIST("+ formParamsList.size()+") on i=" +i+"; "+ designator.getDesignator().obj.getName(), designator);
+						 report_error("ERROR! (DesignatorActpars) ACT PARS LIST  (" +finalactParamsList.size()+") NOT COMAPTIBLE TO FORM PARS LIST("+ formParamsList.size()+") on i=" +i+"; "+ designator.getDesignator().obj.getName(), designator);
 					}
 				 }
 			 }
-			 report_info("~~FUNC CALL " + designator.getDesignator().obj.getName() + "!"+printObjNode(designator.getDesignator().obj), designator);
+			 report_info("~~FUNC CALL " +finalactParamsList.size()+"--"+formParamsList.size()+ designator.getDesignator().obj.getName() + "!"+printObjNode(designator.getDesignator().obj), designator);
 		}
 		//????PRIPREMA ZA SLEDECI DES
 		// actParamsStack.push(new ArrayList<>());
@@ -792,9 +837,30 @@ else if (!exprAddop.getExpr().struct.compatibleWith(exprAddop.getTerm().struct) 
 	 @Override
 	 public void visit(DesignatorParen designator) {
 		 if(designator.getDesignator().obj.getKind()!= Obj.Meth) {
-			 report_error("ERROR! DESIGN DesignatorActpars " + designator.getDesignator().obj.getName() + "NOT OK - NOT A METHOD! ", designator);
+			 report_error("ERROR! (DesignatorActpars) DESIGN  " + designator.getDesignator().obj.getName() + "NOT OK - NOT A METHOD! ", designator);
 		 }
-		 report_info("~~FUNC CALL " + designator.getDesignator().obj.getName() + "!"+printObjNode(designator.getDesignator().obj), designator);
+		 ////DODALA
+
+ 		finalactParamsList=new ArrayList<>();//DODALA
+		 formParamsList = new ArrayList<>();
+		 for(Obj form: designator.getDesignator().obj.getLocalSymbols()) {
+//?????????? kind lvl
+			 if(form.getFpPos()!=-1 && form.getKind()==Obj.Var && form.getLevel()==1) {// kind Var, lvl 1
+				 formParamsList.add(form.getType());
+			 }
+		 }
+		 if(finalactParamsList.size() != formParamsList.size()) {
+			 report_error("ERROR! (DesignatorParen) FORM PARS LIST SIZE (" +formParamsList.size()+") NOT THE SAME SIZE AS ACT PARS LIST("+ finalactParamsList.size()+")" + designator.getDesignator().obj.getName(), designator);
+		 }
+		 else {
+			 for(int i=0; i<finalactParamsList.size();i++) {
+				 if(!finalactParamsList.get(i).assignableTo(formParamsList.get(i))) {
+					 report_error("ERROR! (DesignatorActpars) ACT PARS LIST  (" +finalactParamsList.size()+") NOT COMAPTIBLE TO FORM PARS LIST("+ formParamsList.size()+") on i=" +i+"; "+ designator.getDesignator().obj.getName(), designator);
+				}
+			 }
+		 }
+		 ////
+		 report_info("~~FUNC CALL (DesignatorParen) "  + designator.getDesignator().obj.getName() + "!"+printObjNode(designator.getDesignator().obj), designator);
 	 }
 	 
 	 
@@ -804,12 +870,12 @@ public void visit(SingleStatementRead singleStatementRead) {
 	if (singleStatementRead.getDesignator().obj.getKind() != Obj.Var 
 			&& singleStatementRead.getDesignator().obj.getKind() != Obj.Elem
 			&& singleStatementRead.getDesignator().obj.getKind() != Obj.Fld) {
-		report_error("ERROR! READ MUST BE VAR,ELEM OR FIELD", singleStatementRead);
+		report_error("ERROR! (SingleStatementRead) READ MUST BE VAR,ELEM OR FIELD", singleStatementRead);
 	} 
 	else if (!singleStatementRead.getDesignator().obj.getType().equals(Tab.intType)
 			&& !singleStatementRead.getDesignator().obj.getType().equals(Tab.charType)
 			&& !singleStatementRead.getDesignator().obj.getType().equals(boolStruct) ) {
-		report_error("ERROR! READ MUST BE INT,CHAR OR BOOL", singleStatementRead);
+		report_error("ERROR! (SingleStatementRead) READ MUST BE INT,CHAR OR BOOL", singleStatementRead);
 	} 
 	else {}
 }
@@ -818,7 +884,7 @@ public void visit(SingleStatementRead singleStatementRead) {
     	if (!ssPrint.getExpr().struct.equals(Tab.intType) 
 				&& !ssPrint.getExpr().struct.equals(Tab.charType)
 				&& !ssPrint.getExpr().struct.equals(boolStruct))
-			report_error("ERROR! PRINT MUST BE INT,CHAR OR BOOL", ssPrint);
+			report_error("ERROR! (SingleStatementPrintNum) PRINT MUST BE INT,CHAR OR BOOL", ssPrint);
 		else {}
 	}
 	 @Override
@@ -826,19 +892,19 @@ public void visit(SingleStatementRead singleStatementRead) {
     	if (!ssPrint.getExpr().struct.equals(Tab.intType) 
     			&& !ssPrint.getExpr().struct.equals(Tab.charType)
 				&& !ssPrint.getExpr().struct.equals(boolStruct))
-			report_error("ERROR! PRINT MUST BE INT,CHAR OR BOOL", ssPrint);
+			report_error("ERROR! (SingleStatementPrintNum) PRINT MUST BE INT,CHAR OR BOOL", ssPrint);
 		else {}
 	}
 	 @Override
     public void visit(SingleStatementBreak singleStatementBreak) {
     	if(doWhileCnt==0) {
-    		report_error("ERROR! BREAK MUST BE IN A LOOP", singleStatementBreak);
+    		report_error("ERROR! (SingleStatementBreak) BREAK MUST BE IN A LOOP", singleStatementBreak);
     	}
 	}
 	 @Override
     public void visit(SingleStatementContinue singleStatementContinue) {
     	if(doWhileCnt==0) {
-    		report_error("ERROR! CONTINUE MUST BE IN A LOOP", singleStatementContinue);
+    		report_error("ERROR! (SingleStatementContinue) CONTINUE MUST BE IN A LOOP", singleStatementContinue);
     	}
 	}
 	 @Override
@@ -849,21 +915,21 @@ public void visit(SingleStatementRead singleStatementRead) {
     public void visit(SingleStatementDo singleStatementDo) {
 	    doWhileCnt-=1;
 	    if(!singleStatementDo.getConditionDone().struct.equals(boolStruct)) {
-	    	report_error("ERROR! CONDITION ( kind:"+ singleStatementDo.getConditionDone().struct.getKind()+") MUST BE BOOL",singleStatementDo);
+	    	report_error("ERROR! (SingleStatementDo) CONDITION ( kind:"+ singleStatementDo.getConditionDone().struct.getKind()+") MUST BE BOOL",singleStatementDo);
 		 }
 	}
     
     @Override
     public void visit(SingleStatementIf singleStatementIf) {
 	    if(!singleStatementIf.getConditionDone().struct.equals(boolStruct)) {
-	    	report_error("ERROR! CONDITION ( kind:"+ singleStatementIf.getConditionDone().struct.getKind()+") MUST BE BOOL",singleStatementIf);
+	    	report_error("ERROR! (SingleStatementIf) CONDITION ( kind:"+ singleStatementIf.getConditionDone().struct.getKind()+") MUST BE BOOL",singleStatementIf);
 		 }
 	}
     
     @Override
     public void visit(SingleStatementIfElse singleStatementIfElse) {
 	    if(!singleStatementIfElse.getConditionDone().struct.equals(boolStruct)) {
-	    	report_error("ERROR! CONDITION ( kind:"+ singleStatementIfElse.getConditionDone().struct.getKind()+") MUST BE BOOL",singleStatementIfElse);
+	    	report_error("ERROR! (SingleStatementIfElse) CONDITION ( kind:"+ singleStatementIfElse.getConditionDone().struct.getKind()+") MUST BE BOOL",singleStatementIfElse);
 		 }
 	}
     
@@ -873,10 +939,10 @@ public void visit(SingleStatementRead singleStatementRead) {
 		if (designatorAssignop.getDesignator().obj.getKind() != Obj.Var
 				&& designatorAssignop.getDesignator().obj.getKind() != Obj.Elem
 				&& designatorAssignop.getDesignator().obj.getKind() != Obj.Fld) {
-			report_error("ERROR! DESIGN MUST BE VAR,ELEM OR FIELD "+ designatorAssignop.getDesignator().obj.getName(), designatorAssignop);
+			report_error("ERROR! (DesignatorAssignop) DESIGN MUST BE VAR,ELEM OR FIELD "+ designatorAssignop.getDesignator().obj.getName(), designatorAssignop);
 		}//src pa dest tj da li je leva strana dodeljiva desnoj
 		else if (!designatorAssignop.getExpr().struct.assignableTo(designatorAssignop.getDesignator().obj.getType())) {
-			report_error("ERROR! EXPR NOT COMPATIBLE WITH DESIGN"+ designatorAssignop.getDesignator().obj.getName(),designatorAssignop);
+			report_error("ERROR! (DesignatorAssignop) EXPR NOT COMPATIBLE WITH DESIGN"+ designatorAssignop.getDesignator().obj.getName(),designatorAssignop);
 		}
 		else {}
 	}
@@ -885,10 +951,10 @@ public void visit(SingleStatementRead singleStatementRead) {
 		if (designatorPlus.getDesignator().obj.getKind() != Obj.Var
 				&& designatorPlus.getDesignator().obj.getKind() != Obj.Elem
 				 && designatorPlus.getDesignator().obj.getKind() != Obj.Fld)
-			report_error("ERROR! DESIGN "+ designatorPlus.getDesignator().obj.getName()+"MUST BE VAR,ELEM OR FIELD ",
+			report_error("ERROR! (DesignatorPlus) DESIGN "+ designatorPlus.getDesignator().obj.getName()+"MUST BE VAR,ELEM OR FIELD ",
 					designatorPlus);
 		else if (!designatorPlus.getDesignator().obj.getType().equals(Tab.intType))
-			report_error("ERROR! DESIGN  "+ designatorPlus.getDesignator().obj.getName()+" MUST BE INT", designatorPlus);
+			report_error("ERROR! (DesignatorPlus) DESIGN  "+ designatorPlus.getDesignator().obj.getName()+" MUST BE INT", designatorPlus);
 		else {}
 	}
     @Override
@@ -896,10 +962,10 @@ public void visit(SingleStatementRead singleStatementRead) {
 		if (designatorMinus.getDesignator().obj.getKind() != Obj.Var
 				&& designatorMinus.getDesignator().obj.getKind() != Obj.Elem
 				&& designatorMinus.getDesignator().obj.getKind() != Obj.Fld)
-			report_error("ERROR! DESIGN  "+ designatorMinus.getDesignator().obj.getName()+" MUST BE VAR,ELEM OR FIELD ",
+			report_error("ERROR! (DesignatorMinus) DESIGN  "+ designatorMinus.getDesignator().obj.getName()+" MUST BE VAR,ELEM OR FIELD ",
 					designatorMinus);
 		else if (!designatorMinus.getDesignator().obj.getType().equals(Tab.intType))
-			report_error("ERROR! DESIGN  "+ designatorMinus.getDesignator().obj.getName()+" MUST BE INT", designatorMinus);
+			report_error("ERROR! (DesignatorMinus) DESIGN  "+ designatorMinus.getDesignator().obj.getName()+" MUST BE INT", designatorMinus);
 		else {}
 	}
     
@@ -909,7 +975,7 @@ public void visit(SingleStatementRead singleStatementRead) {
     public void visit(CondFactNoList condFactNoList) {
     	if(!condFactNoList.getExpr().struct.equals(boolStruct)){
     		condFactNoList.struct= Tab.noType;
-    		report_error("ERROR! CONDITION MUST BE BOOL", condFactNoList);
+    		report_error("ERROR! (CondFactNoList) CONDITION MUST BE BOOL", condFactNoList);
     		}
     	else {
     		condFactNoList.struct= boolStruct;
@@ -919,7 +985,7 @@ public void visit(SingleStatementRead singleStatementRead) {
     public void visit(CondFactList condFactList) {
     	if(!condFactList.getExpr().struct.compatibleWith(condFactList.getExpr1().struct)){
     		condFactList.struct= Tab.noType;
-    		report_error("ERROR! CONDITION VARS MUST BE COMPATIBLE", condFactList);
+    		report_error("ERROR! (CondFactList) CONDITION VARS MUST BE COMPATIBLE", condFactList);
     	}
     	else if(condFactList.getExpr().struct.isRefType()
     			|| condFactList.getExpr1().struct.isRefType()){
@@ -929,7 +995,7 @@ public void visit(SingleStatementRead singleStatementRead) {
  	    	}
     		 else {
     			 condFactList.struct= Tab.noType;
-	 	    		report_error("ERROR! CONDITION ARR/CL RELOP MUST BE != or ==", condFactList);
+	 	    		report_error("ERROR! (CondFactList) CONDITION ARR/CL RELOP MUST BE != or ==", condFactList);
     		 }
     	}
     	else {
@@ -953,11 +1019,11 @@ public void visit(SingleStatementRead singleStatementRead) {
     public void visit(CondTermList condTermList) {
     	if (!condTermList.getCondTerm().struct.equals(boolStruct)) {
     		condTermList.struct =Tab.noType;
-			report_error("ERROR! AND CONDITION(in condTermList)IS NOT TYPE BOOL", condTermList);
+			report_error("ERROR! (CondTermList) AND CONDITION(in condTermList)IS NOT TYPE BOOL", condTermList);
 		}
     	else if (!condTermList.getCondFact().struct.equals(boolStruct)) {
     		condTermList.struct =Tab.noType;
-			report_error("ERROR! AND CONDITION(in condTermList) IS NOT TYPE BOOL", condTermList);
+			report_error("ERROR! (CondTermList) AND CONDITION(in condTermList) IS NOT TYPE BOOL", condTermList);
 		}
     	else {
     		condTermList.struct = boolStruct;
@@ -971,11 +1037,11 @@ public void visit(SingleStatementRead singleStatementRead) {
     public void visit(ConditionList conditionList) {
     	if (!conditionList.getCondition().struct.equals(boolStruct)) {
     		conditionList.struct =Tab.noType;
-			report_error("ERROR! OR CONDITION IS NOT TYPE BOOL", conditionList);
+			report_error("ERROR! (ConditionList) OR CONDITION IS NOT TYPE BOOL", conditionList);
 		}
     	else if (!conditionList.getCondTermDone().struct.equals(boolStruct)) {
     		conditionList.struct =Tab.noType;
-			report_error("ERROR! OR CONDITION IS NOT TYPE BOOL", conditionList);
+			report_error("ERROR! (ConditionList) OR CONDITION IS NOT TYPE BOOL", conditionList);
 		}
     	else {
     		conditionList.struct = boolStruct;
