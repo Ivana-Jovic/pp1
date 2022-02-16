@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 13/1/2022 20:32:13
+// 16/1/2022 21:2:36
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -29,7 +29,6 @@ public interface Visitor {
     public void visit(DesignatorStatement DesignatorStatement);
     public void visit(DesignList DesignList);
     public void visit(Statement Statement);
-    public void visit(VarDecl VarDecl);
     public void visit(ClassDecl ClassDecl);
     public void visit(ConstDecl ConstDecl);
     public void visit(CondFact CondFact);
@@ -149,7 +148,7 @@ public interface Visitor {
     public void visit(VariableNoArray VariableNoArray);
     public void visit(VarDeclListNoLong VarDeclListNoLong);
     public void visit(VarDeclListLong VarDeclListLong);
-    public void visit(VarDeclSquare VarDeclSquare);
+    public void visit(VarDecl VarDecl);
     public void visit(NCBConstBool NCBConstBool);
     public void visit(NCBConstChar NCBConstChar);
     public void visit(NCBConstNum NCBConstNum);

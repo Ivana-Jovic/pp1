@@ -163,7 +163,7 @@ VarDeclList ::= (VarDeclListSquare) VarDeclList COMMA IDENT LSQUARE RSQUARE
 **/
 
 
-VarDecl ::= (VarDeclSquare) Type:varType VarDeclList SEMI;
+VarDecl ::= (VarDecl) Type:varType VarDeclList SEMI;
 VarDeclList ::= (VarDeclListLong) VarDeclList COMMA Variable
 			|
 			(VarDeclListNoLong)Variable

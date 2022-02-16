@@ -1,0 +1,85 @@
+program Test 
+record r1 { int x[];} 
+record r2 { r1 obj[];}  
+
+int a;
+char b;
+int c;
+
+char pp[];
+int index;
+bool flag;
+{ 
+
+	void main() r1 rec1; r2 rec2;{ 
+		
+		rec2 = new r2;
+		rec2.obj = new r1[1];
+		rec2.obj[0] = new r1;
+		rec2.obj[0].x = new int[8];
+		
+		
+		
+		read(rec2.obj[0].x[0]);
+		read(rec2.obj[0].x[1]);
+		read(rec2.obj[0].x[2]);
+		read(rec2.obj[0].x[3]);
+		read(rec2.obj[0].x[4]);
+		read(rec2.obj[0].x[5]);
+		read(rec2.obj[0].x[6]);
+		read(rec2.obj[0].x[7]);
+		
+		print(rec2.obj[0].x[7], 8);
+		print(eol);
+		print(rec2.obj[0].x[6], 7);
+		print(eol);
+		print(rec2.obj[0].x[5], 6);
+		print(eol);
+		print(rec2.obj[0].x[4], 5);
+		print(eol);
+		print(rec2.obj[0].x[3], 4);
+		print(eol);
+		print(rec2.obj[0].x[2], 3);
+		print(eol);
+		print(rec2.obj[0].x[1], 2);
+		print(eol);
+		print(rec2.obj[0].x[0], 1);
+		print(eol);
+	
+	
+		
+		pp = new char[11];
+		flag = false;
+		index = 0;
+		
+		if (flag){
+			do{
+				print(pp[index]);
+				index++;
+			}while(index < 11);
+		}else{
+			pp[0] = 'P';
+			pp[1] = 'r';
+			pp[2] = 'e';
+			pp[3] = 'v';
+			pp[4] = 'o';
+			pp[5] = 'd';
+			pp[6] = 'i';
+			pp[7] = 'o';
+			pp[8] = 'c';
+			pp[9] = 'i';
+			pp[10] = '!';
+			flag = true;
+		}
+		
+		
+		if (flag){
+			do{
+				print(pp[index]);
+				index++;
+			}while(index < 11);
+		}
+		
+		
+	}
+}

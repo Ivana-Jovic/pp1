@@ -532,7 +532,11 @@ if(currVarType==Tab.noType) {
     }
    @Override
    public void visit(FactorType factorType) {//pravi se record
+	   if(currVarType.getKind()== Struct.Class)
     	factorType.struct = currVarType;// ili sa new class, curType.getMemberstab
+	   else { report_error("ERROR! (FactorType) NEEDS A RECORD ", factorType);
+	   factorType.struct= Tab.noType;}
+   	
     }
    @Override
     public void visit(FactorTypeExpr factorTypeExpr) {// pravi se niz
