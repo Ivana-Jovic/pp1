@@ -1,0 +1,13 @@
+program Test
+
+{
+	void main() int i; {
+		i = 0;
+		do {
+			i++;
+			//if (i == 1) continue;
+			if (i == 4) break;
+			print(i);
+		} while(i <= 5);
+	}
+}

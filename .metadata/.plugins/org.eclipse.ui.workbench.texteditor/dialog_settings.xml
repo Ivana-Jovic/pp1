@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="report_error"/>
+		<item key="selection" value="ConditionDone"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="ConditionDone"/>
+			<item value="SingleStatementBreak"/>
+			<item value="FactorType"/>
+			<item value="VarDecl"/>
+			<item value="VarDeclSquare"/>
 			<item value="report_error"/>
 			<item value="ActParsWrap"/>
 			<item value="FORM PARS LIST SIZE "/>
@@ -18,11 +23,6 @@
 			<item value="RECORD "/>
 			<item value="printObjNode"/>
 			<item value="Array variable"/>
-			<item value="for("/>
-			<item value="for"/>
-			<item value="~USING ARRAY"/>
-			<item value="~USING ARRAY niz"/>
-			<item value="SemanticPass"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>

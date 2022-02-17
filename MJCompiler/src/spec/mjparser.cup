@@ -78,7 +78,7 @@ nonterminal DesStmtASSIGNOP;
 
 
 nonterminal Variable;
-nonterminal RecordDeclName, Unary, DoStmt, ElseWrapper;
+nonterminal RecordDeclName, Unary, DoStmt, ElseWrapper, ConditionStart;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName,Program,MethodTypeName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, MethDeclType, NCBConst ;
 
@@ -269,7 +269,7 @@ SingleStatement::= (SingleStatementDesi) DesignatorStatement SEMI
 					|
 					(SingleStatementIf) IF LPAREN ConditionDone RPAREN Statement
 					|
-					(SingleStatementDo) DoStmt Statement WHILE LPAREN ConditionDone RPAREN SEMI
+					(SingleStatementDo) DoStmt Statement WHILE LPAREN ConditionStart ConditionDone RPAREN SEMI
 					|
 					(SingleStatementBreak) BREAK SEMI
 					|
@@ -287,7 +287,8 @@ SingleStatement::= (SingleStatementDesi) DesignatorStatement SEMI
 					|
 					(SingleStatemenGoto) GOTO Label SEMI
 					;
-					
+
+ConditionStart ::= (ConditionStart)	Epsilon;				
 					
 ElseWrapper ::=	(ElseWrapper) ELSE;				
 DoStmt::= (DoStmt) DO;

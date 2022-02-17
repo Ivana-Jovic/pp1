@@ -26,7 +26,7 @@ record r2 { r1 c[];}
 		 j=0;
 		 do{
 		 	do{
-		 	if(j>=6)break;
+		 	if(j>=2)break;
 		 	else j++;
 		 	}while(j<5);
 		 	print(i);
@@ -61,5 +61,8 @@ record r2 { r1 c[];}
 		print(rr.c[0].y[0]); 
 		print(eol); 
 	}
-
+	
 }
+
+
+

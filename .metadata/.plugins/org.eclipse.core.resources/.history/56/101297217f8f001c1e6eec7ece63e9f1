@@ -1,0 +1,38 @@
+program Test 
+record r1 { int x[];} 
+record r2 { r1 obj[];}  
+
+int a;
+char b;
+int c;
+
+char pp[];
+int index, index2;
+bool flag;
+{ 
+
+	void main(){ 
+	
+		
+		index2 = 0;
+	index= 0;
+		flag = true;
+	
+		if (flag){
+			do{
+				index++;
+				if (index == 1) continue;
+				print(index);
+				do{
+					if (index2 == 1) break;
+					index2++;
+					print('a');
+					print(eol);
+				}while(index2 < 3);
+				print(eol);
+			}while(index < 10);
+		}
+	
+		
+	}
+}

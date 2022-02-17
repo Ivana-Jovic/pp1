@@ -378,15 +378,19 @@ public CodeGenerator() {
 			Code.fixup(conditionList.remove(conditionList.size() - 1));// poslednji element uzima
 		} // T nastavljaju dalje
 			// i mora ovaj redosled?
+		
+		
+		/////
 	}
 
 	// BEZ ELSA
 	@Override
 	public void visit(SingleStatementIf cond) {// T// do ovog cvora su dosli samo ako su svi cvorovi tacni
 		// T
-		while (!thenList.isEmpty()) { // F// posto nema elsa treba da vratimo F
+		//////////////OBRISANO POSLEDNJE
+		//while (!thenList.isEmpty()) { // F// posto nema elsa treba da vratimo F
 			Code.fixup(thenList.remove(thenList.size() - 1));// poslednji element uzima
-		}
+		//}
 		// i mora ovaj redosled!!!
 		// T i F
 	}
@@ -422,15 +426,56 @@ public CodeGenerator() {
 	////////// DO WHILE
 	// uslov tacan -> skok
 	private List<Integer> doWhileList = new ArrayList<>();
-
+// boolean breakDetected= false;
+ private List<Integer> breakDetected = new ArrayList<>();
+ private List<Integer> breakPc = new ArrayList<>();
+ ////////////////////////
+ private List<Integer> continueLevel = new ArrayList<>();
+ private List<Integer> continuePc = new ArrayList<>();
+int doWhileLevel=0;
+ 
 	@Override
 	public void visit(DoStmt cond) {
 		doWhileList.add(Code.pc);
+	
+		doWhileLevel+=1;
+		
 	}
 
 	@Override
 	public void visit(SingleStatementDo cond) {
+		///
 		Code.putJump(doWhileList.remove(doWhileList.size() - 1));
+		/////
+		while(breakDetected.size()>0 && doWhileLevel==breakDetected.get(breakDetected.size() - 1)) {
+			breakDetected.remove(breakDetected.size() - 1);
+			Code.fixup(breakPc.remove(breakPc.size() - 1));
+		}
 		Code.fixup(thenList.remove(thenList.size() - 1));
+		
+		doWhileLevel-=1;
+	}
+	@Override
+	public void visit(SingleStatementBreak cond) {		
+		Code.putJump(0);
+		breakPc.add(Code.pc-2);
+		breakDetected.add(doWhileLevel);
+	}
+	
+	//CONTINUE
+	
+	@Override
+	public void visit(ConditionStart cond) {
+		
+		while(continueLevel.size()>0 && doWhileLevel==continueLevel.get(continueLevel.size() - 1)) {
+					continueLevel.remove(continueLevel.size() - 1);
+					Code.fixup(continuePc.remove(continuePc.size() - 1));
+		}
+	}
+	@Override
+	public void visit(SingleStatementContinue cond) {
+		Code.putJump(0);
+		continuePc.add(Code.pc-2);
+		continueLevel.add(doWhileLevel);
 	}
 }

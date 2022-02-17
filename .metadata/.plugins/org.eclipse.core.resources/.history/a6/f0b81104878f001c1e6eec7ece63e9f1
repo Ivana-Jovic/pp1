@@ -1,0 +1,21 @@
+program Test
+
+{
+	void main() int i, y; {
+		i = 0;
+		y = 9;
+		do {
+			i++;
+			
+			do {
+				y++;
+				if (y == 13) continue;
+				print(y); print(eol);
+			} while (y <= 15);
+			
+			if (i == 1) continue;
+			if (i == 4) break;
+			print(i); print(eol);
+		} while(i <= 5);
+	}
+}

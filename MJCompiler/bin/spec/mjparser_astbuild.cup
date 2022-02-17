@@ -104,6 +104,7 @@ nonterminal RecordDeclName RecordDeclName;
 nonterminal Unary Unary;
 nonterminal DoStmt DoStmt;
 nonterminal ElseWrapper ElseWrapper;
+nonterminal ConditionStart ConditionStart;
 nonterminal rs.etf.pp1.symboltable.concepts.Obj ProgName,Program,MethodTypeName;
 nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, MethDeclType, NCBConst ;
 
@@ -294,7 +295,7 @@ SingleStatement::= (SingleStatementDesi) DesignatorStatement:D1 SEMI {: RESULT=n
 					|
 					(SingleStatementIf) IF LPAREN ConditionDone:C1 RPAREN Statement:S2 {: RESULT=new SingleStatementIf(C1, S2); RESULT.setLine(C1left); :}
 					|
-					(SingleStatementDo) DoStmt:D1 Statement:S2 WHILE LPAREN ConditionDone:C3 RPAREN SEMI {: RESULT=new SingleStatementDo(D1, S2, C3); RESULT.setLine(D1left); :}
+					(SingleStatementDo) DoStmt:D1 Statement:S2 WHILE LPAREN ConditionStart:C3 ConditionDone:C4 RPAREN SEMI {: RESULT=new SingleStatementDo(D1, S2, C3, C4); RESULT.setLine(D1left); :}
 					|
 					(SingleStatementBreak) BREAK SEMI {: RESULT=new SingleStatementBreak(); :}
 					|
@@ -312,7 +313,8 @@ SingleStatement::= (SingleStatementDesi) DesignatorStatement:D1 SEMI {: RESULT=n
 					|
 					(SingleStatemenGoto) GOTO Label:L1 SEMI {: RESULT=new SingleStatemenGoto(L1); RESULT.setLine(L1left); :}
 					;
-					
+
+ConditionStart ::= (ConditionStart)	Epsilon:E1 {: RESULT=new ConditionStart(E1); RESULT.setLine(E1left); :};				
 					
 ElseWrapper ::=	(ElseWrapper) ELSE {: RESULT=new ElseWrapper(); :};				
 DoStmt::= (DoStmt) DO {: RESULT=new DoStmt(); :};

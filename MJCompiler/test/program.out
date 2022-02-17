@@ -1,427 +1,427 @@
-INFO  21:06:14,925 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
-INFO  21:06:14,965 - #2 program
-INFO  21:06:14,967 - #49 p
-INFO  21:06:14,967 - #7 const
-INFO  21:06:14,967 - #49 int
-INFO  21:06:14,967 - #49 q
-INFO  21:06:14,967 - #35 =
-INFO  21:06:14,967 - #48 4
-INFO  21:06:14,967 - #40 ,
-INFO  21:06:14,968 - #49 w
-INFO  21:06:14,968 - #35 =
-INFO  21:06:14,968 - #48 11
-INFO  21:06:14,968 - #39 ;
-INFO  21:06:14,968 - #49 char
-INFO  21:06:14,970 - #49 x
-INFO  21:06:14,970 - #40 ,
-INFO  21:06:14,970 - #49 y
-INFO  21:06:14,970 - #46 [
-INFO  21:06:14,970 - #47 ]
-INFO  21:06:14,970 - #39 ;
-INFO  21:06:14,970 - #7 const
-INFO  21:06:14,970 - #49 bool
-INFO  21:06:14,970 - #49 b
-INFO  21:06:14,970 - #35 =
-INFO  21:06:14,970 - #51 true
-INFO  21:06:14,971 - #39 ;
-INFO  21:06:14,971 - #21 record
-INFO  21:06:14,971 - #49 r1
-INFO  21:06:14,971 - #42 {
-INFO  21:06:14,971 - #49 int
-INFO  21:06:14,971 - #49 a
-INFO  21:06:14,971 - #39 ;
-INFO  21:06:14,971 - #49 int
-INFO  21:06:14,972 - #49 y
-INFO  21:06:14,972 - #46 [
-INFO  21:06:14,972 - #47 ]
-INFO  21:06:14,972 - #39 ;
-INFO  21:06:14,972 - #43 }
-INFO  21:06:14,972 - #21 record
-INFO  21:06:14,972 - #49 r2
-INFO  21:06:14,972 - #42 {
-INFO  21:06:14,972 - #49 r1
-INFO  21:06:14,972 - #49 c
-INFO  21:06:14,973 - #46 [
-INFO  21:06:14,973 - #47 ]
-INFO  21:06:14,973 - #39 ;
-INFO  21:06:14,973 - #43 }
-INFO  21:06:14,973 - #42 {
-INFO  21:06:14,973 - #49 bool
-INFO  21:06:14,973 - #49 bla
-INFO  21:06:14,973 - #44 (
-INFO  21:06:14,973 - #49 int
-INFO  21:06:14,973 - #49 i
-INFO  21:06:14,973 - #40 ,
-INFO  21:06:14,973 - #49 char
-INFO  21:06:14,973 - #49 j
-INFO  21:06:14,973 - #45 )
-INFO  21:06:14,975 - #49 r1
-INFO  21:06:14,975 - #49 r
-INFO  21:06:14,975 - #39 ;
-INFO  21:06:14,975 - #42 {
-INFO  21:06:14,975 - #49 r
-INFO  21:06:14,975 - #35 =
-INFO  21:06:14,975 - #11 new
-INFO  21:06:14,975 - #49 r1
-INFO  21:06:14,975 - #39 ;
-INFO  21:06:14,975 - #49 r
-INFO  21:06:14,975 - #41 .
-INFO  21:06:14,976 - #49 y
-INFO  21:06:14,976 - #35 =
-INFO  21:06:14,976 - #11 new
-INFO  21:06:14,976 - #49 int
-INFO  21:06:14,976 - #46 [
-INFO  21:06:14,976 - #48 5
-INFO  21:06:14,976 - #47 ]
-INFO  21:06:14,976 - #39 ;
-INFO  21:06:14,976 - #13 read
-INFO  21:06:14,976 - #44 (
-INFO  21:06:14,976 - #49 r
-INFO  21:06:14,976 - #41 .
-INFO  21:06:14,977 - #49 y
-INFO  21:06:14,977 - #46 [
-INFO  21:06:14,977 - #48 4
-INFO  21:06:14,977 - #47 ]
-INFO  21:06:14,977 - #45 )
-INFO  21:06:14,977 - #39 ;
-INFO  21:06:14,977 - #12 print
-INFO  21:06:14,977 - #44 (
-INFO  21:06:14,977 - #49 r
-INFO  21:06:14,977 - #41 .
-INFO  21:06:14,977 - #49 y
-INFO  21:06:14,978 - #46 [
-INFO  21:06:14,978 - #48 4
-INFO  21:06:14,978 - #47 ]
-INFO  21:06:14,978 - #45 )
-INFO  21:06:14,978 - #39 ;
-INFO  21:06:14,978 - #12 print
-INFO  21:06:14,978 - #44 (
-INFO  21:06:14,978 - #49 eol
-INFO  21:06:14,978 - #45 )
-INFO  21:06:14,978 - #39 ;
-INFO  21:06:14,978 - #14 return
-INFO  21:06:14,978 - #51 true
-INFO  21:06:14,978 - #39 ;
-INFO  21:06:14,978 - #43 }
-INFO  21:06:14,978 - #49 int
-INFO  21:06:14,979 - #49 m2
-INFO  21:06:14,979 - #44 (
-INFO  21:06:14,979 - #45 )
-INFO  21:06:14,979 - #49 int
-INFO  21:06:14,979 - #49 a
-INFO  21:06:14,979 - #39 ;
-INFO  21:06:14,979 - #49 bool
-INFO  21:06:14,979 - #49 b
-INFO  21:06:14,979 - #39 ;
-INFO  21:06:14,979 - #49 int
-INFO  21:06:14,980 - #49 i
-INFO  21:06:14,980 - #40 ,
-INFO  21:06:14,980 - #49 j
-INFO  21:06:14,980 - #39 ;
-INFO  21:06:14,980 - #42 {
-INFO  21:06:14,980 - #49 a
-INFO  21:06:14,980 - #35 =
-INFO  21:06:14,980 - #48 1
-INFO  21:06:14,980 - #39 ;
-INFO  21:06:14,980 - #8 if
-INFO  21:06:14,980 - #44 (
-INFO  21:06:14,980 - #51 true
-INFO  21:06:14,980 - #34 ||
-INFO  21:06:14,981 - #49 b
-INFO  21:06:14,981 - #33 &&
-INFO  21:06:14,981 - #49 a
-INFO  21:06:14,981 - #31 <
-INFO  21:06:14,981 - #48 2
-INFO  21:06:14,981 - #45 )
-INFO  21:06:14,982 - #49 a
-INFO  21:06:14,982 - #36 ++
-INFO  21:06:14,982 - #39 ;
-INFO  21:06:14,982 - #12 print
-INFO  21:06:14,982 - #44 (
-INFO  21:06:14,982 - #49 a
-INFO  21:06:14,982 - #45 )
-INFO  21:06:14,983 - #39 ;
-INFO  21:06:14,983 - #12 print
-INFO  21:06:14,983 - #44 (
-INFO  21:06:14,983 - #49 eol
-INFO  21:06:14,983 - #45 )
-INFO  21:06:14,983 - #39 ;
-INFO  21:06:14,983 - #49 b
-INFO  21:06:14,983 - #35 =
-INFO  21:06:14,983 - #49 bla
-INFO  21:06:14,983 - #44 (
-INFO  21:06:14,983 - #48 1
-INFO  21:06:14,983 - #40 ,
-INFO  21:06:14,984 - #50 a
-INFO  21:06:14,984 - #45 )
-INFO  21:06:14,984 - #39 ;
-INFO  21:06:14,984 - #49 i
-INFO  21:06:14,984 - #35 =
-INFO  21:06:14,984 - #48 0
-INFO  21:06:14,984 - #39 ;
-INFO  21:06:14,984 - #49 j
-INFO  21:06:14,984 - #35 =
-INFO  21:06:14,984 - #48 0
-INFO  21:06:14,984 - #39 ;
-INFO  21:06:14,985 - #9 do
-INFO  21:06:14,985 - #42 {
-INFO  21:06:14,985 - #9 do
-INFO  21:06:14,985 - #42 {
-INFO  21:06:14,985 - #8 if
-INFO  21:06:14,985 - #44 (
-INFO  21:06:14,985 - #49 j
-INFO  21:06:14,985 - #30 >=
-INFO  21:06:14,985 - #48 6
-INFO  21:06:14,986 - #45 )
-INFO  21:06:14,986 - #3 break
-INFO  21:06:14,986 - #39 ;
-INFO  21:06:14,986 - #6 else
-INFO  21:06:14,986 - #49 j
-INFO  21:06:14,986 - #36 ++
-INFO  21:06:14,986 - #39 ;
-INFO  21:06:14,986 - #43 }
-INFO  21:06:14,987 - #10 while
-INFO  21:06:14,987 - #44 (
-INFO  21:06:14,987 - #49 j
-INFO  21:06:14,987 - #31 <
-INFO  21:06:14,987 - #48 5
-INFO  21:06:14,987 - #45 )
-INFO  21:06:14,987 - #39 ;
-INFO  21:06:14,987 - #12 print
-INFO  21:06:14,987 - #44 (
-INFO  21:06:14,987 - #49 i
-INFO  21:06:14,987 - #45 )
-INFO  21:06:14,987 - #39 ;
-INFO  21:06:14,987 - #12 print
-INFO  21:06:14,987 - #44 (
-INFO  21:06:14,987 - #49 j
-INFO  21:06:14,988 - #45 )
-INFO  21:06:14,988 - #39 ;
-INFO  21:06:14,988 - #49 i
-INFO  21:06:14,988 - #35 =
-INFO  21:06:14,988 - #49 i
-INFO  21:06:14,988 - #23 +
-INFO  21:06:14,988 - #48 1
-INFO  21:06:14,988 - #39 ;
-INFO  21:06:14,988 - #43 }
-INFO  21:06:14,988 - #10 while
-INFO  21:06:14,989 - #44 (
-INFO  21:06:14,989 - #49 i
-INFO  21:06:14,989 - #31 <
-INFO  21:06:14,989 - #48 5
-INFO  21:06:14,989 - #45 )
-INFO  21:06:14,989 - #39 ;
-INFO  21:06:14,989 - #12 print
-INFO  21:06:14,989 - #44 (
-INFO  21:06:14,989 - #49 eol
-INFO  21:06:14,989 - #45 )
-INFO  21:06:14,989 - #39 ;
-INFO  21:06:14,989 - #14 return
-INFO  21:06:14,989 - #48 1
-INFO  21:06:14,989 - #39 ;
-INFO  21:06:14,989 - #43 }
-INFO  21:06:14,989 - #15 void
-INFO  21:06:14,989 - #49 main
-INFO  21:06:14,989 - #44 (
-INFO  21:06:14,989 - #45 )
-INFO  21:06:14,989 - #49 int
-INFO  21:06:14,989 - #49 a
-INFO  21:06:14,989 - #40 ,
-INFO  21:06:14,989 - #49 b
-INFO  21:06:14,989 - #46 [
-INFO  21:06:14,989 - #47 ]
-INFO  21:06:14,989 - #39 ;
-INFO  21:06:14,990 - #49 char
-INFO  21:06:14,990 - #49 e
-INFO  21:06:14,990 - #39 ;
-INFO  21:06:14,990 - #49 r2
-INFO  21:06:14,990 - #49 rr
-INFO  21:06:14,990 - #39 ;
-INFO  21:06:14,990 - #42 {
-INFO  21:06:14,990 - #49 a
-INFO  21:06:14,994 - #35 =
-INFO  21:06:14,994 - #48 3
-INFO  21:06:14,994 - #39 ;
-INFO  21:06:14,994 - #49 b
-INFO  21:06:14,994 - #35 =
-INFO  21:06:14,994 - #11 new
-INFO  21:06:14,994 - #49 int
-INFO  21:06:14,994 - #46 [
-INFO  21:06:14,994 - #48 7
-INFO  21:06:14,994 - #47 ]
-INFO  21:06:14,994 - #39 ;
-INFO  21:06:14,994 - #49 b
-INFO  21:06:14,996 - #46 [
-INFO  21:06:14,997 - #48 2
-INFO  21:06:14,997 - #47 ]
-INFO  21:06:14,997 - #35 =
-INFO  21:06:14,997 - #49 a
-INFO  21:06:14,997 - #39 ;
-INFO  21:06:14,997 - #49 b
-INFO  21:06:14,997 - #46 [
-INFO  21:06:14,997 - #48 3
-INFO  21:06:14,997 - #47 ]
-INFO  21:06:14,997 - #35 =
-INFO  21:06:14,997 - #49 b
-INFO  21:06:14,997 - #46 [
-INFO  21:06:14,997 - #48 2
-INFO  21:06:14,997 - #47 ]
-INFO  21:06:14,997 - #39 ;
-INFO  21:06:14,997 - #49 b
-INFO  21:06:14,997 - #46 [
-INFO  21:06:14,997 - #48 3
-INFO  21:06:14,997 - #47 ]
-INFO  21:06:14,997 - #37 --
-INFO  21:06:14,997 - #39 ;
-INFO  21:06:14,998 - #49 a
-INFO  21:06:14,998 - #35 =
-INFO  21:06:14,998 - #48 3
-INFO  21:06:14,998 - #23 +
-INFO  21:06:14,998 - #49 b
-INFO  21:06:14,998 - #46 [
-INFO  21:06:14,998 - #48 2
-INFO  21:06:14,998 - #47 ]
-INFO  21:06:14,998 - #24 *
-INFO  21:06:14,998 - #48 2
-INFO  21:06:14,998 - #39 ;
-INFO  21:06:14,999 - #12 print
-INFO  21:06:14,999 - #44 (
-INFO  21:06:14,999 - #48 1
-INFO  21:06:14,999 - #40 ,
-INFO  21:06:14,999 - #48 4
-INFO  21:06:14,999 - #45 )
-INFO  21:06:14,999 - #39 ;
-INFO  21:06:14,999 - #12 print
-INFO  21:06:14,999 - #44 (
-INFO  21:06:14,999 - #49 a
-INFO  21:06:14,999 - #40 ,
-INFO  21:06:14,999 - #48 4
-INFO  21:06:14,999 - #45 )
-INFO  21:06:14,999 - #39 ;
-INFO  21:06:14,999 - #12 print
-INFO  21:06:14,999 - #44 (
-INFO  21:06:14,999 - #49 eol
-INFO  21:06:14,999 - #45 )
-INFO  21:06:14,999 - #39 ;
-INFO  21:06:14,999 - #49 m2
-INFO  21:06:14,999 - #44 (
-INFO  21:06:14,999 - #45 )
-INFO  21:06:14,999 - #39 ;
-INFO  21:06:14,999 - #49 rr
-INFO  21:06:14,999 - #35 =
-INFO  21:06:14,999 - #11 new
-INFO  21:06:14,999 - #49 r2
-INFO  21:06:15,000 - #39 ;
-INFO  21:06:15,000 - #49 rr
-INFO  21:06:15,000 - #41 .
-INFO  21:06:15,000 - #49 c
-INFO  21:06:15,000 - #35 =
-INFO  21:06:15,000 - #11 new
-INFO  21:06:15,000 - #49 r1
-INFO  21:06:15,000 - #46 [
-INFO  21:06:15,000 - #48 1
-INFO  21:06:15,000 - #47 ]
-INFO  21:06:15,000 - #39 ;
-INFO  21:06:15,000 - #49 rr
-INFO  21:06:15,000 - #41 .
-INFO  21:06:15,000 - #49 c
-INFO  21:06:15,000 - #46 [
-INFO  21:06:15,000 - #48 0
-INFO  21:06:15,000 - #47 ]
-INFO  21:06:15,000 - #35 =
-INFO  21:06:15,000 - #11 new
-INFO  21:06:15,000 - #49 r1
-INFO  21:06:15,000 - #39 ;
-INFO  21:06:15,001 - #49 rr
-INFO  21:06:15,001 - #41 .
-INFO  21:06:15,001 - #49 c
-INFO  21:06:15,001 - #46 [
-INFO  21:06:15,001 - #48 0
-INFO  21:06:15,001 - #47 ]
-INFO  21:06:15,001 - #41 .
-INFO  21:06:15,001 - #49 a
-INFO  21:06:15,001 - #35 =
-INFO  21:06:15,001 - #48 8
-INFO  21:06:15,001 - #39 ;
-INFO  21:06:15,001 - #49 rr
-INFO  21:06:15,001 - #41 .
-INFO  21:06:15,001 - #49 c
-INFO  21:06:15,001 - #46 [
-INFO  21:06:15,001 - #48 0
-INFO  21:06:15,001 - #47 ]
-INFO  21:06:15,001 - #41 .
-INFO  21:06:15,001 - #49 a
-INFO  21:06:15,001 - #36 ++
-INFO  21:06:15,001 - #39 ;
-INFO  21:06:15,001 - #12 print
-INFO  21:06:15,001 - #44 (
-INFO  21:06:15,001 - #49 rr
-INFO  21:06:15,001 - #41 .
-INFO  21:06:15,001 - #49 c
-INFO  21:06:15,001 - #46 [
-INFO  21:06:15,001 - #48 0
-INFO  21:06:15,002 - #47 ]
-INFO  21:06:15,002 - #41 .
-INFO  21:06:15,002 - #49 a
-INFO  21:06:15,002 - #45 )
-INFO  21:06:15,002 - #39 ;
-INFO  21:06:15,002 - #12 print
-INFO  21:06:15,002 - #44 (
-INFO  21:06:15,002 - #49 eol
-INFO  21:06:15,002 - #45 )
-INFO  21:06:15,002 - #39 ;
-INFO  21:06:15,002 - #49 rr
-INFO  21:06:15,002 - #41 .
-INFO  21:06:15,002 - #49 c
-INFO  21:06:15,002 - #46 [
-INFO  21:06:15,002 - #48 0
-INFO  21:06:15,002 - #47 ]
-INFO  21:06:15,002 - #41 .
-INFO  21:06:15,002 - #49 y
-INFO  21:06:15,002 - #35 =
-INFO  21:06:15,002 - #11 new
-INFO  21:06:15,002 - #49 int
-INFO  21:06:15,002 - #46 [
-INFO  21:06:15,002 - #48 1
-INFO  21:06:15,002 - #47 ]
-INFO  21:06:15,002 - #39 ;
-INFO  21:06:15,002 - #49 rr
-INFO  21:06:15,002 - #41 .
-INFO  21:06:15,002 - #49 c
-INFO  21:06:15,002 - #46 [
-INFO  21:06:15,002 - #48 0
-INFO  21:06:15,002 - #47 ]
-INFO  21:06:15,003 - #41 .
-INFO  21:06:15,003 - #49 y
-INFO  21:06:15,003 - #46 [
-INFO  21:06:15,003 - #48 0
-INFO  21:06:15,003 - #47 ]
-INFO  21:06:15,003 - #35 =
-INFO  21:06:15,003 - #48 9
-INFO  21:06:15,003 - #39 ;
-INFO  21:06:15,003 - #12 print
-INFO  21:06:15,003 - #44 (
-INFO  21:06:15,003 - #49 rr
-INFO  21:06:15,003 - #41 .
-INFO  21:06:15,003 - #49 c
-INFO  21:06:15,003 - #46 [
-INFO  21:06:15,003 - #48 0
-INFO  21:06:15,003 - #47 ]
-INFO  21:06:15,003 - #41 .
-INFO  21:06:15,003 - #49 y
-INFO  21:06:15,003 - #46 [
-INFO  21:06:15,003 - #48 0
-INFO  21:06:15,003 - #47 ]
-INFO  21:06:15,003 - #45 )
-INFO  21:06:15,003 - #39 ;
-INFO  21:06:15,003 - #12 print
-INFO  21:06:15,003 - #44 (
-INFO  21:06:15,003 - #49 eol
-INFO  21:06:15,003 - #45 )
-INFO  21:06:15,003 - #39 ;
-INFO  21:06:15,003 - #43 }
-INFO  21:06:15,003 - #43 }
-INFO  21:06:15,008 - Program(
+INFO  09:14:29,148 - Compiling source file: C:\Users\Ivana\Desktop\PP1\workspace\MJCompiler\test\program.mj
+INFO  09:14:29,241 - #2 program
+INFO  09:14:29,241 - #49 p
+INFO  09:14:29,241 - #7 const
+INFO  09:14:29,244 - #49 int
+INFO  09:14:29,244 - #49 q
+INFO  09:14:29,245 - #35 =
+INFO  09:14:29,245 - #48 4
+INFO  09:14:29,246 - #40 ,
+INFO  09:14:29,246 - #49 w
+INFO  09:14:29,247 - #35 =
+INFO  09:14:29,247 - #48 11
+INFO  09:14:29,247 - #39 ;
+INFO  09:14:29,247 - #49 char
+INFO  09:14:29,248 - #49 x
+INFO  09:14:29,248 - #40 ,
+INFO  09:14:29,248 - #49 y
+INFO  09:14:29,249 - #46 [
+INFO  09:14:29,249 - #47 ]
+INFO  09:14:29,249 - #39 ;
+INFO  09:14:29,249 - #7 const
+INFO  09:14:29,251 - #49 bool
+INFO  09:14:29,252 - #49 b
+INFO  09:14:29,252 - #35 =
+INFO  09:14:29,252 - #51 true
+INFO  09:14:29,252 - #39 ;
+INFO  09:14:29,253 - #21 record
+INFO  09:14:29,253 - #49 r1
+INFO  09:14:29,253 - #42 {
+INFO  09:14:29,255 - #49 int
+INFO  09:14:29,255 - #49 a
+INFO  09:14:29,255 - #39 ;
+INFO  09:14:29,255 - #49 int
+INFO  09:14:29,256 - #49 y
+INFO  09:14:29,256 - #46 [
+INFO  09:14:29,256 - #47 ]
+INFO  09:14:29,256 - #39 ;
+INFO  09:14:29,256 - #43 }
+INFO  09:14:29,256 - #21 record
+INFO  09:14:29,258 - #49 r2
+INFO  09:14:29,258 - #42 {
+INFO  09:14:29,258 - #49 r1
+INFO  09:14:29,258 - #49 c
+INFO  09:14:29,258 - #46 [
+INFO  09:14:29,258 - #47 ]
+INFO  09:14:29,258 - #39 ;
+INFO  09:14:29,259 - #43 }
+INFO  09:14:29,259 - #42 {
+INFO  09:14:29,259 - #49 bool
+INFO  09:14:29,259 - #49 bla
+INFO  09:14:29,259 - #44 (
+INFO  09:14:29,260 - #49 int
+INFO  09:14:29,260 - #49 i
+INFO  09:14:29,260 - #40 ,
+INFO  09:14:29,260 - #49 char
+INFO  09:14:29,261 - #49 j
+INFO  09:14:29,261 - #45 )
+INFO  09:14:29,261 - #49 r1
+INFO  09:14:29,261 - #49 r
+INFO  09:14:29,261 - #39 ;
+INFO  09:14:29,262 - #42 {
+INFO  09:14:29,262 - #49 r
+INFO  09:14:29,262 - #35 =
+INFO  09:14:29,262 - #11 new
+INFO  09:14:29,263 - #49 r1
+INFO  09:14:29,264 - #39 ;
+INFO  09:14:29,265 - #49 r
+INFO  09:14:29,266 - #41 .
+INFO  09:14:29,267 - #49 y
+INFO  09:14:29,267 - #35 =
+INFO  09:14:29,267 - #11 new
+INFO  09:14:29,268 - #49 int
+INFO  09:14:29,268 - #46 [
+INFO  09:14:29,268 - #48 5
+INFO  09:14:29,269 - #47 ]
+INFO  09:14:29,269 - #39 ;
+INFO  09:14:29,269 - #13 read
+INFO  09:14:29,269 - #44 (
+INFO  09:14:29,270 - #49 r
+INFO  09:14:29,270 - #41 .
+INFO  09:14:29,270 - #49 y
+INFO  09:14:29,270 - #46 [
+INFO  09:14:29,272 - #48 4
+INFO  09:14:29,272 - #47 ]
+INFO  09:14:29,273 - #45 )
+INFO  09:14:29,274 - #39 ;
+INFO  09:14:29,274 - #12 print
+INFO  09:14:29,274 - #44 (
+INFO  09:14:29,274 - #49 r
+INFO  09:14:29,274 - #41 .
+INFO  09:14:29,274 - #49 y
+INFO  09:14:29,274 - #46 [
+INFO  09:14:29,274 - #48 4
+INFO  09:14:29,275 - #47 ]
+INFO  09:14:29,275 - #45 )
+INFO  09:14:29,275 - #39 ;
+INFO  09:14:29,275 - #12 print
+INFO  09:14:29,276 - #44 (
+INFO  09:14:29,276 - #49 eol
+INFO  09:14:29,276 - #45 )
+INFO  09:14:29,276 - #39 ;
+INFO  09:14:29,277 - #14 return
+INFO  09:14:29,277 - #51 true
+INFO  09:14:29,277 - #39 ;
+INFO  09:14:29,277 - #43 }
+INFO  09:14:29,277 - #49 int
+INFO  09:14:29,279 - #49 m2
+INFO  09:14:29,279 - #44 (
+INFO  09:14:29,279 - #45 )
+INFO  09:14:29,280 - #49 int
+INFO  09:14:29,280 - #49 a
+INFO  09:14:29,280 - #39 ;
+INFO  09:14:29,280 - #49 bool
+INFO  09:14:29,281 - #49 b
+INFO  09:14:29,281 - #39 ;
+INFO  09:14:29,281 - #49 int
+INFO  09:14:29,281 - #49 i
+INFO  09:14:29,281 - #40 ,
+INFO  09:14:29,281 - #49 j
+INFO  09:14:29,281 - #39 ;
+INFO  09:14:29,281 - #42 {
+INFO  09:14:29,282 - #49 a
+INFO  09:14:29,282 - #35 =
+INFO  09:14:29,282 - #48 1
+INFO  09:14:29,282 - #39 ;
+INFO  09:14:29,282 - #8 if
+INFO  09:14:29,282 - #44 (
+INFO  09:14:29,282 - #51 true
+INFO  09:14:29,283 - #34 ||
+INFO  09:14:29,284 - #49 b
+INFO  09:14:29,284 - #33 &&
+INFO  09:14:29,284 - #49 a
+INFO  09:14:29,285 - #31 <
+INFO  09:14:29,285 - #48 2
+INFO  09:14:29,287 - #45 )
+INFO  09:14:29,288 - #49 a
+INFO  09:14:29,288 - #36 ++
+INFO  09:14:29,288 - #39 ;
+INFO  09:14:29,289 - #12 print
+INFO  09:14:29,289 - #44 (
+INFO  09:14:29,289 - #49 a
+INFO  09:14:29,289 - #45 )
+INFO  09:14:29,289 - #39 ;
+INFO  09:14:29,290 - #12 print
+INFO  09:14:29,290 - #44 (
+INFO  09:14:29,290 - #49 eol
+INFO  09:14:29,290 - #45 )
+INFO  09:14:29,290 - #39 ;
+INFO  09:14:29,290 - #49 b
+INFO  09:14:29,290 - #35 =
+INFO  09:14:29,290 - #49 bla
+INFO  09:14:29,290 - #44 (
+INFO  09:14:29,291 - #48 1
+INFO  09:14:29,292 - #40 ,
+INFO  09:14:29,293 - #50 a
+INFO  09:14:29,293 - #45 )
+INFO  09:14:29,293 - #39 ;
+INFO  09:14:29,294 - #49 i
+INFO  09:14:29,294 - #35 =
+INFO  09:14:29,294 - #48 0
+INFO  09:14:29,295 - #39 ;
+INFO  09:14:29,295 - #49 j
+INFO  09:14:29,295 - #35 =
+INFO  09:14:29,295 - #48 0
+INFO  09:14:29,295 - #39 ;
+INFO  09:14:29,295 - #9 do
+INFO  09:14:29,295 - #42 {
+INFO  09:14:29,296 - #9 do
+INFO  09:14:29,296 - #42 {
+INFO  09:14:29,296 - #8 if
+INFO  09:14:29,296 - #44 (
+INFO  09:14:29,296 - #49 j
+INFO  09:14:29,296 - #30 >=
+INFO  09:14:29,296 - #48 2
+INFO  09:14:29,298 - #45 )
+INFO  09:14:29,298 - #3 break
+INFO  09:14:29,298 - #39 ;
+INFO  09:14:29,298 - #6 else
+INFO  09:14:29,299 - #49 j
+INFO  09:14:29,300 - #36 ++
+INFO  09:14:29,300 - #39 ;
+INFO  09:14:29,300 - #43 }
+INFO  09:14:29,300 - #10 while
+INFO  09:14:29,301 - #44 (
+INFO  09:14:29,301 - #49 j
+INFO  09:14:29,302 - #31 <
+INFO  09:14:29,303 - #48 5
+INFO  09:14:29,303 - #45 )
+INFO  09:14:29,303 - #39 ;
+INFO  09:14:29,303 - #12 print
+INFO  09:14:29,303 - #44 (
+INFO  09:14:29,303 - #49 i
+INFO  09:14:29,303 - #45 )
+INFO  09:14:29,304 - #39 ;
+INFO  09:14:29,304 - #12 print
+INFO  09:14:29,304 - #44 (
+INFO  09:14:29,304 - #49 j
+INFO  09:14:29,304 - #45 )
+INFO  09:14:29,304 - #39 ;
+INFO  09:14:29,304 - #49 i
+INFO  09:14:29,304 - #35 =
+INFO  09:14:29,304 - #49 i
+INFO  09:14:29,304 - #23 +
+INFO  09:14:29,305 - #48 1
+INFO  09:14:29,306 - #39 ;
+INFO  09:14:29,306 - #43 }
+INFO  09:14:29,306 - #10 while
+INFO  09:14:29,307 - #44 (
+INFO  09:14:29,307 - #49 i
+INFO  09:14:29,307 - #31 <
+INFO  09:14:29,307 - #48 5
+INFO  09:14:29,307 - #45 )
+INFO  09:14:29,307 - #39 ;
+INFO  09:14:29,307 - #12 print
+INFO  09:14:29,307 - #44 (
+INFO  09:14:29,307 - #49 eol
+INFO  09:14:29,307 - #45 )
+INFO  09:14:29,308 - #39 ;
+INFO  09:14:29,308 - #14 return
+INFO  09:14:29,308 - #48 1
+INFO  09:14:29,308 - #39 ;
+INFO  09:14:29,308 - #43 }
+INFO  09:14:29,308 - #15 void
+INFO  09:14:29,308 - #49 main
+INFO  09:14:29,308 - #44 (
+INFO  09:14:29,308 - #45 )
+INFO  09:14:29,308 - #49 int
+INFO  09:14:29,309 - #49 a
+INFO  09:14:29,309 - #40 ,
+INFO  09:14:29,309 - #49 b
+INFO  09:14:29,309 - #46 [
+INFO  09:14:29,309 - #47 ]
+INFO  09:14:29,309 - #39 ;
+INFO  09:14:29,309 - #49 char
+INFO  09:14:29,309 - #49 e
+INFO  09:14:29,309 - #39 ;
+INFO  09:14:29,309 - #49 r2
+INFO  09:14:29,309 - #49 rr
+INFO  09:14:29,310 - #39 ;
+INFO  09:14:29,310 - #42 {
+INFO  09:14:29,310 - #49 a
+INFO  09:14:29,319 - #35 =
+INFO  09:14:29,320 - #48 3
+INFO  09:14:29,320 - #39 ;
+INFO  09:14:29,320 - #49 b
+INFO  09:14:29,321 - #35 =
+INFO  09:14:29,321 - #11 new
+INFO  09:14:29,321 - #49 int
+INFO  09:14:29,321 - #46 [
+INFO  09:14:29,321 - #48 7
+INFO  09:14:29,321 - #47 ]
+INFO  09:14:29,321 - #39 ;
+INFO  09:14:29,328 - #49 b
+INFO  09:14:29,328 - #46 [
+INFO  09:14:29,329 - #48 2
+INFO  09:14:29,330 - #47 ]
+INFO  09:14:29,330 - #35 =
+INFO  09:14:29,330 - #49 a
+INFO  09:14:29,330 - #39 ;
+INFO  09:14:29,330 - #49 b
+INFO  09:14:29,330 - #46 [
+INFO  09:14:29,331 - #48 3
+INFO  09:14:29,331 - #47 ]
+INFO  09:14:29,331 - #35 =
+INFO  09:14:29,331 - #49 b
+INFO  09:14:29,331 - #46 [
+INFO  09:14:29,331 - #48 2
+INFO  09:14:29,331 - #47 ]
+INFO  09:14:29,332 - #39 ;
+INFO  09:14:29,332 - #49 b
+INFO  09:14:29,332 - #46 [
+INFO  09:14:29,332 - #48 3
+INFO  09:14:29,332 - #47 ]
+INFO  09:14:29,332 - #37 --
+INFO  09:14:29,333 - #39 ;
+INFO  09:14:29,333 - #49 a
+INFO  09:14:29,333 - #35 =
+INFO  09:14:29,333 - #48 3
+INFO  09:14:29,334 - #23 +
+INFO  09:14:29,334 - #49 b
+INFO  09:14:29,334 - #46 [
+INFO  09:14:29,334 - #48 2
+INFO  09:14:29,334 - #47 ]
+INFO  09:14:29,334 - #24 *
+INFO  09:14:29,334 - #48 2
+INFO  09:14:29,337 - #39 ;
+INFO  09:14:29,337 - #12 print
+INFO  09:14:29,337 - #44 (
+INFO  09:14:29,338 - #48 1
+INFO  09:14:29,338 - #40 ,
+INFO  09:14:29,338 - #48 4
+INFO  09:14:29,338 - #45 )
+INFO  09:14:29,338 - #39 ;
+INFO  09:14:29,338 - #12 print
+INFO  09:14:29,339 - #44 (
+INFO  09:14:29,339 - #49 a
+INFO  09:14:29,339 - #40 ,
+INFO  09:14:29,339 - #48 4
+INFO  09:14:29,339 - #45 )
+INFO  09:14:29,339 - #39 ;
+INFO  09:14:29,339 - #12 print
+INFO  09:14:29,339 - #44 (
+INFO  09:14:29,340 - #49 eol
+INFO  09:14:29,340 - #45 )
+INFO  09:14:29,340 - #39 ;
+INFO  09:14:29,340 - #49 m2
+INFO  09:14:29,340 - #44 (
+INFO  09:14:29,340 - #45 )
+INFO  09:14:29,340 - #39 ;
+INFO  09:14:29,341 - #49 rr
+INFO  09:14:29,341 - #35 =
+INFO  09:14:29,341 - #11 new
+INFO  09:14:29,341 - #49 r2
+INFO  09:14:29,341 - #39 ;
+INFO  09:14:29,341 - #49 rr
+INFO  09:14:29,342 - #41 .
+INFO  09:14:29,342 - #49 c
+INFO  09:14:29,342 - #35 =
+INFO  09:14:29,342 - #11 new
+INFO  09:14:29,342 - #49 r1
+INFO  09:14:29,342 - #46 [
+INFO  09:14:29,343 - #48 1
+INFO  09:14:29,343 - #47 ]
+INFO  09:14:29,343 - #39 ;
+INFO  09:14:29,343 - #49 rr
+INFO  09:14:29,343 - #41 .
+INFO  09:14:29,343 - #49 c
+INFO  09:14:29,343 - #46 [
+INFO  09:14:29,343 - #48 0
+INFO  09:14:29,343 - #47 ]
+INFO  09:14:29,344 - #35 =
+INFO  09:14:29,344 - #11 new
+INFO  09:14:29,344 - #49 r1
+INFO  09:14:29,344 - #39 ;
+INFO  09:14:29,344 - #49 rr
+INFO  09:14:29,344 - #41 .
+INFO  09:14:29,344 - #49 c
+INFO  09:14:29,344 - #46 [
+INFO  09:14:29,344 - #48 0
+INFO  09:14:29,344 - #47 ]
+INFO  09:14:29,344 - #41 .
+INFO  09:14:29,344 - #49 a
+INFO  09:14:29,345 - #35 =
+INFO  09:14:29,345 - #48 8
+INFO  09:14:29,345 - #39 ;
+INFO  09:14:29,345 - #49 rr
+INFO  09:14:29,345 - #41 .
+INFO  09:14:29,345 - #49 c
+INFO  09:14:29,345 - #46 [
+INFO  09:14:29,345 - #48 0
+INFO  09:14:29,346 - #47 ]
+INFO  09:14:29,346 - #41 .
+INFO  09:14:29,346 - #49 a
+INFO  09:14:29,346 - #36 ++
+INFO  09:14:29,346 - #39 ;
+INFO  09:14:29,346 - #12 print
+INFO  09:14:29,347 - #44 (
+INFO  09:14:29,347 - #49 rr
+INFO  09:14:29,347 - #41 .
+INFO  09:14:29,347 - #49 c
+INFO  09:14:29,347 - #46 [
+INFO  09:14:29,347 - #48 0
+INFO  09:14:29,348 - #47 ]
+INFO  09:14:29,348 - #41 .
+INFO  09:14:29,348 - #49 a
+INFO  09:14:29,348 - #45 )
+INFO  09:14:29,348 - #39 ;
+INFO  09:14:29,348 - #12 print
+INFO  09:14:29,349 - #44 (
+INFO  09:14:29,349 - #49 eol
+INFO  09:14:29,349 - #45 )
+INFO  09:14:29,349 - #39 ;
+INFO  09:14:29,350 - #49 rr
+INFO  09:14:29,350 - #41 .
+INFO  09:14:29,350 - #49 c
+INFO  09:14:29,350 - #46 [
+INFO  09:14:29,350 - #48 0
+INFO  09:14:29,350 - #47 ]
+INFO  09:14:29,351 - #41 .
+INFO  09:14:29,351 - #49 y
+INFO  09:14:29,351 - #35 =
+INFO  09:14:29,351 - #11 new
+INFO  09:14:29,351 - #49 int
+INFO  09:14:29,351 - #46 [
+INFO  09:14:29,351 - #48 1
+INFO  09:14:29,351 - #47 ]
+INFO  09:14:29,352 - #39 ;
+INFO  09:14:29,352 - #49 rr
+INFO  09:14:29,352 - #41 .
+INFO  09:14:29,352 - #49 c
+INFO  09:14:29,352 - #46 [
+INFO  09:14:29,352 - #48 0
+INFO  09:14:29,352 - #47 ]
+INFO  09:14:29,352 - #41 .
+INFO  09:14:29,352 - #49 y
+INFO  09:14:29,352 - #46 [
+INFO  09:14:29,352 - #48 0
+INFO  09:14:29,352 - #47 ]
+INFO  09:14:29,352 - #35 =
+INFO  09:14:29,353 - #48 9
+INFO  09:14:29,353 - #39 ;
+INFO  09:14:29,353 - #12 print
+INFO  09:14:29,353 - #44 (
+INFO  09:14:29,353 - #49 rr
+INFO  09:14:29,354 - #41 .
+INFO  09:14:29,355 - #49 c
+INFO  09:14:29,355 - #46 [
+INFO  09:14:29,355 - #48 0
+INFO  09:14:29,355 - #47 ]
+INFO  09:14:29,355 - #41 .
+INFO  09:14:29,355 - #49 y
+INFO  09:14:29,355 - #46 [
+INFO  09:14:29,355 - #48 0
+INFO  09:14:29,355 - #47 ]
+INFO  09:14:29,355 - #45 )
+INFO  09:14:29,355 - #39 ;
+INFO  09:14:29,355 - #12 print
+INFO  09:14:29,355 - #44 (
+INFO  09:14:29,355 - #49 eol
+INFO  09:14:29,356 - #45 )
+INFO  09:14:29,357 - #39 ;
+INFO  09:14:29,357 - #43 }
+INFO  09:14:29,357 - #43 }
+INFO  09:14:29,369 - Program(
   ProgName(
    p
   ) [ProgName]
@@ -1179,7 +1179,7 @@ INFO  21:06:15,008 - Program(
                                                               ) [Epsilon]
                                                             ) [UnaryNoMinus]
                                                             FactorNum(
-                                                             6
+                                                             2
                                                             ) [FactorNum]
                                                           ) [Factor]
                                                         ) [TermFactor]
@@ -1209,6 +1209,10 @@ INFO  21:06:15,008 - Program(
                                       ) [YStatementList]
                                     ) [Statements]
                                   ) [StatementStat]
+                                  ConditionStart(
+                                    Epsilon(
+                                    ) [Epsilon]
+                                  ) [ConditionStart]
                                   ConditionDone(
                                     ConditionNoList(
                                       CondTermDone(
@@ -1336,6 +1340,10 @@ INFO  21:06:15,008 - Program(
                       ) [YStatementList]
                     ) [Statements]
                   ) [StatementStat]
+                  ConditionStart(
+                    Epsilon(
+                    ) [Epsilon]
+                  ) [ConditionStart]
                   ConditionDone(
                     ConditionNoList(
                       CondTermDone(
@@ -2296,74 +2304,74 @@ INFO  21:06:15,008 - Program(
     ) [MethodDecl]
   ) [YMethodDeclList]
 ) [Program]
-INFO  21:06:15,011 - ===================================
-INFO  21:06:15,016 - ~~CONST  q IS BEING DEFINED!  { Con:  int  4  0} na liniji 3
-INFO  21:06:15,016 - ~~CONST  w IS BEING DEFINED!  { Con:  int  11  0} na liniji 3
-INFO  21:06:15,016 - ~~VARIABLE x IS BEING DEFINED!  { Var:  char  0  0} na liniji 4
-INFO  21:06:15,016 - ~~ARRAY VARIABLE y IS BEING DEFINED!  { Var:  arr of char  1  0} na liniji 4
-INFO  21:06:15,016 - ~~CONST  b IS BEING DEFINED!  { Con:  bool  1  0} na liniji 5
-INFO  21:06:15,016 - ~~RECORD  r1 IS BEING DEFINED!  { Type:  class   0  0} na liniji 6
-INFO  21:06:15,016 - ~~VARIABLE a IS BEING DEFINED!  { Fld:  int  0  2} na liniji 6
-INFO  21:06:15,016 - ~~ARRAY VARIABLE y IS BEING DEFINED!  { Fld:  arr of int  1  2} na liniji 6
-INFO  21:06:15,017 - ~~RECORD  r2 IS BEING DEFINED!  { Type:  class   0  0} na liniji 7
-INFO  21:06:15,017 - ~~ARRAY VARIABLE c IS BEING DEFINED!  { Fld:  arr of class  0  2} na liniji 7
-INFO  21:06:15,017 - ~~FORM PAR i IS BEING USED!  { Var:  int  0  1} na liniji 9
-INFO  21:06:15,017 - ~~FORM PAR j IS BEING USED!  { Var:  char  1  1} na liniji 9
-INFO  21:06:15,017 - ~~VARIABLE r IS BEING DEFINED!  { Var:  class   [ Fld:  int  0  2]  [ Fld:  arr  1  2]  2  1} na liniji 9
-INFO  21:06:15,017 - ~~USING DESIGNATOR LOCAL VAR r!  { Var:  class   [ Fld:  int  0  2]  [ Fld:  arr  1  2]  2  1} na liniji 10
-INFO  21:06:15,018 - ~~USING RECORD r!  { Var:  class   [ Fld:  int  0  2]  [ Fld:  arr  1  2]  2  1} na liniji 11
-INFO  21:06:15,018 - ~~USING RECORD r!  { Var:  class   [ Fld:  int  0  2]  [ Fld:  arr  1  2]  2  1} na liniji 12
-INFO  21:06:15,018 - ~~USING RECORD r!  { Var:  class   [ Fld:  int  0  2]  [ Fld:  arr  1  2]  2  1} na liniji 13
-INFO  21:06:15,018 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 14
-INFO  21:06:15,018 - ~~VARIABLE a IS BEING DEFINED!  { Var:  int  0  1} na liniji 19
-INFO  21:06:15,018 - ~~VARIABLE b IS BEING DEFINED!  { Var:  bool  1  1} na liniji 19
-INFO  21:06:15,018 - ~~VARIABLE i IS BEING DEFINED!  { Var:  int  2  1} na liniji 19
-INFO  21:06:15,018 - ~~VARIABLE j IS BEING DEFINED!  { Var:  int  3  1} na liniji 19
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 20
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR b!  { Var:  bool  1  1} na liniji 21
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 21
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 21
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 22
-INFO  21:06:15,018 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 23
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR b!  { Var:  bool  1  1} na liniji 24
-INFO  21:06:15,018 - ~~FUNC CALL 2--2bla!  { Meth:  bool   0  2}  [ Var:  int  0  1]  [ Var:  char  1  1]  [ Var:  class  2  1] na liniji 24
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  2  1} na liniji 25
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR j!  { Var:  int  3  1} na liniji 26
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR j!  { Var:  int  3  1} na liniji 29
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR j!  { Var:  int  3  1} na liniji 30
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR j!  { Var:  int  3  1} na liniji 31
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  2  1} na liniji 32
-INFO  21:06:15,018 - ~~USING DESIGNATOR LOCAL VAR j!  { Var:  int  3  1} na liniji 33
-INFO  21:06:15,019 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  2  1} na liniji 34
-INFO  21:06:15,019 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  2  1} na liniji 34
-INFO  21:06:15,019 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  2  1} na liniji 35
-INFO  21:06:15,019 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 36
-INFO  21:06:15,019 - ~~VARIABLE a IS BEING DEFINED!  { Var:  int  0  1} na liniji 40
-INFO  21:06:15,019 - ~~ARRAY VARIABLE b IS BEING DEFINED!  { Var:  arr of int  1  1} na liniji 40
-INFO  21:06:15,019 - ~~VARIABLE e IS BEING DEFINED!  { Var:  char  2  1} na liniji 40
-INFO  21:06:15,019 - ~~VARIABLE rr IS BEING DEFINED!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 40
-INFO  21:06:15,019 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 41
-INFO  21:06:15,019 - ~~USING DESIGNATOR LOCAL VAR b!  { Var:  arr of int  1  1} na liniji 42
-INFO  21:06:15,019 - ~~USING ELEM OF ARR b!  { Var:  arr of int  1  1} na liniji 43
-INFO  21:06:15,019 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 43
-INFO  21:06:15,019 - ~~USING ELEM OF ARR b!  { Var:  arr of int  1  1} na liniji 44
-INFO  21:06:15,019 - ~~USING ELEM OF ARR b!  { Var:  arr of int  1  1} na liniji 44
-INFO  21:06:15,019 - ~~USING ELEM OF ARR b!  { Var:  arr of int  1  1} na liniji 45
-INFO  21:06:15,019 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 46
-INFO  21:06:15,019 - ~~USING ELEM OF ARR b!  { Var:  arr of int  1  1} na liniji 46
-INFO  21:06:15,019 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 48
-INFO  21:06:15,019 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 49
-INFO  21:06:15,019 - ~~FUNC CALL (DesignatorParen) m2!  { Meth:  int   0  0}  [ Var:  int  0  1]  [ Var:  bool  1  1]  [ Var:  int  2  1]  [ Var:  int  3  1] na liniji 50
-INFO  21:06:15,019 - ~~USING DESIGNATOR LOCAL VAR rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 52
-INFO  21:06:15,019 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 53
-INFO  21:06:15,019 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 54
-INFO  21:06:15,019 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 55
-INFO  21:06:15,019 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 56
-INFO  21:06:15,019 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 57
-INFO  21:06:15,019 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 58
-INFO  21:06:15,020 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 59
-INFO  21:06:15,020 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 60
-INFO  21:06:15,020 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 61
-INFO  21:06:15,020 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 62
-INFO  21:06:15,020 - ===================================
-INFO  21:06:15,023 - Parsiranje uspesno zavrseno
+INFO  09:14:29,375 - ===================================
+INFO  09:14:29,390 - ~~CONST  q IS BEING DEFINED!  { Con:  int  4  0} na liniji 3
+INFO  09:14:29,390 - ~~CONST  w IS BEING DEFINED!  { Con:  int  11  0} na liniji 3
+INFO  09:14:29,390 - ~~VARIABLE x IS BEING DEFINED!  { Var:  char  0  0} na liniji 4
+INFO  09:14:29,390 - ~~ARRAY VARIABLE y IS BEING DEFINED!  { Var:  arr of char  1  0} na liniji 4
+INFO  09:14:29,390 - ~~CONST  b IS BEING DEFINED!  { Con:  bool  1  0} na liniji 5
+INFO  09:14:29,390 - ~~RECORD  r1 IS BEING DEFINED!  { Type:  class   0  0} na liniji 6
+INFO  09:14:29,391 - ~~VARIABLE a IS BEING DEFINED!  { Fld:  int  0  2} na liniji 6
+INFO  09:14:29,391 - ~~ARRAY VARIABLE y IS BEING DEFINED!  { Fld:  arr of int  1  2} na liniji 6
+INFO  09:14:29,391 - ~~RECORD  r2 IS BEING DEFINED!  { Type:  class   0  0} na liniji 7
+INFO  09:14:29,391 - ~~ARRAY VARIABLE c IS BEING DEFINED!  { Fld:  arr of class  0  2} na liniji 7
+INFO  09:14:29,391 - ~~FORM PAR i IS BEING USED!  { Var:  int  0  1} na liniji 9
+INFO  09:14:29,391 - ~~FORM PAR j IS BEING USED!  { Var:  char  1  1} na liniji 9
+INFO  09:14:29,391 - ~~VARIABLE r IS BEING DEFINED!  { Var:  class   [ Fld:  int  0  2]  [ Fld:  arr  1  2]  2  1} na liniji 9
+INFO  09:14:29,391 - ~~USING DESIGNATOR LOCAL VAR r!  { Var:  class   [ Fld:  int  0  2]  [ Fld:  arr  1  2]  2  1} na liniji 10
+INFO  09:14:29,392 - ~~USING RECORD r!  { Var:  class   [ Fld:  int  0  2]  [ Fld:  arr  1  2]  2  1} na liniji 11
+INFO  09:14:29,393 - ~~USING RECORD r!  { Var:  class   [ Fld:  int  0  2]  [ Fld:  arr  1  2]  2  1} na liniji 12
+INFO  09:14:29,393 - ~~USING RECORD r!  { Var:  class   [ Fld:  int  0  2]  [ Fld:  arr  1  2]  2  1} na liniji 13
+INFO  09:14:29,393 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 14
+INFO  09:14:29,393 - ~~VARIABLE a IS BEING DEFINED!  { Var:  int  0  1} na liniji 19
+INFO  09:14:29,393 - ~~VARIABLE b IS BEING DEFINED!  { Var:  bool  1  1} na liniji 19
+INFO  09:14:29,393 - ~~VARIABLE i IS BEING DEFINED!  { Var:  int  2  1} na liniji 19
+INFO  09:14:29,393 - ~~VARIABLE j IS BEING DEFINED!  { Var:  int  3  1} na liniji 19
+INFO  09:14:29,394 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 20
+INFO  09:14:29,394 - ~~USING DESIGNATOR LOCAL VAR b!  { Var:  bool  1  1} na liniji 21
+INFO  09:14:29,394 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 21
+INFO  09:14:29,394 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 21
+INFO  09:14:29,394 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 22
+INFO  09:14:29,395 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 23
+INFO  09:14:29,395 - ~~USING DESIGNATOR LOCAL VAR b!  { Var:  bool  1  1} na liniji 24
+INFO  09:14:29,395 - ~~FUNC CALL 2--2bla!  { Meth:  bool   0  2}  [ Var:  int  0  1]  [ Var:  char  1  1]  [ Var:  class  2  1] na liniji 24
+INFO  09:14:29,395 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  2  1} na liniji 25
+INFO  09:14:29,395 - ~~USING DESIGNATOR LOCAL VAR j!  { Var:  int  3  1} na liniji 26
+INFO  09:14:29,395 - ~~USING DESIGNATOR LOCAL VAR j!  { Var:  int  3  1} na liniji 29
+INFO  09:14:29,395 - ~~USING DESIGNATOR LOCAL VAR j!  { Var:  int  3  1} na liniji 30
+INFO  09:14:29,395 - ~~USING DESIGNATOR LOCAL VAR j!  { Var:  int  3  1} na liniji 31
+INFO  09:14:29,395 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  2  1} na liniji 32
+INFO  09:14:29,396 - ~~USING DESIGNATOR LOCAL VAR j!  { Var:  int  3  1} na liniji 33
+INFO  09:14:29,396 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  2  1} na liniji 34
+INFO  09:14:29,396 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  2  1} na liniji 34
+INFO  09:14:29,396 - ~~USING DESIGNATOR LOCAL VAR i!  { Var:  int  2  1} na liniji 35
+INFO  09:14:29,396 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 36
+INFO  09:14:29,396 - ~~VARIABLE a IS BEING DEFINED!  { Var:  int  0  1} na liniji 40
+INFO  09:14:29,396 - ~~ARRAY VARIABLE b IS BEING DEFINED!  { Var:  arr of int  1  1} na liniji 40
+INFO  09:14:29,396 - ~~VARIABLE e IS BEING DEFINED!  { Var:  char  2  1} na liniji 40
+INFO  09:14:29,396 - ~~VARIABLE rr IS BEING DEFINED!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 40
+INFO  09:14:29,396 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 41
+INFO  09:14:29,397 - ~~USING DESIGNATOR LOCAL VAR b!  { Var:  arr of int  1  1} na liniji 42
+INFO  09:14:29,397 - ~~USING ELEM OF ARR b!  { Var:  arr of int  1  1} na liniji 43
+INFO  09:14:29,397 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 43
+INFO  09:14:29,397 - ~~USING ELEM OF ARR b!  { Var:  arr of int  1  1} na liniji 44
+INFO  09:14:29,397 - ~~USING ELEM OF ARR b!  { Var:  arr of int  1  1} na liniji 44
+INFO  09:14:29,397 - ~~USING ELEM OF ARR b!  { Var:  arr of int  1  1} na liniji 45
+INFO  09:14:29,397 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 46
+INFO  09:14:29,397 - ~~USING ELEM OF ARR b!  { Var:  arr of int  1  1} na liniji 46
+INFO  09:14:29,397 - ~~USING DESIGNATOR LOCAL VAR a!  { Var:  int  0  1} na liniji 48
+INFO  09:14:29,398 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 49
+INFO  09:14:29,398 - ~~FUNC CALL (DesignatorParen) m2!  { Meth:  int   0  0}  [ Var:  int  0  1]  [ Var:  bool  1  1]  [ Var:  int  2  1]  [ Var:  int  3  1] na liniji 50
+INFO  09:14:29,398 - ~~USING DESIGNATOR LOCAL VAR rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 52
+INFO  09:14:29,398 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 53
+INFO  09:14:29,398 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 54
+INFO  09:14:29,398 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 55
+INFO  09:14:29,398 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 56
+INFO  09:14:29,398 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 57
+INFO  09:14:29,398 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 58
+INFO  09:14:29,398 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 59
+INFO  09:14:29,399 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 60
+INFO  09:14:29,399 - ~~USING RECORD rr!  { Var:  class   [ Fld:  arr  0  2]  3  1} na liniji 61
+INFO  09:14:29,399 - ~~USING DESIGNATOR GLOBAL VAR eol!  { Con:  char  10  0} na liniji 62
+INFO  09:14:29,399 - ===================================
+INFO  09:14:29,408 - Parsiranje uspesno zavrseno
